@@ -1,0 +1,15 @@
+E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\passave project.exe.config
+E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\passave project.exe
+E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\passave project.pdb
+E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\MaterialSkin.dll
+E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\passave project.csprojResolveAssemblyReference.cache
+E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\passave project.csproj.GenerateResource.cache
+E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\passave project.csproj.CoreCompileInputs.cache
+E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\passave project.csproj.CopyComplete
+E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\passave project.exe
+E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\passave project.pdb
+E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\Passave.MainForm.resources
+E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\Passave.Properties.Resources.resources
+E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\MetroFramework.Design.dll
+E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\MetroFramework.dll
+E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\MetroFramework.Fonts.dll
