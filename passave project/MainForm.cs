@@ -14,6 +14,9 @@ namespace Passave
 {
     public partial class MainForm : Form
     {
+        // TOFIX: NEW FILE ICON FAILED
+        // TODO: CREATE ENTRY ABSTRACT CLASS AND CHILDS FOR IT
+
         public MainForm()
         {
             InitializeComponent();
