@@ -10,6 +10,3 @@ E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\pa
 E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\passave project.pdb
 E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\Passave.MainForm.resources
 E:\cloud\applications\visual studio\passave project\passave project\obj\Debug\Passave.Properties.Resources.resources
-E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\MetroFramework.Design.dll
-E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\MetroFramework.dll
-E:\cloud\applications\visual studio\passave project\passave project\bin\Debug\MetroFramework.Fonts.dll

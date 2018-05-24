@@ -123,5 +123,41 @@
   <ItemGroup>
     <None Include="Resources\sn_button_default.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_button_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_button_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_button_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_button_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_button_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_button_default.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
