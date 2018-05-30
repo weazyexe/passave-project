@@ -22,3 +22,4 @@ E:\repositories\passave-project\passave project\obj\Debug\passave project.csproj
 E:\repositories\passave-project\passave project\obj\Debug\passave project.csproj.CopyComplete
 E:\repositories\passave-project\passave project\obj\Debug\passave project.exe
 E:\repositories\passave-project\passave project\obj\Debug\passave project.pdb
+E:\repositories\passave-project\passave project\obj\Debug\Passave.AddEditForm.resources

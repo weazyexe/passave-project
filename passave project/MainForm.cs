@@ -14,7 +14,12 @@ namespace Passave
 {
     public partial class MainForm : Form
     {
-        // TODO: CREATE ENTRY ABSTRACT CLASS AND CHILDS FOR IT
+        List<Entry> socialNetworkList = new List<Entry>();
+        List<Entry> emailList = new List<Entry>();
+        List<BankEntry> homebankingList = new List<BankEntry>();
+        List<LicenseEntry> licensesList = new List<LicenseEntry>();
+        List<Entry> otherList = new List<Entry>();
+
         bool isSNShow = true, isEmailShow = false, isHomebankingShow = false, isLicensesShow = false, isOtherShow = false;
 
         public MainForm()
@@ -302,7 +307,8 @@ namespace Passave
         {
             if (isSNShow)
             {
-
+                AddEditForm form = new AddEditForm();
+                form.ShowDialog();
             }
         }
     }

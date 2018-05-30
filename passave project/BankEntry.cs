@@ -10,7 +10,10 @@ namespace Passave
     {
         public BankEntry(string name, string cardNumber, string date, string cvc, string phone, string notes) : base(name, notes)
         {
-
+            CardNumber = cardNumber;
+            Date = date;
+            CVC = cvc;
+            Phone = phone;
         }
 
         public string CardNumber
