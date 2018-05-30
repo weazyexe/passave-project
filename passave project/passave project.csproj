@@ -49,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankEntry.cs" />
+    <Compile Include="BaseEntry.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="LicenseEntry.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,9 +140,6 @@
     <None Include="Resources\minimize_button_default.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\new_button_activated.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\new_button_default.png" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search_button_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_button_activated.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
