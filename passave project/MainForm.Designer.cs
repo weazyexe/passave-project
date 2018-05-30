@@ -31,9 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.SNListView = new MaterialSkin.Controls.MaterialListView();
             this.NameSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LoginSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PasswordSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PhoneSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UrlSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NotesSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TableContextMenu = new MaterialSkin.Controls.MaterialContextMenuStrip();
+            this.AddEntryButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditEntryButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteEntryButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.Separator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.CopyLoginButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.CopyPasswordButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.Separator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ViewEntryButton = new System.Windows.Forms.ToolStripMenuItem();
             this.BorderPanel = new System.Windows.Forms.Panel();
-            this.SearchTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SearchButton = new System.Windows.Forms.PictureBox();
+            this.SearchTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SaveButton = new System.Windows.Forms.PictureBox();
             this.OpenButton = new System.Windows.Forms.PictureBox();
             this.NewButton = new System.Windows.Forms.PictureBox();
@@ -46,11 +60,6 @@
             this.HomebankingButton = new System.Windows.Forms.PictureBox();
             this.EmailButton = new System.Windows.Forms.PictureBox();
             this.SNButton = new System.Windows.Forms.PictureBox();
-            this.LoginSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PasswordSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PhoneSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.UrlSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NotesSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EmailListView = new MaterialSkin.Controls.MaterialListView();
             this.NameEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LoginEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,34 +74,6 @@
             this.CvcHB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PhoneHB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NotesHB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LicensesListView = new MaterialSkin.Controls.MaterialListView();
-            this.NameLicenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.KeyLicenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NotesLicenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.OtherListView = new MaterialSkin.Controls.MaterialListView();
-            this.NameOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LoginOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PasswordOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PhoneOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.UrlOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NotesOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TableContextMenu = new MaterialSkin.Controls.MaterialContextMenuStrip();
-            this.AddEntryButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.EditEntryButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeleteEntryButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.Separator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.CopyLoginButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.CopyPasswordButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.Separator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ViewEntryButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.LicensesContextMenu = new MaterialSkin.Controls.MaterialContextMenuStrip();
-            this.AddLicenseButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.EditLicenseButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeleteLicenseButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.Separator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.CopyKeyButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.Separator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.ViewLicenseButton = new System.Windows.Forms.ToolStripMenuItem();
             this.HomebankingContextMenu = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.AddCardButton = new System.Windows.Forms.ToolStripMenuItem();
             this.EditCardButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +83,26 @@
             this.CopyCVCButton = new System.Windows.Forms.ToolStripMenuItem();
             this.Separator6 = new System.Windows.Forms.ToolStripSeparator();
             this.ViewCardButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.LicensesListView = new MaterialSkin.Controls.MaterialListView();
+            this.NameLicenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.KeyLicenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NotesLicenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LicensesContextMenu = new MaterialSkin.Controls.MaterialContextMenuStrip();
+            this.AddLicenseButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditLicenseButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteLicenseButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.Separator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.CopyKeyButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.Separator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.ViewLicenseButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.OtherListView = new MaterialSkin.Controls.MaterialListView();
+            this.NameOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LoginOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PasswordOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PhoneOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UrlOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NotesOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TableContextMenu.SuspendLayout();
             this.BorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).BeginInit();
@@ -116,9 +117,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomebankingButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SNButton)).BeginInit();
-            this.TableContextMenu.SuspendLayout();
-            this.LicensesContextMenu.SuspendLayout();
             this.HomebankingContextMenu.SuspendLayout();
+            this.LicensesContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // SNListView
@@ -151,6 +151,96 @@
             this.NameSN.Text = "Name";
             this.NameSN.Width = 100;
             // 
+            // LoginSN
+            // 
+            this.LoginSN.Text = "Login";
+            this.LoginSN.Width = 120;
+            // 
+            // PasswordSN
+            // 
+            this.PasswordSN.Text = "Password";
+            this.PasswordSN.Width = 100;
+            // 
+            // PhoneSN
+            // 
+            this.PhoneSN.Text = "Phone";
+            this.PhoneSN.Width = 120;
+            // 
+            // UrlSN
+            // 
+            this.UrlSN.Text = "URL";
+            this.UrlSN.Width = 120;
+            // 
+            // NotesSN
+            // 
+            this.NotesSN.Text = "Notes";
+            this.NotesSN.Width = 170;
+            // 
+            // TableContextMenu
+            // 
+            this.TableContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TableContextMenu.Depth = 0;
+            this.TableContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddEntryButton,
+            this.EditEntryButton,
+            this.DeleteEntryButton,
+            this.Separator1,
+            this.CopyLoginButton,
+            this.CopyPasswordButton,
+            this.Separator2,
+            this.ViewEntryButton});
+            this.TableContextMenu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TableContextMenu.Name = "TableContextMenu";
+            this.TableContextMenu.Size = new System.Drawing.Size(181, 170);
+            // 
+            // AddEntryButton
+            // 
+            this.AddEntryButton.Name = "AddEntryButton";
+            this.AddEntryButton.Size = new System.Drawing.Size(155, 22);
+            this.AddEntryButton.Text = "Add Entry";
+            this.AddEntryButton.Click += new System.EventHandler(this.AddEntryButton_Click);
+            // 
+            // EditEntryButton
+            // 
+            this.EditEntryButton.Name = "EditEntryButton";
+            this.EditEntryButton.Size = new System.Drawing.Size(180, 22);
+            this.EditEntryButton.Text = "Edit Entry";
+            this.EditEntryButton.Click += new System.EventHandler(this.EditEntryButton_Click);
+            // 
+            // DeleteEntryButton
+            // 
+            this.DeleteEntryButton.Name = "DeleteEntryButton";
+            this.DeleteEntryButton.Size = new System.Drawing.Size(155, 22);
+            this.DeleteEntryButton.Text = "Delete Entry";
+            // 
+            // Separator1
+            // 
+            this.Separator1.Name = "Separator1";
+            this.Separator1.Size = new System.Drawing.Size(152, 6);
+            // 
+            // CopyLoginButton
+            // 
+            this.CopyLoginButton.Name = "CopyLoginButton";
+            this.CopyLoginButton.Size = new System.Drawing.Size(155, 22);
+            this.CopyLoginButton.Text = "Copy Login";
+            // 
+            // CopyPasswordButton
+            // 
+            this.CopyPasswordButton.Name = "CopyPasswordButton";
+            this.CopyPasswordButton.Size = new System.Drawing.Size(155, 22);
+            this.CopyPasswordButton.Text = "Copy Password";
+            // 
+            // Separator2
+            // 
+            this.Separator2.Name = "Separator2";
+            this.Separator2.Size = new System.Drawing.Size(152, 6);
+            // 
+            // ViewEntryButton
+            // 
+            this.ViewEntryButton.Name = "ViewEntryButton";
+            this.ViewEntryButton.Size = new System.Drawing.Size(155, 22);
+            this.ViewEntryButton.Text = "View Entry";
+            // 
             // BorderPanel
             // 
             this.BorderPanel.Controls.Add(this.SearchButton);
@@ -166,6 +256,19 @@
             this.BorderPanel.Size = new System.Drawing.Size(720, 59);
             this.BorderPanel.TabIndex = 3;
             this.BorderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BorderPanel_MouseDown);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.ErrorImage = null;
+            this.SearchButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchButton.Image")));
+            this.SearchButton.Location = new System.Drawing.Point(311, 12);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(30, 35);
+            this.SearchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SearchButton.TabIndex = 6;
+            this.SearchButton.TabStop = false;
+            this.SearchButton.MouseLeave += new System.EventHandler(this.SearchButton_MouseLeave);
+            this.SearchButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SearchButton_MouseMove);
             // 
             // SearchTextBox
             // 
@@ -183,19 +286,6 @@
             this.SearchTextBox.TabIndex = 5;
             this.SearchTextBox.TabStop = false;
             this.SearchTextBox.UseSystemPasswordChar = false;
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.ErrorImage = null;
-            this.SearchButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchButton.Image")));
-            this.SearchButton.Location = new System.Drawing.Point(311, 12);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(30, 35);
-            this.SearchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SearchButton.TabIndex = 6;
-            this.SearchButton.TabStop = false;
-            this.SearchButton.MouseLeave += new System.EventHandler(this.SearchButton_MouseLeave);
-            this.SearchButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SearchButton_MouseMove);
             // 
             // SaveButton
             // 
@@ -352,31 +442,6 @@
             this.SNButton.MouseLeave += new System.EventHandler(this.SNButton_MouseLeave);
             this.SNButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SNButton_MouseMove);
             // 
-            // LoginSN
-            // 
-            this.LoginSN.Text = "Login";
-            this.LoginSN.Width = 120;
-            // 
-            // PasswordSN
-            // 
-            this.PasswordSN.Text = "Password";
-            this.PasswordSN.Width = 100;
-            // 
-            // PhoneSN
-            // 
-            this.PhoneSN.Text = "Phone";
-            this.PhoneSN.Width = 120;
-            // 
-            // UrlSN
-            // 
-            this.UrlSN.Text = "URL";
-            this.UrlSN.Width = 120;
-            // 
-            // NotesSN
-            // 
-            this.NotesSN.Text = "Notes";
-            this.NotesSN.Width = 170;
-            // 
             // EmailListView
             // 
             this.EmailListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -485,6 +550,70 @@
             this.NotesHB.Text = "Notes";
             this.NotesHB.Width = 170;
             // 
+            // HomebankingContextMenu
+            // 
+            this.HomebankingContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.HomebankingContextMenu.Depth = 0;
+            this.HomebankingContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddCardButton,
+            this.EditCardButton,
+            this.DeleteCardButton,
+            this.Separator5,
+            this.CopyCardButton,
+            this.CopyCVCButton,
+            this.Separator6,
+            this.ViewCardButton});
+            this.HomebankingContextMenu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.HomebankingContextMenu.Name = "HomebankingContextMenu";
+            this.HomebankingContextMenu.Size = new System.Drawing.Size(178, 148);
+            // 
+            // AddCardButton
+            // 
+            this.AddCardButton.Name = "AddCardButton";
+            this.AddCardButton.Size = new System.Drawing.Size(180, 22);
+            this.AddCardButton.Text = "Add Entry";
+            this.AddCardButton.Click += new System.EventHandler(this.AddCardButton_Click);
+            // 
+            // EditCardButton
+            // 
+            this.EditCardButton.Name = "EditCardButton";
+            this.EditCardButton.Size = new System.Drawing.Size(180, 22);
+            this.EditCardButton.Text = "Edit Entry";
+            // 
+            // DeleteCardButton
+            // 
+            this.DeleteCardButton.Name = "DeleteCardButton";
+            this.DeleteCardButton.Size = new System.Drawing.Size(180, 22);
+            this.DeleteCardButton.Text = "Delete Entry";
+            // 
+            // Separator5
+            // 
+            this.Separator5.Name = "Separator5";
+            this.Separator5.Size = new System.Drawing.Size(177, 6);
+            // 
+            // CopyCardButton
+            // 
+            this.CopyCardButton.Name = "CopyCardButton";
+            this.CopyCardButton.Size = new System.Drawing.Size(180, 22);
+            this.CopyCardButton.Text = "Copy Card Number";
+            // 
+            // CopyCVCButton
+            // 
+            this.CopyCVCButton.Name = "CopyCVCButton";
+            this.CopyCVCButton.Size = new System.Drawing.Size(180, 22);
+            this.CopyCVCButton.Text = "Copy CVC";
+            // 
+            // Separator6
+            // 
+            this.Separator6.Name = "Separator6";
+            this.Separator6.Size = new System.Drawing.Size(177, 6);
+            // 
+            // ViewCardButton
+            // 
+            this.ViewCardButton.Name = "ViewCardButton";
+            this.ViewCardButton.Size = new System.Drawing.Size(180, 22);
+            this.ViewCardButton.Text = "View Entry";
+            // 
             // LicensesListView
             // 
             this.LicensesListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -521,6 +650,63 @@
             // 
             this.NotesLicenses.Text = "Notes";
             this.NotesLicenses.Width = 400;
+            // 
+            // LicensesContextMenu
+            // 
+            this.LicensesContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.LicensesContextMenu.Depth = 0;
+            this.LicensesContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddLicenseButton,
+            this.EditLicenseButton,
+            this.DeleteLicenseButton,
+            this.Separator3,
+            this.CopyKeyButton,
+            this.Separator4,
+            this.ViewLicenseButton});
+            this.LicensesContextMenu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LicensesContextMenu.Name = "LicensesContextMenu";
+            this.LicensesContextMenu.Size = new System.Drawing.Size(138, 126);
+            // 
+            // AddLicenseButton
+            // 
+            this.AddLicenseButton.Name = "AddLicenseButton";
+            this.AddLicenseButton.Size = new System.Drawing.Size(180, 22);
+            this.AddLicenseButton.Text = "Add Entry";
+            this.AddLicenseButton.Click += new System.EventHandler(this.AddLicenseButton_Click);
+            // 
+            // EditLicenseButton
+            // 
+            this.EditLicenseButton.Name = "EditLicenseButton";
+            this.EditLicenseButton.Size = new System.Drawing.Size(137, 22);
+            this.EditLicenseButton.Text = "Edit Entry";
+            // 
+            // DeleteLicenseButton
+            // 
+            this.DeleteLicenseButton.Name = "DeleteLicenseButton";
+            this.DeleteLicenseButton.Size = new System.Drawing.Size(137, 22);
+            this.DeleteLicenseButton.Text = "Delete Entry";
+            // 
+            // Separator3
+            // 
+            this.Separator3.Name = "Separator3";
+            this.Separator3.Size = new System.Drawing.Size(134, 6);
+            // 
+            // CopyKeyButton
+            // 
+            this.CopyKeyButton.Name = "CopyKeyButton";
+            this.CopyKeyButton.Size = new System.Drawing.Size(137, 22);
+            this.CopyKeyButton.Text = "Copy Key";
+            // 
+            // Separator4
+            // 
+            this.Separator4.Name = "Separator4";
+            this.Separator4.Size = new System.Drawing.Size(134, 6);
+            // 
+            // ViewLicenseButton
+            // 
+            this.ViewLicenseButton.Name = "ViewLicenseButton";
+            this.ViewLicenseButton.Size = new System.Drawing.Size(137, 22);
+            this.ViewLicenseButton.Text = "View Entry";
             // 
             // OtherListView
             // 
@@ -577,189 +763,6 @@
             this.NotesOther.Text = "Notes";
             this.NotesOther.Width = 170;
             // 
-            // TableContextMenu
-            // 
-            this.TableContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TableContextMenu.Depth = 0;
-            this.TableContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddEntryButton,
-            this.EditEntryButton,
-            this.DeleteEntryButton,
-            this.Separator1,
-            this.CopyLoginButton,
-            this.CopyPasswordButton,
-            this.Separator2,
-            this.ViewEntryButton});
-            this.TableContextMenu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.TableContextMenu.Name = "TableContextMenu";
-            this.TableContextMenu.Size = new System.Drawing.Size(156, 148);
-            // 
-            // AddEntryButton
-            // 
-            this.AddEntryButton.Name = "AddEntryButton";
-            this.AddEntryButton.Size = new System.Drawing.Size(180, 22);
-            this.AddEntryButton.Text = "Add Entry";
-            this.AddEntryButton.Click += new System.EventHandler(this.AddEntryButton_Click);
-            // 
-            // EditEntryButton
-            // 
-            this.EditEntryButton.Name = "EditEntryButton";
-            this.EditEntryButton.Size = new System.Drawing.Size(155, 22);
-            this.EditEntryButton.Text = "Edit Entry";
-            // 
-            // DeleteEntryButton
-            // 
-            this.DeleteEntryButton.Name = "DeleteEntryButton";
-            this.DeleteEntryButton.Size = new System.Drawing.Size(155, 22);
-            this.DeleteEntryButton.Text = "Delete Entry";
-            // 
-            // Separator1
-            // 
-            this.Separator1.Name = "Separator1";
-            this.Separator1.Size = new System.Drawing.Size(152, 6);
-            // 
-            // CopyLoginButton
-            // 
-            this.CopyLoginButton.Name = "CopyLoginButton";
-            this.CopyLoginButton.Size = new System.Drawing.Size(155, 22);
-            this.CopyLoginButton.Text = "Copy Login";
-            // 
-            // CopyPasswordButton
-            // 
-            this.CopyPasswordButton.Name = "CopyPasswordButton";
-            this.CopyPasswordButton.Size = new System.Drawing.Size(155, 22);
-            this.CopyPasswordButton.Text = "Copy Password";
-            // 
-            // Separator2
-            // 
-            this.Separator2.Name = "Separator2";
-            this.Separator2.Size = new System.Drawing.Size(152, 6);
-            // 
-            // ViewEntryButton
-            // 
-            this.ViewEntryButton.Name = "ViewEntryButton";
-            this.ViewEntryButton.Size = new System.Drawing.Size(155, 22);
-            this.ViewEntryButton.Text = "View Entry";
-            // 
-            // LicensesContextMenu
-            // 
-            this.LicensesContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.LicensesContextMenu.Depth = 0;
-            this.LicensesContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddLicenseButton,
-            this.EditLicenseButton,
-            this.DeleteLicenseButton,
-            this.Separator3,
-            this.CopyKeyButton,
-            this.Separator4,
-            this.ViewLicenseButton});
-            this.LicensesContextMenu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LicensesContextMenu.Name = "LicensesContextMenu";
-            this.LicensesContextMenu.Size = new System.Drawing.Size(138, 126);
-            // 
-            // AddLicenseButton
-            // 
-            this.AddLicenseButton.Name = "AddLicenseButton";
-            this.AddLicenseButton.Size = new System.Drawing.Size(137, 22);
-            this.AddLicenseButton.Text = "Add Entry";
-            // 
-            // EditLicenseButton
-            // 
-            this.EditLicenseButton.Name = "EditLicenseButton";
-            this.EditLicenseButton.Size = new System.Drawing.Size(137, 22);
-            this.EditLicenseButton.Text = "Edit Entry";
-            // 
-            // DeleteLicenseButton
-            // 
-            this.DeleteLicenseButton.Name = "DeleteLicenseButton";
-            this.DeleteLicenseButton.Size = new System.Drawing.Size(137, 22);
-            this.DeleteLicenseButton.Text = "Delete Entry";
-            // 
-            // Separator3
-            // 
-            this.Separator3.Name = "Separator3";
-            this.Separator3.Size = new System.Drawing.Size(134, 6);
-            // 
-            // CopyKeyButton
-            // 
-            this.CopyKeyButton.Name = "CopyKeyButton";
-            this.CopyKeyButton.Size = new System.Drawing.Size(137, 22);
-            this.CopyKeyButton.Text = "Copy Key";
-            // 
-            // Separator4
-            // 
-            this.Separator4.Name = "Separator4";
-            this.Separator4.Size = new System.Drawing.Size(134, 6);
-            // 
-            // ViewLicenseButton
-            // 
-            this.ViewLicenseButton.Name = "ViewLicenseButton";
-            this.ViewLicenseButton.Size = new System.Drawing.Size(137, 22);
-            this.ViewLicenseButton.Text = "View Entry";
-            // 
-            // HomebankingContextMenu
-            // 
-            this.HomebankingContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.HomebankingContextMenu.Depth = 0;
-            this.HomebankingContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddCardButton,
-            this.EditCardButton,
-            this.DeleteCardButton,
-            this.Separator5,
-            this.CopyCardButton,
-            this.CopyCVCButton,
-            this.Separator6,
-            this.ViewCardButton});
-            this.HomebankingContextMenu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.HomebankingContextMenu.Name = "HomebankingContextMenu";
-            this.HomebankingContextMenu.Size = new System.Drawing.Size(178, 148);
-            // 
-            // AddCardButton
-            // 
-            this.AddCardButton.Name = "AddCardButton";
-            this.AddCardButton.Size = new System.Drawing.Size(177, 22);
-            this.AddCardButton.Text = "Add Entry";
-            // 
-            // EditCardButton
-            // 
-            this.EditCardButton.Name = "EditCardButton";
-            this.EditCardButton.Size = new System.Drawing.Size(177, 22);
-            this.EditCardButton.Text = "Edit Entry";
-            // 
-            // DeleteCardButton
-            // 
-            this.DeleteCardButton.Name = "DeleteCardButton";
-            this.DeleteCardButton.Size = new System.Drawing.Size(177, 22);
-            this.DeleteCardButton.Text = "Delete Entry";
-            // 
-            // Separator5
-            // 
-            this.Separator5.Name = "Separator5";
-            this.Separator5.Size = new System.Drawing.Size(174, 6);
-            // 
-            // CopyCardButton
-            // 
-            this.CopyCardButton.Name = "CopyCardButton";
-            this.CopyCardButton.Size = new System.Drawing.Size(177, 22);
-            this.CopyCardButton.Text = "Copy Card Number";
-            // 
-            // CopyCVCButton
-            // 
-            this.CopyCVCButton.Name = "CopyCVCButton";
-            this.CopyCVCButton.Size = new System.Drawing.Size(177, 22);
-            this.CopyCVCButton.Text = "Copy CVC";
-            // 
-            // Separator6
-            // 
-            this.Separator6.Name = "Separator6";
-            this.Separator6.Size = new System.Drawing.Size(174, 6);
-            // 
-            // ViewCardButton
-            // 
-            this.ViewCardButton.Name = "ViewCardButton";
-            this.ViewCardButton.Size = new System.Drawing.Size(177, 22);
-            this.ViewCardButton.Text = "View Entry";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -777,6 +780,7 @@
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Passave";
+            this.TableContextMenu.ResumeLayout(false);
             this.BorderPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).EndInit();
@@ -791,9 +795,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomebankingButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SNButton)).EndInit();
-            this.TableContextMenu.ResumeLayout(false);
-            this.LicensesContextMenu.ResumeLayout(false);
             this.HomebankingContextMenu.ResumeLayout(false);
+            this.LicensesContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

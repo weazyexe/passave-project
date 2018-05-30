@@ -20,7 +20,7 @@ namespace Passave
         List<LicenseEntry> licensesList = new List<LicenseEntry>();
         List<Entry> otherList = new List<Entry>();
 
-        bool isSNShow = true, isEmailShow = false, isHomebankingShow = false, isLicensesShow = false, isOtherShow = false;
+        public static bool isSNShow = true, isEmailShow = false, isHomebankingShow = false, isLicensesShow = false, isOtherShow = false;
 
         public MainForm()
         {
@@ -280,6 +280,7 @@ namespace Passave
             OtherListView.Hide();
         }
 
+
         private void OtherButton_Click(object sender, EventArgs e)
         {
             isSNShow = false;
@@ -305,11 +306,92 @@ namespace Passave
 
         private void AddEntryButton_Click(object sender, EventArgs e)
         {
-            if (isSNShow)
+            AddEditForm form = new AddEditForm(Mode.Add);
+            if (form.ShowDialog() == DialogResult.OK)
+                AddEntryToDatabase();
+        }
+
+        private void AddCardButton_Click(object sender, EventArgs e)
+        {
+            AddEditForm form = new AddEditForm(Mode.Add);
+            if (form.ShowDialog() == DialogResult.OK)
+                AddEntryToDatabase();
+        }
+
+        private void AddLicenseButton_Click(object sender, EventArgs e)
+        {
+            AddEditForm form = new AddEditForm(Mode.Add);
+            if (form.ShowDialog() == DialogResult.OK)
+                AddEntryToDatabase();
+        }
+
+        private void EditEntryButton_Click(object sender, EventArgs e)
+        {
+            AddEditForm form = new AddEditForm(Mode.Edit);
+            if (form.ShowDialog() == DialogResult.OK)
+                EditEntryAtDatabase();
+        }
+
+        private void AddEntryToDatabase()
+        {
+            if (isSNShow || isEmailShow || isOtherShow)
             {
-                AddEditForm form = new AddEditForm();
-                form.ShowDialog();
+                if (isSNShow)
+                    socialNetworkList.Add(AddEditForm.addEntry);
+                if (isEmailShow)
+                    emailList.Add(AddEditForm.addEntry);
+                if (isOtherShow)
+                    otherList.Add(AddEditForm.addEntry);
+
+                ListViewItem listViewItem = new ListViewItem(AddEditForm.addEntry.Name);
+                listViewItem.SubItems.Add(AddEditForm.addEntry.Login);
+                listViewItem.SubItems.Add("••••••••••");
+                listViewItem.SubItems.Add(AddEditForm.addEntry.Phone);
+                listViewItem.SubItems.Add(AddEditForm.addEntry.URL);
+                listViewItem.SubItems.Add(AddEditForm.addEntry.Notes);
+
+                if (isSNShow)
+                    SNListView.Items.Add(listViewItem);
+                if (isEmailShow)
+                    EmailListView.Items.Add(listViewItem);
+                if (isOtherShow)
+                    OtherListView.Items.Add(listViewItem);
+            }
+
+            if (isHomebankingShow)
+            {
+                homebankingList.Add(AddEditForm.addHomebankingEntry);
+
+                ListViewItem listViewItem = new ListViewItem(AddEditForm.addHomebankingEntry.Name);
+                listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.CardNumber);
+                listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.CVC);
+                listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.Date);
+                listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.Phone);
+                listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.Notes);
+
+                HomebankingListView.Items.Add(listViewItem);
+            }
+
+            if (isLicensesShow)
+            {
+                licensesList.Add(AddEditForm.addLicenseEntry);
+
+                ListViewItem listViewItem = new ListViewItem(AddEditForm.addLicenseEntry.Name);
+                listViewItem.SubItems.Add(AddEditForm.addLicenseEntry.Key);
+                listViewItem.SubItems.Add(AddEditForm.addLicenseEntry.Notes);
+
+                LicensesListView.Items.Add(listViewItem);
             }
         }
+
+        private void EditEntryAtDatabase()
+        {
+            
+        }
+    }
+
+    public enum Mode
+    {
+        Add, Edit
     }
 }
