@@ -266,6 +266,8 @@
             this.CardNumberTextBox.TabIndex = 15;
             this.CardNumberTextBox.TabStop = false;
             this.CardNumberTextBox.UseSystemPasswordChar = false;
+            this.CardNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CardNumberTextBox_KeyPress);
+            this.CardNumberTextBox.TextChanged += new System.EventHandler(this.CardNumberTextBox_TextChanged);
             // 
             // CvcTextBox
             // 
@@ -275,7 +277,7 @@
             this.CvcTextBox.MaxLength = 32767;
             this.CvcTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.CvcTextBox.Name = "CvcTextBox";
-            this.CvcTextBox.PasswordChar = '\0';
+            this.CvcTextBox.PasswordChar = '•';
             this.CvcTextBox.SelectedText = "";
             this.CvcTextBox.SelectionLength = 0;
             this.CvcTextBox.SelectionStart = 0;
@@ -287,7 +289,7 @@
             // DateTextBox
             // 
             this.DateTextBox.Depth = 0;
-            this.DateTextBox.Hint = "Date";
+            this.DateTextBox.Hint = "DD/MM";
             this.DateTextBox.Location = new System.Drawing.Point(138, 167);
             this.DateTextBox.MaxLength = 32767;
             this.DateTextBox.MouseState = MaterialSkin.MouseState.HOVER;
@@ -300,12 +302,13 @@
             this.DateTextBox.TabIndex = 17;
             this.DateTextBox.TabStop = false;
             this.DateTextBox.UseSystemPasswordChar = false;
+            this.DateTextBox.TextChanged += new System.EventHandler(this.DateTextBox_TextChanged);
             // 
             // KeyTextBox
             // 
             this.KeyTextBox.Depth = 0;
             this.KeyTextBox.Hint = "Key";
-            this.KeyTextBox.Location = new System.Drawing.Point(39, 117);
+            this.KeyTextBox.Location = new System.Drawing.Point(39, 146);
             this.KeyTextBox.MaxLength = 32767;
             this.KeyTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.KeyTextBox.Name = "KeyTextBox";

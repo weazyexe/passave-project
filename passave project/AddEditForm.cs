@@ -16,6 +16,8 @@ namespace Passave
         public static LicenseEntry addLicenseEntry;
         public static BankEntry addHomebankingEntry;
         Mode mode;
+        bool isBackspace = false;
+        int spacesCount = 0;
 
         public AddEditForm(Mode _mode)
         {
@@ -66,16 +68,64 @@ namespace Passave
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (PasswordTextBox.Text == RepeatPasswordTextBox.Text)
+            NewMessageBox messageBox;
+            if (PasswordTextBox.Text != RepeatPasswordTextBox.Text)
+            {
+                messageBox = new NewMessageBox("Passwords not equals!");
+                messageBox.ShowDialog();
+            }
+            else 
             {
                 if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
-                    addEntry = new Entry(NameTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text, PhoneTextBox.Text, UrlTextBox.Text, NotesTextBox.Text);
+                {
+                    if (NameTextBox.Text != "" || PasswordTextBox.Text != "" || LoginTextBox.Text != "")
+                        addEntry = new Entry(NameTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text, PhoneTextBox.Text, UrlTextBox.Text, NotesTextBox.Text);
+                    else
+                    {
+                        messageBox = new NewMessageBox("Name, login and password field can't be empty!");
+                        messageBox.ShowDialog();
+                    }
+                }
 
                 if (MainForm.isHomebankingShow)
-                    addHomebankingEntry = new BankEntry(NameTextBox.Text, CardNumberTextBox.Text, DateTextBox.Text, CvcTextBox.Text, PhoneTextBox.Text, NotesTextBox.Text);
-
+                {
+                    if (NameTextBox.Text == "" || CardNumberTextBox.Text == "" || DateTextBox.Text == "" || CvcTextBox.Text == "")
+                    {
+                        messageBox = new NewMessageBox("Name, card number, date and CVC field can't be empty!");
+                        messageBox.ShowDialog();
+                    }
+                    else if (CvcTextBox.Text.Length != 3)
+                    {
+                        messageBox = new NewMessageBox("CVC is not correct!");
+                        messageBox.ShowDialog();
+                    }
+                    else if (!char.IsDigit(CvcTextBox.Text[0]) && !char.IsDigit(CvcTextBox.Text[1]) && !char.IsDigit(CvcTextBox.Text[2]))
+                    {
+                        messageBox = new NewMessageBox("CVC is not correct!");
+                        messageBox.ShowDialog();
+                    }
+                    else if (DateTextBox.Text.Length != 5)
+                    {
+                        messageBox = new NewMessageBox("Date is not correct!");
+                        messageBox.ShowDialog();
+                    }
+                    else if (!char.IsDigit(DateTextBox.Text[0]) && !char.IsDigit(DateTextBox.Text[1]) && !char.IsDigit(DateTextBox.Text[3]) && !char.IsDigit(DateTextBox.Text[4]))
+                    {
+                        messageBox = new NewMessageBox("Date is not correct!");
+                        messageBox.ShowDialog();
+                    }
+                    else addHomebankingEntry = new BankEntry(NameTextBox.Text, CardNumberTextBox.Text, DateTextBox.Text, CvcTextBox.Text, PhoneTextBox.Text, NotesTextBox.Text);
+                }
                 if (MainForm.isLicensesShow)
-                    addLicenseEntry = new LicenseEntry(NameTextBox.Text, KeyTextBox.Text, NotesTextBox.Text);
+                {
+                    if (NameTextBox.Text != "" || KeyTextBox.Text != "")
+                        addLicenseEntry = new LicenseEntry(NameTextBox.Text, KeyTextBox.Text, NotesTextBox.Text);
+                    else
+                    {
+                        messageBox = new NewMessageBox("Name and key field can't be empty!");
+                        messageBox.ShowDialog();
+                    }
+                }
 
                 DialogResult = DialogResult.OK;
                 Close();
@@ -231,6 +281,44 @@ namespace Passave
                 DateTextBox.TabIndex = 10;
                 KeyTextBox.TabIndex = 1;
             }
+        }
+
+        private void DateTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (DateTextBox.Text.Length == 2)
+            {
+                DateTextBox.Text += '/';
+                DateTextBox.SelectionStart = DateTextBox.Text.Length;
+            }
+        }
+
+        private void CardNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!char.IsDigit(CardNumberTextBox.Text[CardNumberTextBox.Text.Length - 1]))
+                {
+                    CardNumberTextBox.Text.Remove(CardNumberTextBox.Text.Length - 1);
+                    CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
+                }
+                if ((CardNumberTextBox.Text.Length + spacesCount) % 4 == 0 && CardNumberTextBox.Text.Length != 0 && !isBackspace)
+                {
+                    CardNumberTextBox.Text += ' ';
+                    spacesCount++;
+                    CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void CardNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8)
+                isBackspace = true;
+            else isBackspace = false;
         }
     }
 }

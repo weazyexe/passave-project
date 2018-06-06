@@ -8,6 +8,11 @@ namespace Passave
 {
     public class Entry : BaseEntry
     {
+        public Entry()
+        {
+
+        }
+
         public Entry(string name, string login, string password, string phone, string url, string notes) : base(name, notes)
         {
             Login = login;
