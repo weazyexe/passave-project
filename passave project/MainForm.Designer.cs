@@ -191,7 +191,7 @@
             this.ViewEntryButton});
             this.TableContextMenu.MouseState = MaterialSkin.MouseState.HOVER;
             this.TableContextMenu.Name = "TableContextMenu";
-            this.TableContextMenu.Size = new System.Drawing.Size(181, 170);
+            this.TableContextMenu.Size = new System.Drawing.Size(156, 148);
             // 
             // AddEntryButton
             // 
@@ -203,7 +203,7 @@
             // EditEntryButton
             // 
             this.EditEntryButton.Name = "EditEntryButton";
-            this.EditEntryButton.Size = new System.Drawing.Size(180, 22);
+            this.EditEntryButton.Size = new System.Drawing.Size(155, 22);
             this.EditEntryButton.Text = "Edit Entry";
             this.EditEntryButton.Click += new System.EventHandler(this.EditEntryButton_Click);
             // 
@@ -212,6 +212,7 @@
             this.DeleteEntryButton.Name = "DeleteEntryButton";
             this.DeleteEntryButton.Size = new System.Drawing.Size(155, 22);
             this.DeleteEntryButton.Text = "Delete Entry";
+            this.DeleteEntryButton.Click += new System.EventHandler(this.DeleteEntryButton_Click);
             // 
             // Separator1
             // 
@@ -565,12 +566,12 @@
             this.ViewCardButton});
             this.HomebankingContextMenu.MouseState = MaterialSkin.MouseState.HOVER;
             this.HomebankingContextMenu.Name = "HomebankingContextMenu";
-            this.HomebankingContextMenu.Size = new System.Drawing.Size(178, 148);
+            this.HomebankingContextMenu.Size = new System.Drawing.Size(181, 170);
             // 
             // AddCardButton
             // 
             this.AddCardButton.Name = "AddCardButton";
-            this.AddCardButton.Size = new System.Drawing.Size(180, 22);
+            this.AddCardButton.Size = new System.Drawing.Size(177, 22);
             this.AddCardButton.Text = "Add Entry";
             this.AddCardButton.Click += new System.EventHandler(this.AddCardButton_Click);
             // 
@@ -579,39 +580,41 @@
             this.EditCardButton.Name = "EditCardButton";
             this.EditCardButton.Size = new System.Drawing.Size(180, 22);
             this.EditCardButton.Text = "Edit Entry";
+            this.EditCardButton.Click += new System.EventHandler(this.EditCardButton_Click);
             // 
             // DeleteCardButton
             // 
             this.DeleteCardButton.Name = "DeleteCardButton";
             this.DeleteCardButton.Size = new System.Drawing.Size(180, 22);
             this.DeleteCardButton.Text = "Delete Entry";
+            this.DeleteCardButton.Click += new System.EventHandler(this.DeleteCardButton_Click);
             // 
             // Separator5
             // 
             this.Separator5.Name = "Separator5";
-            this.Separator5.Size = new System.Drawing.Size(177, 6);
+            this.Separator5.Size = new System.Drawing.Size(174, 6);
             // 
             // CopyCardButton
             // 
             this.CopyCardButton.Name = "CopyCardButton";
-            this.CopyCardButton.Size = new System.Drawing.Size(180, 22);
+            this.CopyCardButton.Size = new System.Drawing.Size(177, 22);
             this.CopyCardButton.Text = "Copy Card Number";
             // 
             // CopyCVCButton
             // 
             this.CopyCVCButton.Name = "CopyCVCButton";
-            this.CopyCVCButton.Size = new System.Drawing.Size(180, 22);
+            this.CopyCVCButton.Size = new System.Drawing.Size(177, 22);
             this.CopyCVCButton.Text = "Copy CVC";
             // 
             // Separator6
             // 
             this.Separator6.Name = "Separator6";
-            this.Separator6.Size = new System.Drawing.Size(177, 6);
+            this.Separator6.Size = new System.Drawing.Size(174, 6);
             // 
             // ViewCardButton
             // 
             this.ViewCardButton.Name = "ViewCardButton";
-            this.ViewCardButton.Size = new System.Drawing.Size(180, 22);
+            this.ViewCardButton.Size = new System.Drawing.Size(177, 22);
             this.ViewCardButton.Text = "View Entry";
             // 
             // LicensesListView
@@ -670,21 +673,23 @@
             // AddLicenseButton
             // 
             this.AddLicenseButton.Name = "AddLicenseButton";
-            this.AddLicenseButton.Size = new System.Drawing.Size(180, 22);
+            this.AddLicenseButton.Size = new System.Drawing.Size(137, 22);
             this.AddLicenseButton.Text = "Add Entry";
             this.AddLicenseButton.Click += new System.EventHandler(this.AddLicenseButton_Click);
             // 
             // EditLicenseButton
             // 
             this.EditLicenseButton.Name = "EditLicenseButton";
-            this.EditLicenseButton.Size = new System.Drawing.Size(137, 22);
+            this.EditLicenseButton.Size = new System.Drawing.Size(180, 22);
             this.EditLicenseButton.Text = "Edit Entry";
+            this.EditLicenseButton.Click += new System.EventHandler(this.EditLicenseButton_Click);
             // 
             // DeleteLicenseButton
             // 
             this.DeleteLicenseButton.Name = "DeleteLicenseButton";
-            this.DeleteLicenseButton.Size = new System.Drawing.Size(137, 22);
+            this.DeleteLicenseButton.Size = new System.Drawing.Size(180, 22);
             this.DeleteLicenseButton.Text = "Delete Entry";
+            this.DeleteLicenseButton.Click += new System.EventHandler(this.DeleteLicenseButton_Click);
             // 
             // Separator3
             // 

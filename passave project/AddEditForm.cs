@@ -70,8 +70,10 @@ namespace Passave
             {
                 if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
                     addEntry = new Entry(NameTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text, PhoneTextBox.Text, UrlTextBox.Text, NotesTextBox.Text);
+
                 if (MainForm.isHomebankingShow)
                     addHomebankingEntry = new BankEntry(NameTextBox.Text, CardNumberTextBox.Text, DateTextBox.Text, CvcTextBox.Text, PhoneTextBox.Text, NotesTextBox.Text);
+
                 if (MainForm.isLicensesShow)
                     addLicenseEntry = new LicenseEntry(NameTextBox.Text, KeyTextBox.Text, NotesTextBox.Text);
 
@@ -96,7 +98,36 @@ namespace Passave
             {
                 HeaderLabel.Text = "EDIT ENTRY";
                 AddButton.Text = "Edit";
+
+                if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
+                {
+                    NameTextBox.Text = addEntry.Name;
+                    LoginTextBox.Text = addEntry.Login;
+                    PasswordTextBox.Text = addEntry.Password;
+                    RepeatPasswordTextBox.Text = addEntry.Password;
+                    PhoneTextBox.Text = addEntry.Phone;
+                    UrlTextBox.Text = addEntry.URL;
+                    NotesTextBox.Text = addEntry.Notes;
+                }
+
+                if (MainForm.isHomebankingShow)
+                {
+                    NameTextBox.Text = addHomebankingEntry.Name;
+                    CardNumberTextBox.Text = addHomebankingEntry.CardNumber;
+                    DateTextBox.Text = addHomebankingEntry.Date;
+                    CvcTextBox.Text = addHomebankingEntry.CVC;
+                    PhoneTextBox.Text = addHomebankingEntry.Phone;
+                    NotesTextBox.Text = addHomebankingEntry.Notes;
+                }
+
+                if (MainForm.isLicensesShow)
+                {
+                    NameTextBox.Text = addLicenseEntry.Name;
+                    KeyTextBox.Text = addLicenseEntry.Key;
+                    NotesTextBox.Text = addLicenseEntry.Notes;
+                }
             }
+
             if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
             {
                 Size = new Size(315, 500);
