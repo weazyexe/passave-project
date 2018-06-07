@@ -12,6 +12,8 @@ namespace Passave
 {
     public partial class SettingsForm : Form
     {
+        public static bool isUIShow = true, isSecureShow = false, isAboutShow = false;
+
         public SettingsForm()
         {
             InitializeComponent();
