@@ -512,6 +512,7 @@
             // 
             // OtherListView
             // 
+            this.OtherListView.BackColor = System.Drawing.SystemColors.Window;
             this.OtherListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OtherListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.NameOther,
@@ -523,6 +524,7 @@
             this.OtherListView.ContextMenuStrip = this.TableContextMenu;
             this.OtherListView.Depth = 0;
             this.OtherListView.Font = new System.Drawing.Font("Roboto", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(204)));
+            this.OtherListView.ForeColor = System.Drawing.SystemColors.WindowText;
             this.OtherListView.FullRowSelect = true;
             this.OtherListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.OtherListView.Location = new System.Drawing.Point(297, 77);
