@@ -149,6 +149,17 @@ namespace Passave
 
         private void NewMessageBox_Load(object sender, EventArgs e)
         {
+            if (MainForm.theme == Theme.Forest)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+            if (MainForm.theme == Theme.Desert)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
+            if (MainForm.theme == Theme.Mountains)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
+            if (MainForm.theme == Theme.City)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
+            if (MainForm.theme == Theme.Sunset)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+
             if (mbb == MessageBoxButtons.OK)
             {
                 OKButton.Show();

@@ -32,16 +32,29 @@
             this.BorderPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.PictureBox();
-            this.ThemePanel = new System.Windows.Forms.Panel();
+            this.ThemeLabel = new System.Windows.Forms.Label();
+            this.ForestButton = new System.Windows.Forms.PictureBox();
+            this.MenuPanel = new System.Windows.Forms.Panel();
             this.AboutButton = new System.Windows.Forms.PictureBox();
             this.SecureButton = new System.Windows.Forms.PictureBox();
             this.UIButton = new System.Windows.Forms.PictureBox();
+            this.DesertButton = new System.Windows.Forms.PictureBox();
+            this.MountainsButton = new System.Windows.Forms.PictureBox();
+            this.CityButton = new System.Windows.Forms.PictureBox();
+            this.SunsetButton = new System.Windows.Forms.PictureBox();
+            this.ApplyButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.CancelButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.BorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
-            this.ThemePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ForestButton)).BeginInit();
+            this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AboutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecureButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UIButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DesertButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MountainsButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CityButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).BeginInit();
             this.SuspendLayout();
             // 
             // BorderPanel
@@ -51,7 +64,7 @@
             this.BorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.BorderPanel.Location = new System.Drawing.Point(162, 0);
             this.BorderPanel.Name = "BorderPanel";
-            this.BorderPanel.Size = new System.Drawing.Size(638, 48);
+            this.BorderPanel.Size = new System.Drawing.Size(625, 48);
             this.BorderPanel.TabIndex = 5;
             this.BorderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BorderPanel_MouseDown);
             // 
@@ -60,7 +73,7 @@
             this.HeaderLabel.AutoSize = true;
             this.HeaderLabel.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HeaderLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.HeaderLabel.Location = new System.Drawing.Point(24, 12);
+            this.HeaderLabel.Location = new System.Drawing.Point(28, 12);
             this.HeaderLabel.Name = "HeaderLabel";
             this.HeaderLabel.Size = new System.Drawing.Size(111, 26);
             this.HeaderLabel.TabIndex = 3;
@@ -70,7 +83,7 @@
             // 
             this.CloseButton.BackColor = System.Drawing.SystemColors.Control;
             this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
-            this.CloseButton.Location = new System.Drawing.Point(604, 12);
+            this.CloseButton.Location = new System.Drawing.Point(591, 12);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(22, 22);
             this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,18 +93,42 @@
             this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
             this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
             // 
-            // ThemePanel
+            // ThemeLabel
             // 
-            this.ThemePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(145)))), ((int)(((byte)(213)))));
-            this.ThemePanel.BackgroundImage = global::Passave.Properties.Resources.menuimage_desert;
-            this.ThemePanel.Controls.Add(this.AboutButton);
-            this.ThemePanel.Controls.Add(this.SecureButton);
-            this.ThemePanel.Controls.Add(this.UIButton);
-            this.ThemePanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ThemePanel.Location = new System.Drawing.Point(0, 0);
-            this.ThemePanel.Name = "ThemePanel";
-            this.ThemePanel.Size = new System.Drawing.Size(162, 450);
-            this.ThemePanel.TabIndex = 1;
+            this.ThemeLabel.AutoSize = true;
+            this.ThemeLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ThemeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ThemeLabel.Location = new System.Drawing.Point(191, 66);
+            this.ThemeLabel.Name = "ThemeLabel";
+            this.ThemeLabel.Size = new System.Drawing.Size(58, 19);
+            this.ThemeLabel.TabIndex = 11;
+            this.ThemeLabel.Text = "Theme";
+            // 
+            // ForestButton
+            // 
+            this.ForestButton.Image = global::Passave.Properties.Resources.menuimage_forest;
+            this.ForestButton.Location = new System.Drawing.Point(195, 97);
+            this.ForestButton.Name = "ForestButton";
+            this.ForestButton.Size = new System.Drawing.Size(107, 231);
+            this.ForestButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ForestButton.TabIndex = 6;
+            this.ForestButton.TabStop = false;
+            this.ForestButton.Click += new System.EventHandler(this.ForestButton_Click);
+            this.ForestButton.MouseLeave += new System.EventHandler(this.ForestButton_MouseLeave);
+            this.ForestButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ForestButton_MouseMove);
+            // 
+            // MenuPanel
+            // 
+            this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(145)))), ((int)(((byte)(213)))));
+            this.MenuPanel.BackgroundImage = global::Passave.Properties.Resources.menuimage_desert;
+            this.MenuPanel.Controls.Add(this.AboutButton);
+            this.MenuPanel.Controls.Add(this.SecureButton);
+            this.MenuPanel.Controls.Add(this.UIButton);
+            this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.MenuPanel.Name = "MenuPanel";
+            this.MenuPanel.Size = new System.Drawing.Size(162, 496);
+            this.MenuPanel.TabIndex = 1;
             // 
             // AboutButton
             // 
@@ -129,37 +166,146 @@
             this.UIButton.MouseLeave += new System.EventHandler(this.UIButton_MouseLeave);
             this.UIButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UIButton_MouseMove);
             // 
+            // DesertButton
+            // 
+            this.DesertButton.Image = global::Passave.Properties.Resources.menuimage_desert;
+            this.DesertButton.Location = new System.Drawing.Point(308, 97);
+            this.DesertButton.Name = "DesertButton";
+            this.DesertButton.Size = new System.Drawing.Size(107, 231);
+            this.DesertButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DesertButton.TabIndex = 12;
+            this.DesertButton.TabStop = false;
+            this.DesertButton.Click += new System.EventHandler(this.DesertButton_Click);
+            this.DesertButton.MouseLeave += new System.EventHandler(this.DesertButton_MouseLeave);
+            this.DesertButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DesertButton_MouseMove);
+            // 
+            // MountainsButton
+            // 
+            this.MountainsButton.Image = global::Passave.Properties.Resources.menuimage_mountains;
+            this.MountainsButton.Location = new System.Drawing.Point(421, 97);
+            this.MountainsButton.Name = "MountainsButton";
+            this.MountainsButton.Size = new System.Drawing.Size(107, 231);
+            this.MountainsButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MountainsButton.TabIndex = 13;
+            this.MountainsButton.TabStop = false;
+            this.MountainsButton.Click += new System.EventHandler(this.MountainsButton_Click);
+            this.MountainsButton.MouseLeave += new System.EventHandler(this.MountainsButton_MouseLeave);
+            this.MountainsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MountainsButton_MouseMove);
+            // 
+            // CityButton
+            // 
+            this.CityButton.Image = global::Passave.Properties.Resources.menuimage_city;
+            this.CityButton.Location = new System.Drawing.Point(534, 97);
+            this.CityButton.Name = "CityButton";
+            this.CityButton.Size = new System.Drawing.Size(107, 231);
+            this.CityButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CityButton.TabIndex = 14;
+            this.CityButton.TabStop = false;
+            this.CityButton.Click += new System.EventHandler(this.CityButton_Click);
+            this.CityButton.MouseLeave += new System.EventHandler(this.CityButton_MouseLeave);
+            this.CityButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CityButton_MouseMove);
+            // 
+            // SunsetButton
+            // 
+            this.SunsetButton.Image = global::Passave.Properties.Resources.menuimage_sunset;
+            this.SunsetButton.Location = new System.Drawing.Point(647, 97);
+            this.SunsetButton.Name = "SunsetButton";
+            this.SunsetButton.Size = new System.Drawing.Size(107, 231);
+            this.SunsetButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SunsetButton.TabIndex = 15;
+            this.SunsetButton.TabStop = false;
+            this.SunsetButton.Click += new System.EventHandler(this.SunsetButton_Click);
+            this.SunsetButton.MouseLeave += new System.EventHandler(this.SunsetButton_MouseLeave);
+            this.SunsetButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SunsetButton_MouseMove);
+            // 
+            // ApplyButton
+            // 
+            this.ApplyButton.AutoSize = true;
+            this.ApplyButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ApplyButton.Depth = 0;
+            this.ApplyButton.Icon = null;
+            this.ApplyButton.Location = new System.Drawing.Point(711, 445);
+            this.ApplyButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ApplyButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.Primary = false;
+            this.ApplyButton.Size = new System.Drawing.Size(63, 36);
+            this.ApplyButton.TabIndex = 16;
+            this.ApplyButton.Text = "Apply";
+            this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
+            // 
+            // CancelButton
+            // 
+            this.CancelButton.AutoSize = true;
+            this.CancelButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CancelButton.Depth = 0;
+            this.CancelButton.Icon = null;
+            this.CancelButton.Location = new System.Drawing.Point(630, 445);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CancelButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Primary = false;
+            this.CancelButton.Size = new System.Drawing.Size(73, 36);
+            this.CancelButton.TabIndex = 17;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(787, 496);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.ApplyButton);
+            this.Controls.Add(this.SunsetButton);
+            this.Controls.Add(this.CityButton);
+            this.Controls.Add(this.MountainsButton);
+            this.Controls.Add(this.DesertButton);
+            this.Controls.Add(this.ThemeLabel);
+            this.Controls.Add(this.ForestButton);
             this.Controls.Add(this.BorderPanel);
-            this.Controls.Add(this.ThemePanel);
+            this.Controls.Add(this.MenuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SettingsForm";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SettingsForm";
+            this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.BorderPanel.ResumeLayout(false);
             this.BorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
-            this.ThemePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ForestButton)).EndInit();
+            this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AboutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecureButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UIButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DesertButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MountainsButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CityButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel ThemePanel;
+        private System.Windows.Forms.Panel MenuPanel;
         private System.Windows.Forms.Panel BorderPanel;
         private System.Windows.Forms.Label HeaderLabel;
         private System.Windows.Forms.PictureBox CloseButton;
         private System.Windows.Forms.PictureBox UIButton;
         private System.Windows.Forms.PictureBox AboutButton;
         private System.Windows.Forms.PictureBox SecureButton;
+        private System.Windows.Forms.PictureBox ForestButton;
+        private System.Windows.Forms.Label ThemeLabel;
+        private System.Windows.Forms.PictureBox DesertButton;
+        private System.Windows.Forms.PictureBox MountainsButton;
+        private System.Windows.Forms.PictureBox CityButton;
+        private System.Windows.Forms.PictureBox SunsetButton;
+        private MaterialSkin.Controls.MaterialFlatButton ApplyButton;
+        private MaterialSkin.Controls.MaterialFlatButton CancelButton;
     }
 }

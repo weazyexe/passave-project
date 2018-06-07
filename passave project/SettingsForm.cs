@@ -149,5 +149,155 @@ namespace Passave
         {
             AboutButton.Image = Properties.Resources.about_button_activated;
         }
+
+        private void ForestButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (MainForm.theme != Theme.Forest)
+                ForestButton.Image = Properties.Resources.menuimage_forest;
+        }
+
+        private void ForestButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MainForm.theme != Theme.Forest)
+                ForestButton.Image = Properties.Resources.menuimage_forest_move;
+        }
+
+        private void DesertButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (MainForm.theme != Theme.Desert)
+                DesertButton.Image = Properties.Resources.menuimage_desert;
+        }
+
+        private void DesertButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MainForm.theme != Theme.Desert)
+                DesertButton.Image = Properties.Resources.menuimage_desert_move;
+        }
+
+        private void MountainsButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (MainForm.theme != Theme.Mountains)
+                MountainsButton.Image = Properties.Resources.menuimage_mountains;
+        }
+
+        private void MountainsButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MainForm.theme != Theme.Mountains)
+                MountainsButton.Image = Properties.Resources.menuimage_mountains_move;
+        }
+
+        private void CityButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (MainForm.theme != Theme.City)
+                CityButton.Image = Properties.Resources.menuimage_city;
+        }
+
+        private void CityButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MainForm.theme != Theme.City)
+                CityButton.Image = Properties.Resources.menuimage_city_move;
+        }
+
+        private void SunsetButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (MainForm.theme != Theme.Sunset)
+                SunsetButton.Image = Properties.Resources.menuimage_sunset;
+        }
+
+        private void SunsetButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MainForm.theme != Theme.Sunset)
+                SunsetButton.Image = Properties.Resources.menuimage_sunset_move;
+        }
+
+        private void ForestButton_Click(object sender, EventArgs e)
+        {
+            MainForm.theme = Theme.Forest;
+            ForestButton.Image = Properties.Resources.menuimage_forest_activated;
+            DesertButton.Image = Properties.Resources.menuimage_desert;
+            MountainsButton.Image = Properties.Resources.menuimage_mountains;
+            CityButton.Image = Properties.Resources.menuimage_city;
+            SunsetButton.Image = Properties.Resources.menuimage_sunset;
+        }
+
+        private void DesertButton_Click(object sender, EventArgs e)
+        {
+            MainForm.theme = Theme.Desert;
+            ForestButton.Image = Properties.Resources.menuimage_forest;
+            DesertButton.Image = Properties.Resources.menuimage_desert_activated;
+            MountainsButton.Image = Properties.Resources.menuimage_mountains;
+            CityButton.Image = Properties.Resources.menuimage_city;
+            SunsetButton.Image = Properties.Resources.menuimage_sunset;
+        }
+
+        private void MountainsButton_Click(object sender, EventArgs e)
+        {
+            MainForm.theme = Theme.Mountains;
+            ForestButton.Image = Properties.Resources.menuimage_forest;
+            DesertButton.Image = Properties.Resources.menuimage_desert;
+            MountainsButton.Image = Properties.Resources.menuimage_mountains_activated;
+            CityButton.Image = Properties.Resources.menuimage_city;
+            SunsetButton.Image = Properties.Resources.menuimage_sunset;
+        }
+
+        private void CityButton_Click(object sender, EventArgs e)
+        {
+            MainForm.theme = Theme.City;
+            ForestButton.Image = Properties.Resources.menuimage_forest;
+            DesertButton.Image = Properties.Resources.menuimage_desert;
+            MountainsButton.Image = Properties.Resources.menuimage_mountains;
+            CityButton.Image = Properties.Resources.menuimage_city_activated;
+            SunsetButton.Image = Properties.Resources.menuimage_sunset;
+        }
+
+        private void SunsetButton_Click(object sender, EventArgs e)
+        {
+            MainForm.theme = Theme.Sunset;
+            ForestButton.Image = Properties.Resources.menuimage_forest;
+            DesertButton.Image = Properties.Resources.menuimage_desert;
+            MountainsButton.Image = Properties.Resources.menuimage_mountains;
+            CityButton.Image = Properties.Resources.menuimage_city;
+            SunsetButton.Image = Properties.Resources.menuimage_sunset_activated;
+        }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            if (MainForm.theme == Theme.Forest)
+            {
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+                ForestButton.Image = Properties.Resources.menuimage_forest_activated;
+            }
+            if (MainForm.theme == Theme.Desert)
+            {
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
+                DesertButton.Image = Properties.Resources.menuimage_desert_activated;
+            }
+            if (MainForm.theme == Theme.Mountains)
+            {
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
+                MountainsButton.Image = Properties.Resources.menuimage_mountains_activated;
+            }
+            if (MainForm.theme == Theme.City)
+            {
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
+                CityButton.Image = Properties.Resources.menuimage_city_activated;
+            }
+            if (MainForm.theme == Theme.Sunset)
+            {
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+                SunsetButton.Image = Properties.Resources.menuimage_sunset_activated;
+            }
+        }
+
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

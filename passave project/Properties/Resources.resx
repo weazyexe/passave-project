@@ -223,4 +223,34 @@
   <data name="ui_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ui_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="menuimage_city_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_city_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_city_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_city_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_desert_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_desert_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_desert_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_desert_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_forest_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_forest_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_forest_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_forest_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_mountains_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_mountains_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_mountains_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_mountains_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_sunset_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_sunset_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_sunset_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_sunset_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

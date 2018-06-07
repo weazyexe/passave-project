@@ -30,6 +30,8 @@ namespace Passave
 
         int changes = 0;
 
+        public static Theme theme = Theme.Desert;
+
         public MainForm()
         {
             InitializeComponent();
@@ -730,7 +732,19 @@ namespace Passave
         private void SettingsButton_Click(object sender, EventArgs e)
         {
             SettingsForm settings = new SettingsForm();
-            settings.ShowDialog();
+            if (settings.ShowDialog() == DialogResult.OK)
+            {
+                if (theme == Theme.Forest)
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+                if (theme == Theme.Desert)
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
+                if (theme == Theme.Mountains)
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
+                if (theme == Theme.City)
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
+                if (theme == Theme.Sunset)
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+            }
         }
 
 
@@ -1380,5 +1394,10 @@ namespace Passave
     public enum Mode
     {
         Add, Edit
+    }
+
+    public enum Theme
+    {
+        Forest, Desert, Mountains, City, Sunset
     }
 }

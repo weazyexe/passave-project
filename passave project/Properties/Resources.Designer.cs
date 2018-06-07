@@ -173,9 +173,49 @@ namespace Passave.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menuimage_city_activated {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_city_activated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_city_move {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_city_move", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menuimage_desert {
             get {
                 object obj = ResourceManager.GetObject("menuimage_desert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_desert_activated {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_desert_activated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_desert_move {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_desert_move", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +233,26 @@ namespace Passave.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menuimage_forest_activated {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_forest_activated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_forest_move {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_forest_move", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menuimage_mountains {
             get {
                 object obj = ResourceManager.GetObject("menuimage_mountains", resourceCulture);
@@ -203,9 +263,49 @@ namespace Passave.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menuimage_mountains_activated {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_mountains_activated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_mountains_move {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_mountains_move", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menuimage_sunset {
             get {
                 object obj = ResourceManager.GetObject("menuimage_sunset", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_sunset_activated {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_sunset_activated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_sunset_move {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_sunset_move", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

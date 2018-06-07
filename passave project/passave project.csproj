@@ -220,5 +220,35 @@
   <ItemGroup>
     <None Include="Resources\ui_button_default.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_city_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_city_move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_desert_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_desert_move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_forest_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_forest_move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_mountains_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_mountains_move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_sunset_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_sunset_move.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
