@@ -63,6 +63,26 @@ namespace Passave.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap about_button_activated {
+            get {
+                object obj = ResourceManager.GetObject("about_button_activated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap about_button_default {
+            get {
+                object obj = ResourceManager.GetObject("about_button_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_button_activated {
             get {
                 object obj = ResourceManager.GetObject("close_button_activated", resourceCulture);
@@ -143,9 +163,49 @@ namespace Passave.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menuimage_city {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_city", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_desert {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_desert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menuimage_forest {
             get {
                 object obj = ResourceManager.GetObject("menuimage_forest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_mountains {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_mountains", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuimage_sunset {
+            get {
+                object obj = ResourceManager.GetObject("menuimage_sunset", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +333,26 @@ namespace Passave.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap secure_button_activated {
+            get {
+                object obj = ResourceManager.GetObject("secure_button_activated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap secure_button_default {
+            get {
+                object obj = ResourceManager.GetObject("secure_button_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settings_button_activated {
             get {
                 object obj = ResourceManager.GetObject("settings_button_activated", resourceCulture);
@@ -306,6 +386,26 @@ namespace Passave.Properties {
         internal static System.Drawing.Bitmap sn_button_default {
             get {
                 object obj = ResourceManager.GetObject("sn_button_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ui_button_activated {
+            get {
+                object obj = ResourceManager.GetObject("ui_button_activated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ui_button_default {
+            get {
+                object obj = ResourceManager.GetObject("ui_button_default", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

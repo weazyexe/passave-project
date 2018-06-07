@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditForm));
             this.ThemePanel = new System.Windows.Forms.Panel();
-            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.BorderPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -46,33 +45,20 @@
             this.CvcTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.DateTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.KeyTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
+            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.BorderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             this.SuspendLayout();
             // 
             // ThemePanel
             // 
             this.ThemePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(145)))), ((int)(((byte)(213)))));
-            this.ThemePanel.BackgroundImage = global::Passave.Properties.Resources.menuimage_forest;
+            this.ThemePanel.BackgroundImage = global::Passave.Properties.Resources.menuimage_desert;
             this.ThemePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.ThemePanel.Location = new System.Drawing.Point(0, 0);
             this.ThemePanel.Name = "ThemePanel";
             this.ThemePanel.Size = new System.Drawing.Size(10, 255);
             this.ThemePanel.TabIndex = 0;
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.BackColor = System.Drawing.SystemColors.Control;
-            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
-            this.CloseButton.Location = new System.Drawing.Point(492, 12);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(22, 22);
-            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CloseButton.TabIndex = 2;
-            this.CloseButton.TabStop = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
-            this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
             // 
             // BorderPanel
             // 
@@ -266,8 +252,6 @@
             this.CardNumberTextBox.TabIndex = 15;
             this.CardNumberTextBox.TabStop = false;
             this.CardNumberTextBox.UseSystemPasswordChar = false;
-            this.CardNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CardNumberTextBox_KeyPress);
-            this.CardNumberTextBox.TextChanged += new System.EventHandler(this.CardNumberTextBox_TextChanged);
             // 
             // CvcTextBox
             // 
@@ -308,7 +292,7 @@
             // 
             this.KeyTextBox.Depth = 0;
             this.KeyTextBox.Hint = "Key";
-            this.KeyTextBox.Location = new System.Drawing.Point(39, 146);
+            this.KeyTextBox.Location = new System.Drawing.Point(39, 117);
             this.KeyTextBox.MaxLength = 32767;
             this.KeyTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.KeyTextBox.Name = "KeyTextBox";
@@ -320,6 +304,20 @@
             this.KeyTextBox.TabIndex = 18;
             this.KeyTextBox.TabStop = false;
             this.KeyTextBox.UseSystemPasswordChar = false;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.BackColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
+            this.CloseButton.Location = new System.Drawing.Point(492, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(22, 22);
+            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CloseButton.TabIndex = 2;
+            this.CloseButton.TabStop = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
+            this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
             // 
             // AddEditForm
             // 
@@ -347,9 +345,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddEditForm";
             this.Load += new System.EventHandler(this.AddEditForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             this.BorderPanel.ResumeLayout(false);
             this.BorderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

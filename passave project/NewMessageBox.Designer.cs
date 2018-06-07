@@ -32,12 +32,12 @@
             this.ThemePanel = new System.Windows.Forms.Panel();
             this.BorderPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
-            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.CancelButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.OKButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.MessageTextBox = new System.Windows.Forms.Label();
             this.YesButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.NoButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.BorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             // ThemePanel
             // 
             this.ThemePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(145)))), ((int)(((byte)(213)))));
-            this.ThemePanel.BackgroundImage = global::Passave.Properties.Resources.menuimage_forest;
+            this.ThemePanel.BackgroundImage = global::Passave.Properties.Resources.menuimage_desert;
             this.ThemePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.ThemePanel.Location = new System.Drawing.Point(0, 0);
             this.ThemePanel.Name = "ThemePanel";
@@ -73,20 +73,6 @@
             this.HeaderLabel.Size = new System.Drawing.Size(108, 26);
             this.HeaderLabel.TabIndex = 3;
             this.HeaderLabel.Text = "MESSAGE";
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.BackColor = System.Drawing.SystemColors.Control;
-            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
-            this.CloseButton.Location = new System.Drawing.Point(263, 12);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(22, 22);
-            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CloseButton.TabIndex = 2;
-            this.CloseButton.TabStop = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
-            this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
             // 
             // CancelButton
             // 
@@ -124,12 +110,11 @@
             // 
             // MessageTextBox
             // 
-            this.MessageTextBox.AutoSize = true;
             this.MessageTextBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MessageTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MessageTextBox.Location = new System.Drawing.Point(35, 68);
             this.MessageTextBox.Name = "MessageTextBox";
-            this.MessageTextBox.Size = new System.Drawing.Size(74, 20);
+            this.MessageTextBox.Size = new System.Drawing.Size(260, 95);
             this.MessageTextBox.TabIndex = 17;
             this.MessageTextBox.Text = "Text here";
             // 
@@ -166,6 +151,20 @@
             this.NoButton.Text = "No";
             this.NoButton.UseVisualStyleBackColor = true;
             this.NoButton.Click += new System.EventHandler(this.NoButton_Click);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.BackColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
+            this.CloseButton.Location = new System.Drawing.Point(263, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(22, 22);
+            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CloseButton.TabIndex = 2;
+            this.CloseButton.TabStop = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
+            this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
             // 
             // NewMessageBox
             // 

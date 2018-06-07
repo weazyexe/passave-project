@@ -44,13 +44,7 @@
             this.CopyLoginButton = new System.Windows.Forms.ToolStripMenuItem();
             this.CopyPasswordButton = new System.Windows.Forms.ToolStripMenuItem();
             this.BorderPanel = new System.Windows.Forms.Panel();
-            this.SearchButton = new System.Windows.Forms.PictureBox();
             this.SearchTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.SaveButton = new System.Windows.Forms.PictureBox();
-            this.OpenButton = new System.Windows.Forms.PictureBox();
-            this.NewButton = new System.Windows.Forms.PictureBox();
-            this.MinimizeButton = new System.Windows.Forms.PictureBox();
-            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.EmailListView = new MaterialSkin.Controls.MaterialListView();
             this.NameEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LoginEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -89,6 +83,12 @@
             this.PhoneOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UrlOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NotesOther = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SearchButton = new System.Windows.Forms.PictureBox();
+            this.SaveButton = new System.Windows.Forms.PictureBox();
+            this.OpenButton = new System.Windows.Forms.PictureBox();
+            this.NewButton = new System.Windows.Forms.PictureBox();
+            this.MinimizeButton = new System.Windows.Forms.PictureBox();
+            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.SettingsButton = new System.Windows.Forms.PictureBox();
             this.OtherButton = new System.Windows.Forms.PictureBox();
@@ -98,14 +98,14 @@
             this.SNButton = new System.Windows.Forms.PictureBox();
             this.TableContextMenu.SuspendLayout();
             this.BorderPanel.SuspendLayout();
+            this.HomebankingContextMenu.SuspendLayout();
+            this.LicensesContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
-            this.HomebankingContextMenu.SuspendLayout();
-            this.LicensesContextMenu.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SettingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OtherButton)).BeginInit();
@@ -149,7 +149,7 @@
             // LoginSN
             // 
             this.LoginSN.Text = "Login";
-            this.LoginSN.Width = 100;
+            this.LoginSN.Width = 160;
             // 
             // PasswordSN
             // 
@@ -159,7 +159,7 @@
             // PhoneSN
             // 
             this.PhoneSN.Text = "Phone";
-            this.PhoneSN.Width = 120;
+            this.PhoneSN.Width = 130;
             // 
             // UrlSN
             // 
@@ -169,7 +169,7 @@
             // NotesSN
             // 
             this.NotesSN.Text = "Notes";
-            this.NotesSN.Width = 170;
+            this.NotesSN.Width = 120;
             // 
             // TableContextMenu
             // 
@@ -242,19 +242,6 @@
             this.BorderPanel.TabIndex = 3;
             this.BorderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BorderPanel_MouseDown);
             // 
-            // SearchButton
-            // 
-            this.SearchButton.ErrorImage = null;
-            this.SearchButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchButton.Image")));
-            this.SearchButton.Location = new System.Drawing.Point(311, 12);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(30, 35);
-            this.SearchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SearchButton.TabIndex = 6;
-            this.SearchButton.TabStop = false;
-            this.SearchButton.MouseLeave += new System.EventHandler(this.SearchButton_MouseLeave);
-            this.SearchButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SearchButton_MouseMove);
-            // 
             // SearchTextBox
             // 
             this.SearchTextBox.Depth = 0;
@@ -271,71 +258,6 @@
             this.SearchTextBox.TabIndex = 5;
             this.SearchTextBox.TabStop = false;
             this.SearchTextBox.UseSystemPasswordChar = false;
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
-            this.SaveButton.Location = new System.Drawing.Point(99, 12);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(35, 35);
-            this.SaveButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SaveButton.TabIndex = 4;
-            this.SaveButton.TabStop = false;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            this.SaveButton.MouseLeave += new System.EventHandler(this.SaveButton_MouseLeave);
-            this.SaveButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SaveButton_MouseMove);
-            // 
-            // OpenButton
-            // 
-            this.OpenButton.Image = global::Passave.Properties.Resources.open_button_default;
-            this.OpenButton.Location = new System.Drawing.Point(58, 12);
-            this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(35, 35);
-            this.OpenButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.OpenButton.TabIndex = 3;
-            this.OpenButton.TabStop = false;
-            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
-            this.OpenButton.MouseLeave += new System.EventHandler(this.OpenButton_MouseLeave);
-            this.OpenButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OpenButton_MouseMove);
-            // 
-            // NewButton
-            // 
-            this.NewButton.Image = global::Passave.Properties.Resources.new_button_default;
-            this.NewButton.Location = new System.Drawing.Point(17, 12);
-            this.NewButton.Name = "NewButton";
-            this.NewButton.Size = new System.Drawing.Size(35, 35);
-            this.NewButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.NewButton.TabIndex = 2;
-            this.NewButton.TabStop = false;
-            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
-            this.NewButton.MouseLeave += new System.EventHandler(this.NewButton_MouseLeave);
-            this.NewButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewButton_MouseMove);
-            // 
-            // MinimizeButton
-            // 
-            this.MinimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("MinimizeButton.Image")));
-            this.MinimizeButton.Location = new System.Drawing.Point(658, 12);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(22, 22);
-            this.MinimizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MinimizeButton.TabIndex = 1;
-            this.MinimizeButton.TabStop = false;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            this.MinimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_MouseLeave);
-            this.MinimizeButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MinimizeButton_MouseMove);
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
-            this.CloseButton.Location = new System.Drawing.Point(686, 12);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(22, 22);
-            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CloseButton.TabIndex = 0;
-            this.CloseButton.TabStop = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
-            this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
             // 
             // EmailListView
             // 
@@ -366,12 +288,12 @@
             // NameEmail
             // 
             this.NameEmail.Text = "Name";
-            this.NameEmail.Width = 108;
+            this.NameEmail.Width = 100;
             // 
             // LoginEmail
             // 
             this.LoginEmail.Text = "Login";
-            this.LoginEmail.Width = 120;
+            this.LoginEmail.Width = 160;
             // 
             // PasswordEmail
             // 
@@ -381,7 +303,7 @@
             // PhoneEmail
             // 
             this.PhoneEmail.Text = "Phone";
-            this.PhoneEmail.Width = 120;
+            this.PhoneEmail.Width = 130;
             // 
             // UrlEmail
             // 
@@ -391,7 +313,7 @@
             // NotesEmail
             // 
             this.NotesEmail.Text = "Notes";
-            this.NotesEmail.Width = 170;
+            this.NotesEmail.Width = 120;
             // 
             // HomebankingListView
             // 
@@ -432,6 +354,7 @@
             // DateHB
             // 
             this.DateHB.Text = "Date";
+            this.DateHB.Width = 90;
             // 
             // CvcHB
             // 
@@ -440,12 +363,12 @@
             // PhoneHB
             // 
             this.PhoneHB.Text = "Phone";
-            this.PhoneHB.Width = 120;
+            this.PhoneHB.Width = 130;
             // 
             // NotesHB
             // 
             this.NotesHB.Text = "Notes";
-            this.NotesHB.Width = 170;
+            this.NotesHB.Width = 150;
             // 
             // HomebankingContextMenu
             // 
@@ -621,7 +544,7 @@
             // LoginOther
             // 
             this.LoginOther.Text = "Login";
-            this.LoginOther.Width = 120;
+            this.LoginOther.Width = 160;
             // 
             // PasswordOther
             // 
@@ -631,7 +554,7 @@
             // PhoneOther
             // 
             this.PhoneOther.Text = "Phone";
-            this.PhoneOther.Width = 120;
+            this.PhoneOther.Width = 130;
             // 
             // UrlOther
             // 
@@ -641,12 +564,90 @@
             // NotesOther
             // 
             this.NotesOther.Text = "Notes";
-            this.NotesOther.Width = 170;
+            this.NotesOther.Width = 120;
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.ErrorImage = null;
+            this.SearchButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchButton.Image")));
+            this.SearchButton.Location = new System.Drawing.Point(311, 12);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(30, 35);
+            this.SearchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SearchButton.TabIndex = 6;
+            this.SearchButton.TabStop = false;
+            this.SearchButton.MouseLeave += new System.EventHandler(this.SearchButton_MouseLeave);
+            this.SearchButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SearchButton_MouseMove);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
+            this.SaveButton.Location = new System.Drawing.Point(99, 12);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(35, 35);
+            this.SaveButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SaveButton.TabIndex = 4;
+            this.SaveButton.TabStop = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            this.SaveButton.MouseLeave += new System.EventHandler(this.SaveButton_MouseLeave);
+            this.SaveButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SaveButton_MouseMove);
+            // 
+            // OpenButton
+            // 
+            this.OpenButton.Image = global::Passave.Properties.Resources.open_button_default;
+            this.OpenButton.Location = new System.Drawing.Point(58, 12);
+            this.OpenButton.Name = "OpenButton";
+            this.OpenButton.Size = new System.Drawing.Size(35, 35);
+            this.OpenButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.OpenButton.TabIndex = 3;
+            this.OpenButton.TabStop = false;
+            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
+            this.OpenButton.MouseLeave += new System.EventHandler(this.OpenButton_MouseLeave);
+            this.OpenButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OpenButton_MouseMove);
+            // 
+            // NewButton
+            // 
+            this.NewButton.Image = global::Passave.Properties.Resources.new_button_default;
+            this.NewButton.Location = new System.Drawing.Point(17, 12);
+            this.NewButton.Name = "NewButton";
+            this.NewButton.Size = new System.Drawing.Size(35, 35);
+            this.NewButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.NewButton.TabIndex = 2;
+            this.NewButton.TabStop = false;
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
+            this.NewButton.MouseLeave += new System.EventHandler(this.NewButton_MouseLeave);
+            this.NewButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewButton_MouseMove);
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("MinimizeButton.Image")));
+            this.MinimizeButton.Location = new System.Drawing.Point(658, 12);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(22, 22);
+            this.MinimizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MinimizeButton.TabIndex = 1;
+            this.MinimizeButton.TabStop = false;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.MinimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_MouseLeave);
+            this.MinimizeButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MinimizeButton_MouseMove);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
+            this.CloseButton.Location = new System.Drawing.Point(686, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(22, 22);
+            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CloseButton.TabIndex = 0;
+            this.CloseButton.TabStop = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
+            this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
             // 
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.MenuPanel.BackgroundImage = global::Passave.Properties.Resources.menuimage_forest;
+            this.MenuPanel.BackgroundImage = global::Passave.Properties.Resources.menuimage_desert;
             this.MenuPanel.Controls.Add(this.SettingsButton);
             this.MenuPanel.Controls.Add(this.OtherButton);
             this.MenuPanel.Controls.Add(this.LicensesButton);
@@ -668,6 +669,7 @@
             this.SettingsButton.Size = new System.Drawing.Size(220, 50);
             this.SettingsButton.TabIndex = 5;
             this.SettingsButton.TabStop = false;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             this.SettingsButton.MouseLeave += new System.EventHandler(this.SettingsButton_MouseLeave);
             this.SettingsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SettingsButton_MouseMove);
             // 
@@ -756,14 +758,14 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.TableContextMenu.ResumeLayout(false);
             this.BorderPanel.ResumeLayout(false);
+            this.HomebankingContextMenu.ResumeLayout(false);
+            this.LicensesContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
-            this.HomebankingContextMenu.ResumeLayout(false);
-            this.LicensesContextMenu.ResumeLayout(false);
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SettingsButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OtherButton)).EndInit();

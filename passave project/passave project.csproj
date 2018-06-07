@@ -73,6 +73,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddEditForm.resx">
       <DependentUpon>AddEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,9 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\licenses_button_default.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\menuimage_forest.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\other_button_activated.png" />
@@ -180,6 +186,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\new_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_city.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_desert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_mountains.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuimage_sunset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about_button_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\secure_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\secure_button_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ui_button_activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ui_button_default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

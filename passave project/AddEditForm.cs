@@ -12,12 +12,10 @@ namespace Passave
 {
     public partial class AddEditForm : Form
     {
-        public static Entry addEntry;
-        public static LicenseEntry addLicenseEntry;
-        public static BankEntry addHomebankingEntry;
+        public static Entry addEntry = new Entry();
+        public static LicenseEntry addLicenseEntry = new LicenseEntry();
+        public static BankEntry addHomebankingEntry = new BankEntry();
         Mode mode;
-        bool isBackspace = false;
-        int spacesCount = 0;
 
         public AddEditForm(Mode _mode)
         {
@@ -79,7 +77,16 @@ namespace Passave
                 if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
                 {
                     if (NameTextBox.Text != "" || PasswordTextBox.Text != "" || LoginTextBox.Text != "")
+                    {
                         addEntry = new Entry(NameTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text, PhoneTextBox.Text, UrlTextBox.Text, NotesTextBox.Text);
+                        DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                    else if (addEntry.Name == NameTextBox.Text && addEntry.Login == LoginTextBox.Text && addEntry.Password == PasswordTextBox.Text &&
+                        addEntry.Phone == PhoneTextBox.Text && addEntry.URL == UrlTextBox.Text && addEntry.Notes == NotesTextBox.Text)
+                    {
+                        DialogResult = DialogResult.Cancel;
+                    }
                     else
                     {
                         messageBox = new NewMessageBox("Name, login and password field can't be empty!");
@@ -114,21 +121,36 @@ namespace Passave
                         messageBox = new NewMessageBox("Date is not correct!");
                         messageBox.ShowDialog();
                     }
-                    else addHomebankingEntry = new BankEntry(NameTextBox.Text, CardNumberTextBox.Text, DateTextBox.Text, CvcTextBox.Text, PhoneTextBox.Text, NotesTextBox.Text);
+                    else if (addHomebankingEntry.Name == NameTextBox.Text && addHomebankingEntry.CardNumber == CardNumberTextBox.Text && addHomebankingEntry.Date == DateTextBox.Text &&
+                        addHomebankingEntry.CVC == CvcTextBox.Text && addHomebankingEntry.Phone == PhoneTextBox.Text && addHomebankingEntry.Notes == NotesTextBox.Text)
+                    {
+                        DialogResult = DialogResult.Cancel;
+                    }
+                    else
+                    {
+                        addHomebankingEntry = new BankEntry(NameTextBox.Text, CardNumberTextBox.Text, DateTextBox.Text, CvcTextBox.Text, PhoneTextBox.Text, NotesTextBox.Text);
+                        DialogResult = DialogResult.OK;
+                        Close();
+                    }
                 }
                 if (MainForm.isLicensesShow)
                 {
                     if (NameTextBox.Text != "" || KeyTextBox.Text != "")
+                    {
                         addLicenseEntry = new LicenseEntry(NameTextBox.Text, KeyTextBox.Text, NotesTextBox.Text);
+                        DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                    else if (addLicenseEntry.Name == NameTextBox.Text && addLicenseEntry.Key == KeyTextBox.Text && addLicenseEntry.Notes == NotesTextBox.Text)
+                    {
+                        DialogResult = DialogResult.Cancel;
+                    }
                     else
                     {
                         messageBox = new NewMessageBox("Name and key field can't be empty!");
                         messageBox.ShowDialog();
                     }
                 }
-
-                DialogResult = DialogResult.OK;
-                Close();
             }
         }
 
@@ -290,35 +312,6 @@ namespace Passave
                 DateTextBox.Text += '/';
                 DateTextBox.SelectionStart = DateTextBox.Text.Length;
             }
-        }
-
-        private void CardNumberTextBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!char.IsDigit(CardNumberTextBox.Text[CardNumberTextBox.Text.Length - 1]))
-                {
-                    CardNumberTextBox.Text.Remove(CardNumberTextBox.Text.Length - 1);
-                    CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
-                }
-                if ((CardNumberTextBox.Text.Length + spacesCount) % 4 == 0 && CardNumberTextBox.Text.Length != 0 && !isBackspace)
-                {
-                    CardNumberTextBox.Text += ' ';
-                    spacesCount++;
-                    CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void CardNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 8)
-                isBackspace = true;
-            else isBackspace = false;
         }
     }
 }

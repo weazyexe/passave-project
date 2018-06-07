@@ -118,38 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="settings_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="email_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\email_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minimize_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="homebanking_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\homebanking_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sn_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sn_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="email_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menuimage_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuimage_forest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="open_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sn_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sn_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="other_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\other_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="new_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="homebanking_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homebanking_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="licenses_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\licenses_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,40 +148,79 @@
   <data name="save_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="other_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\other_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="email_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="open_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menuimage_mountains" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_mountains.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menuimage_sunset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_sunset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="licenses_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\licenses_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="email_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\email_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sn_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sn_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="other_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\other_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimize_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minimize_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="homebanking_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homebanking_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="other_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\other_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="licenses_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\licenses_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="new_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_city" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_city.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sn_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sn_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuimage_desert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuimage_desert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="search_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="about_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\about_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="about_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\about_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secure_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secure_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secure_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secure_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ui_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ui_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
