@@ -44,6 +44,10 @@
             this.SunsetButton = new System.Windows.Forms.PictureBox();
             this.ApplyButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.CancelButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.LanguageLabel = new System.Windows.Forms.Label();
+            this.mDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.EnglishButton = new System.Windows.Forms.Button();
+            this.RussianButton = new System.Windows.Forms.Button();
             this.BorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ForestButton)).BeginInit();
@@ -100,14 +104,14 @@
             this.ThemeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ThemeLabel.Location = new System.Drawing.Point(191, 66);
             this.ThemeLabel.Name = "ThemeLabel";
-            this.ThemeLabel.Size = new System.Drawing.Size(58, 19);
+            this.ThemeLabel.Size = new System.Drawing.Size(62, 20);
             this.ThemeLabel.TabIndex = 11;
-            this.ThemeLabel.Text = "Theme";
+            this.ThemeLabel.Text = "Theme:";
             // 
             // ForestButton
             // 
             this.ForestButton.Image = global::Passave.Properties.Resources.menuimage_forest;
-            this.ForestButton.Location = new System.Drawing.Point(195, 97);
+            this.ForestButton.Location = new System.Drawing.Point(194, 97);
             this.ForestButton.Name = "ForestButton";
             this.ForestButton.Size = new System.Drawing.Size(107, 231);
             this.ForestButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +131,7 @@
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 0);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(162, 496);
+            this.MenuPanel.Size = new System.Drawing.Size(162, 522);
             this.MenuPanel.TabIndex = 1;
             // 
             // AboutButton
@@ -139,6 +143,7 @@
             this.AboutButton.Size = new System.Drawing.Size(135, 50);
             this.AboutButton.TabIndex = 3;
             this.AboutButton.TabStop = false;
+            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             this.AboutButton.MouseLeave += new System.EventHandler(this.AboutButton_MouseLeave);
             this.AboutButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AboutButton_MouseMove);
             // 
@@ -151,6 +156,7 @@
             this.SecureButton.Size = new System.Drawing.Size(135, 50);
             this.SecureButton.TabIndex = 2;
             this.SecureButton.TabStop = false;
+            this.SecureButton.Click += new System.EventHandler(this.SecureButton_Click);
             this.SecureButton.MouseLeave += new System.EventHandler(this.SecureButton_MouseLeave);
             this.SecureButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SecureButton_MouseMove);
             // 
@@ -163,6 +169,7 @@
             this.UIButton.Size = new System.Drawing.Size(135, 50);
             this.UIButton.TabIndex = 1;
             this.UIButton.TabStop = false;
+            this.UIButton.Click += new System.EventHandler(this.UIButton_Click);
             this.UIButton.MouseLeave += new System.EventHandler(this.UIButton_MouseLeave);
             this.UIButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UIButton_MouseMove);
             // 
@@ -224,7 +231,7 @@
             this.ApplyButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ApplyButton.Depth = 0;
             this.ApplyButton.Icon = null;
-            this.ApplyButton.Location = new System.Drawing.Point(711, 445);
+            this.ApplyButton.Location = new System.Drawing.Point(712, 471);
             this.ApplyButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ApplyButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ApplyButton.Name = "ApplyButton";
@@ -241,7 +248,7 @@
             this.CancelButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CancelButton.Depth = 0;
             this.CancelButton.Icon = null;
-            this.CancelButton.Location = new System.Drawing.Point(630, 445);
+            this.CancelButton.Location = new System.Drawing.Point(631, 471);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.CancelButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.CancelButton.Name = "CancelButton";
@@ -252,19 +259,76 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // LanguageLabel
+            // 
+            this.LanguageLabel.AutoSize = true;
+            this.LanguageLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LanguageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LanguageLabel.Location = new System.Drawing.Point(191, 357);
+            this.LanguageLabel.Name = "LanguageLabel";
+            this.LanguageLabel.Size = new System.Drawing.Size(84, 20);
+            this.LanguageLabel.TabIndex = 20;
+            this.LanguageLabel.Text = "Language:";
+            // 
+            // mDivider1
+            // 
+            this.mDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mDivider1.Depth = 0;
+            this.mDivider1.Location = new System.Drawing.Point(195, 344);
+            this.mDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mDivider1.Name = "mDivider1";
+            this.mDivider1.Size = new System.Drawing.Size(560, 1);
+            this.mDivider1.TabIndex = 21;
+            this.mDivider1.Text = "materialDivider1";
+            // 
+            // EnglishButton
+            // 
+            this.EnglishButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
+            this.EnglishButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
+            this.EnglishButton.FlatAppearance.BorderSize = 2;
+            this.EnglishButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EnglishButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EnglishButton.ForeColor = System.Drawing.Color.White;
+            this.EnglishButton.Location = new System.Drawing.Point(195, 391);
+            this.EnglishButton.Name = "EnglishButton";
+            this.EnglishButton.Size = new System.Drawing.Size(106, 44);
+            this.EnglishButton.TabIndex = 22;
+            this.EnglishButton.Text = "ENGLISH";
+            this.EnglishButton.UseVisualStyleBackColor = false;
+            this.EnglishButton.Click += new System.EventHandler(this.EnglishButton_Click);
+            // 
+            // RussianButton
+            // 
+            this.RussianButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
+            this.RussianButton.FlatAppearance.BorderSize = 2;
+            this.RussianButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RussianButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RussianButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
+            this.RussianButton.Location = new System.Drawing.Point(308, 391);
+            this.RussianButton.Name = "RussianButton";
+            this.RussianButton.Size = new System.Drawing.Size(107, 44);
+            this.RussianButton.TabIndex = 23;
+            this.RussianButton.Text = "РУССКИЙ";
+            this.RussianButton.UseVisualStyleBackColor = true;
+            this.RussianButton.Click += new System.EventHandler(this.RussianButton_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 496);
-            this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.ApplyButton);
+            this.ClientSize = new System.Drawing.Size(787, 522);
+            this.Controls.Add(this.RussianButton);
+            this.Controls.Add(this.EnglishButton);
+            this.Controls.Add(this.mDivider1);
+            this.Controls.Add(this.LanguageLabel);
+            this.Controls.Add(this.ThemeLabel);
             this.Controls.Add(this.SunsetButton);
             this.Controls.Add(this.CityButton);
             this.Controls.Add(this.MountainsButton);
             this.Controls.Add(this.DesertButton);
-            this.Controls.Add(this.ThemeLabel);
             this.Controls.Add(this.ForestButton);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.BorderPanel);
             this.Controls.Add(this.MenuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -307,5 +371,9 @@
         private System.Windows.Forms.PictureBox SunsetButton;
         private MaterialSkin.Controls.MaterialFlatButton ApplyButton;
         private MaterialSkin.Controls.MaterialFlatButton CancelButton;
+        private System.Windows.Forms.Label LanguageLabel;
+        private MaterialSkin.Controls.MaterialDivider mDivider1;
+        private System.Windows.Forms.Button EnglishButton;
+        private System.Windows.Forms.Button RussianButton;
     }
 }

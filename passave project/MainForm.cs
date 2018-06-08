@@ -28,7 +28,7 @@ namespace Passave
 
         public static bool isSNShow = true, isEmailShow = false, isHomebankingShow = false, isLicensesShow = false, isOtherShow = false;
 
-        int changes = 0;
+        public static int changes = 0;
 
         public static Theme theme = Theme.Desert;
 
@@ -1118,7 +1118,25 @@ namespace Passave
                 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    string saved = "SOCIAL_NETWORK\n";
+                    string saved = "";
+
+                    if (SettingsForm.language == Language.English)
+                        saved += "ENGLISH\n";
+                    if (SettingsForm.language == Language.Russian)
+                        saved += "RUSSIAN\n";
+
+                    if (theme == Theme.Forest)
+                        saved += "FOREST\n";
+                    if (theme == Theme.Desert)
+                        saved += "DESERT\n";
+                    if (theme == Theme.Mountains)
+                        saved += "MOUNTAINS\n";
+                    if (theme == Theme.City)
+                        saved += "CITY\n";
+                    if (theme == Theme.Sunset)
+                        saved += "SUNSET\n";
+
+                    saved += "SOCIAL_NETWORK\n";
                     foreach (Entry item in socialNetworkList)
                     {
                         saved += item.Name + '\n';
@@ -1200,6 +1218,41 @@ namespace Passave
 
                         bool isFirst = true;
                         string readed = sr.ReadLine();
+
+                        if (readed == "ENGLISH")
+                            SettingsForm.language = Language.English;
+                        if (readed == "RUSSIAN")
+                            SettingsForm.language = Language.Russian;
+
+                        readed = sr.ReadLine();
+
+                        if (readed == "FOREST")
+                        {
+                            theme = Theme.Forest;
+                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+                        }
+                        if (readed == "DESERT")
+                        {
+                            theme = Theme.Desert;
+                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
+                        }
+                        if (readed == "MOUNTAINS")
+                        {
+                            theme = Theme.Mountains;
+                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
+                        }
+                        if (readed == "CITY")
+                        {
+                            theme = Theme.City;
+                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
+                        }
+                        if (readed == "SUNSET")
+                        {
+                            theme = Theme.Sunset;
+                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+                        }
+
+                        readed = sr.ReadLine();
                         while (readed != "EMAIL")
                         {
                             if (isFirst) readed = sr.ReadLine();
@@ -1399,5 +1452,10 @@ namespace Passave
     public enum Theme
     {
         Forest, Desert, Mountains, City, Sunset
+    }
+
+    public enum Language
+    {
+        Russian, English
     }
 }

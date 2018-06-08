@@ -22,6 +22,17 @@ namespace Passave
             mode = _mode;
             InitializeComponent();
             MenuPanel.BackColor = Color.FromArgb(56, 145, 213);
+
+            if (MainForm.theme == Theme.Forest)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+            if (MainForm.theme == Theme.Desert)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
+            if (MainForm.theme == Theme.Mountains)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
+            if (MainForm.theme == Theme.City)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
+            if (MainForm.theme == Theme.Sunset)
+                MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
         }
 
         #region FORM SHADOW
@@ -371,17 +382,6 @@ namespace Passave
                 DateTextBox.TabIndex = 10;
                 KeyTextBox.TabIndex = 1;
             }
-
-            if (MainForm.theme == Theme.Forest)
-                MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
-            if (MainForm.theme == Theme.Desert)
-                MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
-            if (MainForm.theme == Theme.Mountains)
-                MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
-            if (MainForm.theme == Theme.City)
-                MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
-            if (MainForm.theme == Theme.Sunset)
-                MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
         }
 
         private void DateTextBox_TextChanged(object sender, EventArgs e)
