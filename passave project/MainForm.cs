@@ -14,9 +14,7 @@ using MaterialSkin.Controls;
 namespace Passave
 {
     // TODO:
-    // settings: theme, language, change password, create secure key, clipboard clear timer, feedback, about
-    // settings: ui / secure / about
-    // PIN
+    // settings: change password, create secure key, clipboard clear timer at secure
 
     public partial class MainForm : Form
     {

@@ -31,34 +31,38 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.BorderPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
-            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.ThemeLabel = new System.Windows.Forms.Label();
-            this.ForestButton = new System.Windows.Forms.PictureBox();
-            this.MenuPanel = new System.Windows.Forms.Panel();
-            this.AboutButton = new System.Windows.Forms.PictureBox();
-            this.SecureButton = new System.Windows.Forms.PictureBox();
-            this.UIButton = new System.Windows.Forms.PictureBox();
-            this.DesertButton = new System.Windows.Forms.PictureBox();
-            this.MountainsButton = new System.Windows.Forms.PictureBox();
-            this.CityButton = new System.Windows.Forms.PictureBox();
-            this.SunsetButton = new System.Windows.Forms.PictureBox();
             this.ApplyButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.CancelButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.LanguageLabel = new System.Windows.Forms.Label();
             this.mDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.EnglishButton = new System.Windows.Forms.Button();
             this.RussianButton = new System.Windows.Forms.Button();
+            this.LogoPicture = new System.Windows.Forms.PictureBox();
+            this.SunsetButton = new System.Windows.Forms.PictureBox();
+            this.CityButton = new System.Windows.Forms.PictureBox();
+            this.MountainsButton = new System.Windows.Forms.PictureBox();
+            this.DesertButton = new System.Windows.Forms.PictureBox();
+            this.ForestButton = new System.Windows.Forms.PictureBox();
+            this.CloseButton = new System.Windows.Forms.PictureBox();
+            this.MenuPanel = new System.Windows.Forms.Panel();
+            this.AboutButton = new System.Windows.Forms.PictureBox();
+            this.SecureButton = new System.Windows.Forms.PictureBox();
+            this.UIButton = new System.Windows.Forms.PictureBox();
+            this.AboutProgramLabel = new System.Windows.Forms.Label();
+            this.AboutDevLink = new System.Windows.Forms.LinkLabel();
             this.BorderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CityButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MountainsButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DesertButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ForestButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AboutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecureButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UIButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DesertButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MountainsButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CityButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).BeginInit();
             this.SuspendLayout();
             // 
             // BorderPanel
@@ -83,6 +87,179 @@
             this.HeaderLabel.TabIndex = 3;
             this.HeaderLabel.Text = "SETTINGS";
             // 
+            // ThemeLabel
+            // 
+            this.ThemeLabel.AutoSize = true;
+            this.ThemeLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ThemeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ThemeLabel.Location = new System.Drawing.Point(192, 68);
+            this.ThemeLabel.Name = "ThemeLabel";
+            this.ThemeLabel.Size = new System.Drawing.Size(62, 20);
+            this.ThemeLabel.TabIndex = 11;
+            this.ThemeLabel.Text = "Theme:";
+            // 
+            // ApplyButton
+            // 
+            this.ApplyButton.AutoSize = true;
+            this.ApplyButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ApplyButton.Depth = 0;
+            this.ApplyButton.Icon = null;
+            this.ApplyButton.Location = new System.Drawing.Point(712, 471);
+            this.ApplyButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ApplyButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.Primary = false;
+            this.ApplyButton.Size = new System.Drawing.Size(63, 36);
+            this.ApplyButton.TabIndex = 16;
+            this.ApplyButton.Text = "Apply";
+            this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
+            // 
+            // CancelButton
+            // 
+            this.CancelButton.AutoSize = true;
+            this.CancelButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CancelButton.Depth = 0;
+            this.CancelButton.Icon = null;
+            this.CancelButton.Location = new System.Drawing.Point(631, 471);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CancelButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Primary = false;
+            this.CancelButton.Size = new System.Drawing.Size(73, 36);
+            this.CancelButton.TabIndex = 17;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // LanguageLabel
+            // 
+            this.LanguageLabel.AutoSize = true;
+            this.LanguageLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LanguageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LanguageLabel.Location = new System.Drawing.Point(192, 359);
+            this.LanguageLabel.Name = "LanguageLabel";
+            this.LanguageLabel.Size = new System.Drawing.Size(84, 20);
+            this.LanguageLabel.TabIndex = 20;
+            this.LanguageLabel.Text = "Language:";
+            // 
+            // mDivider1
+            // 
+            this.mDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mDivider1.Depth = 0;
+            this.mDivider1.Location = new System.Drawing.Point(196, 346);
+            this.mDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mDivider1.Name = "mDivider1";
+            this.mDivider1.Size = new System.Drawing.Size(560, 1);
+            this.mDivider1.TabIndex = 21;
+            this.mDivider1.Text = "materialDivider1";
+            // 
+            // EnglishButton
+            // 
+            this.EnglishButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
+            this.EnglishButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
+            this.EnglishButton.FlatAppearance.BorderSize = 2;
+            this.EnglishButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EnglishButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EnglishButton.ForeColor = System.Drawing.Color.White;
+            this.EnglishButton.Location = new System.Drawing.Point(196, 393);
+            this.EnglishButton.Name = "EnglishButton";
+            this.EnglishButton.Size = new System.Drawing.Size(106, 44);
+            this.EnglishButton.TabIndex = 22;
+            this.EnglishButton.Text = "ENGLISH";
+            this.EnglishButton.UseVisualStyleBackColor = false;
+            this.EnglishButton.Click += new System.EventHandler(this.EnglishButton_Click);
+            // 
+            // RussianButton
+            // 
+            this.RussianButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
+            this.RussianButton.FlatAppearance.BorderSize = 2;
+            this.RussianButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RussianButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RussianButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
+            this.RussianButton.Location = new System.Drawing.Point(309, 393);
+            this.RussianButton.Name = "RussianButton";
+            this.RussianButton.Size = new System.Drawing.Size(107, 44);
+            this.RussianButton.TabIndex = 23;
+            this.RussianButton.Text = "РУССКИЙ";
+            this.RussianButton.UseVisualStyleBackColor = true;
+            this.RussianButton.Click += new System.EventHandler(this.RussianButton_Click);
+            // 
+            // LogoPicture
+            // 
+            this.LogoPicture.Image = global::Passave.Properties.Resources.logo;
+            this.LogoPicture.Location = new System.Drawing.Point(354, 66);
+            this.LogoPicture.Name = "LogoPicture";
+            this.LogoPicture.Size = new System.Drawing.Size(237, 184);
+            this.LogoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPicture.TabIndex = 24;
+            this.LogoPicture.TabStop = false;
+            // 
+            // SunsetButton
+            // 
+            this.SunsetButton.Image = global::Passave.Properties.Resources.menuimage_sunset;
+            this.SunsetButton.Location = new System.Drawing.Point(648, 99);
+            this.SunsetButton.Name = "SunsetButton";
+            this.SunsetButton.Size = new System.Drawing.Size(107, 231);
+            this.SunsetButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SunsetButton.TabIndex = 15;
+            this.SunsetButton.TabStop = false;
+            this.SunsetButton.Click += new System.EventHandler(this.SunsetButton_Click);
+            this.SunsetButton.MouseLeave += new System.EventHandler(this.SunsetButton_MouseLeave);
+            this.SunsetButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SunsetButton_MouseMove);
+            // 
+            // CityButton
+            // 
+            this.CityButton.Image = global::Passave.Properties.Resources.menuimage_city;
+            this.CityButton.Location = new System.Drawing.Point(535, 99);
+            this.CityButton.Name = "CityButton";
+            this.CityButton.Size = new System.Drawing.Size(107, 231);
+            this.CityButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CityButton.TabIndex = 14;
+            this.CityButton.TabStop = false;
+            this.CityButton.Click += new System.EventHandler(this.CityButton_Click);
+            this.CityButton.MouseLeave += new System.EventHandler(this.CityButton_MouseLeave);
+            this.CityButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CityButton_MouseMove);
+            // 
+            // MountainsButton
+            // 
+            this.MountainsButton.Image = global::Passave.Properties.Resources.menuimage_mountains;
+            this.MountainsButton.Location = new System.Drawing.Point(422, 99);
+            this.MountainsButton.Name = "MountainsButton";
+            this.MountainsButton.Size = new System.Drawing.Size(107, 231);
+            this.MountainsButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MountainsButton.TabIndex = 13;
+            this.MountainsButton.TabStop = false;
+            this.MountainsButton.Click += new System.EventHandler(this.MountainsButton_Click);
+            this.MountainsButton.MouseLeave += new System.EventHandler(this.MountainsButton_MouseLeave);
+            this.MountainsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MountainsButton_MouseMove);
+            // 
+            // DesertButton
+            // 
+            this.DesertButton.Image = global::Passave.Properties.Resources.menuimage_desert;
+            this.DesertButton.Location = new System.Drawing.Point(309, 99);
+            this.DesertButton.Name = "DesertButton";
+            this.DesertButton.Size = new System.Drawing.Size(107, 231);
+            this.DesertButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DesertButton.TabIndex = 12;
+            this.DesertButton.TabStop = false;
+            this.DesertButton.Click += new System.EventHandler(this.DesertButton_Click);
+            this.DesertButton.MouseLeave += new System.EventHandler(this.DesertButton_MouseLeave);
+            this.DesertButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DesertButton_MouseMove);
+            // 
+            // ForestButton
+            // 
+            this.ForestButton.Image = global::Passave.Properties.Resources.menuimage_forest;
+            this.ForestButton.Location = new System.Drawing.Point(195, 99);
+            this.ForestButton.Name = "ForestButton";
+            this.ForestButton.Size = new System.Drawing.Size(107, 231);
+            this.ForestButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ForestButton.TabIndex = 6;
+            this.ForestButton.TabStop = false;
+            this.ForestButton.Click += new System.EventHandler(this.ForestButton_Click);
+            this.ForestButton.MouseLeave += new System.EventHandler(this.ForestButton_MouseLeave);
+            this.ForestButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ForestButton_MouseMove);
+            // 
             // CloseButton
             // 
             this.CloseButton.BackColor = System.Drawing.SystemColors.Control;
@@ -96,30 +273,6 @@
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
             this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
-            // 
-            // ThemeLabel
-            // 
-            this.ThemeLabel.AutoSize = true;
-            this.ThemeLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThemeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ThemeLabel.Location = new System.Drawing.Point(191, 66);
-            this.ThemeLabel.Name = "ThemeLabel";
-            this.ThemeLabel.Size = new System.Drawing.Size(62, 20);
-            this.ThemeLabel.TabIndex = 11;
-            this.ThemeLabel.Text = "Theme:";
-            // 
-            // ForestButton
-            // 
-            this.ForestButton.Image = global::Passave.Properties.Resources.menuimage_forest;
-            this.ForestButton.Location = new System.Drawing.Point(194, 97);
-            this.ForestButton.Name = "ForestButton";
-            this.ForestButton.Size = new System.Drawing.Size(107, 231);
-            this.ForestButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ForestButton.TabIndex = 6;
-            this.ForestButton.TabStop = false;
-            this.ForestButton.Click += new System.EventHandler(this.ForestButton_Click);
-            this.ForestButton.MouseLeave += new System.EventHandler(this.ForestButton_MouseLeave);
-            this.ForestButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ForestButton_MouseMove);
             // 
             // MenuPanel
             // 
@@ -173,150 +326,42 @@
             this.UIButton.MouseLeave += new System.EventHandler(this.UIButton_MouseLeave);
             this.UIButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UIButton_MouseMove);
             // 
-            // DesertButton
+            // AboutProgramLabel
             // 
-            this.DesertButton.Image = global::Passave.Properties.Resources.menuimage_desert;
-            this.DesertButton.Location = new System.Drawing.Point(308, 97);
-            this.DesertButton.Name = "DesertButton";
-            this.DesertButton.Size = new System.Drawing.Size(107, 231);
-            this.DesertButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.DesertButton.TabIndex = 12;
-            this.DesertButton.TabStop = false;
-            this.DesertButton.Click += new System.EventHandler(this.DesertButton_Click);
-            this.DesertButton.MouseLeave += new System.EventHandler(this.DesertButton_MouseLeave);
-            this.DesertButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DesertButton_MouseMove);
+            this.AboutProgramLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutProgramLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AboutProgramLabel.Location = new System.Drawing.Point(269, 253);
+            this.AboutProgramLabel.Name = "AboutProgramLabel";
+            this.AboutProgramLabel.Size = new System.Drawing.Size(413, 99);
+            this.AboutProgramLabel.TabIndex = 25;
+            this.AboutProgramLabel.Text = "Passave - simple and beautiful password manager\r\nAn open source project (dev link" +
+    " is clickable to github)\r\nCompilation date: 08.06.2018";
+            this.AboutProgramLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MountainsButton
+            // AboutDevLink
             // 
-            this.MountainsButton.Image = global::Passave.Properties.Resources.menuimage_mountains;
-            this.MountainsButton.Location = new System.Drawing.Point(421, 97);
-            this.MountainsButton.Name = "MountainsButton";
-            this.MountainsButton.Size = new System.Drawing.Size(107, 231);
-            this.MountainsButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MountainsButton.TabIndex = 13;
-            this.MountainsButton.TabStop = false;
-            this.MountainsButton.Click += new System.EventHandler(this.MountainsButton_Click);
-            this.MountainsButton.MouseLeave += new System.EventHandler(this.MountainsButton_MouseLeave);
-            this.MountainsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MountainsButton_MouseMove);
-            // 
-            // CityButton
-            // 
-            this.CityButton.Image = global::Passave.Properties.Resources.menuimage_city;
-            this.CityButton.Location = new System.Drawing.Point(534, 97);
-            this.CityButton.Name = "CityButton";
-            this.CityButton.Size = new System.Drawing.Size(107, 231);
-            this.CityButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CityButton.TabIndex = 14;
-            this.CityButton.TabStop = false;
-            this.CityButton.Click += new System.EventHandler(this.CityButton_Click);
-            this.CityButton.MouseLeave += new System.EventHandler(this.CityButton_MouseLeave);
-            this.CityButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CityButton_MouseMove);
-            // 
-            // SunsetButton
-            // 
-            this.SunsetButton.Image = global::Passave.Properties.Resources.menuimage_sunset;
-            this.SunsetButton.Location = new System.Drawing.Point(647, 97);
-            this.SunsetButton.Name = "SunsetButton";
-            this.SunsetButton.Size = new System.Drawing.Size(107, 231);
-            this.SunsetButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SunsetButton.TabIndex = 15;
-            this.SunsetButton.TabStop = false;
-            this.SunsetButton.Click += new System.EventHandler(this.SunsetButton_Click);
-            this.SunsetButton.MouseLeave += new System.EventHandler(this.SunsetButton_MouseLeave);
-            this.SunsetButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SunsetButton_MouseMove);
-            // 
-            // ApplyButton
-            // 
-            this.ApplyButton.AutoSize = true;
-            this.ApplyButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ApplyButton.Depth = 0;
-            this.ApplyButton.Icon = null;
-            this.ApplyButton.Location = new System.Drawing.Point(712, 471);
-            this.ApplyButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ApplyButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Primary = false;
-            this.ApplyButton.Size = new System.Drawing.Size(63, 36);
-            this.ApplyButton.TabIndex = 16;
-            this.ApplyButton.Text = "Apply";
-            this.ApplyButton.UseVisualStyleBackColor = true;
-            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
-            // 
-            // CancelButton
-            // 
-            this.CancelButton.AutoSize = true;
-            this.CancelButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CancelButton.Depth = 0;
-            this.CancelButton.Icon = null;
-            this.CancelButton.Location = new System.Drawing.Point(631, 471);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.CancelButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Primary = false;
-            this.CancelButton.Size = new System.Drawing.Size(73, 36);
-            this.CancelButton.TabIndex = 17;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // LanguageLabel
-            // 
-            this.LanguageLabel.AutoSize = true;
-            this.LanguageLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LanguageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.LanguageLabel.Location = new System.Drawing.Point(191, 357);
-            this.LanguageLabel.Name = "LanguageLabel";
-            this.LanguageLabel.Size = new System.Drawing.Size(84, 20);
-            this.LanguageLabel.TabIndex = 20;
-            this.LanguageLabel.Text = "Language:";
-            // 
-            // mDivider1
-            // 
-            this.mDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mDivider1.Depth = 0;
-            this.mDivider1.Location = new System.Drawing.Point(195, 344);
-            this.mDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mDivider1.Name = "mDivider1";
-            this.mDivider1.Size = new System.Drawing.Size(560, 1);
-            this.mDivider1.TabIndex = 21;
-            this.mDivider1.Text = "materialDivider1";
-            // 
-            // EnglishButton
-            // 
-            this.EnglishButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
-            this.EnglishButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
-            this.EnglishButton.FlatAppearance.BorderSize = 2;
-            this.EnglishButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EnglishButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EnglishButton.ForeColor = System.Drawing.Color.White;
-            this.EnglishButton.Location = new System.Drawing.Point(195, 391);
-            this.EnglishButton.Name = "EnglishButton";
-            this.EnglishButton.Size = new System.Drawing.Size(106, 44);
-            this.EnglishButton.TabIndex = 22;
-            this.EnglishButton.Text = "ENGLISH";
-            this.EnglishButton.UseVisualStyleBackColor = false;
-            this.EnglishButton.Click += new System.EventHandler(this.EnglishButton_Click);
-            // 
-            // RussianButton
-            // 
-            this.RussianButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
-            this.RussianButton.FlatAppearance.BorderSize = 2;
-            this.RussianButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RussianButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RussianButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
-            this.RussianButton.Location = new System.Drawing.Point(308, 391);
-            this.RussianButton.Name = "RussianButton";
-            this.RussianButton.Size = new System.Drawing.Size(107, 44);
-            this.RussianButton.TabIndex = 23;
-            this.RussianButton.Text = "РУССКИЙ";
-            this.RussianButton.UseVisualStyleBackColor = true;
-            this.RussianButton.Click += new System.EventHandler(this.RussianButton_Click);
+            this.AboutDevLink.ActiveLinkColor = System.Drawing.Color.Gray;
+            this.AboutDevLink.AutoSize = true;
+            this.AboutDevLink.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutDevLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.AboutDevLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.AboutDevLink.Location = new System.Drawing.Point(401, 365);
+            this.AboutDevLink.Name = "AboutDevLink";
+            this.AboutDevLink.Size = new System.Drawing.Size(163, 20);
+            this.AboutDevLink.TabIndex = 26;
+            this.AboutDevLink.TabStop = true;
+            this.AboutDevLink.Text = "Developer: weazy.exe";
+            this.AboutDevLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AboutDevLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutDevLink_LinkClicked);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 522);
+            this.Controls.Add(this.AboutDevLink);
+            this.Controls.Add(this.AboutProgramLabel);
+            this.Controls.Add(this.LogoPicture);
             this.Controls.Add(this.RussianButton);
             this.Controls.Add(this.EnglishButton);
             this.Controls.Add(this.mDivider1);
@@ -339,16 +384,17 @@
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.BorderPanel.ResumeLayout(false);
             this.BorderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CityButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MountainsButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DesertButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ForestButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AboutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecureButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UIButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DesertButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MountainsButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CityButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,5 +421,8 @@
         private MaterialSkin.Controls.MaterialDivider mDivider1;
         private System.Windows.Forms.Button EnglishButton;
         private System.Windows.Forms.Button RussianButton;
+        private System.Windows.Forms.PictureBox LogoPicture;
+        private System.Windows.Forms.Label AboutProgramLabel;
+        private System.Windows.Forms.LinkLabel AboutDevLink;
     }
 }

@@ -77,6 +77,7 @@ namespace Passave
                 RussianButton.FlatAppearance.BorderColor = currentColor;
             }
 
+            AboutSettingsHide();
             UIButton.Image = Properties.Resources.ui_button_activated;
         }
 
@@ -362,6 +363,7 @@ namespace Passave
             AboutButton.Image = Properties.Resources.about_button_default;
 
             UiSettingsShow();
+            AboutSettingsHide();
         }
 
         private void SecureButton_Click(object sender, EventArgs e)
@@ -375,6 +377,7 @@ namespace Passave
             AboutButton.Image = Properties.Resources.about_button_default;
 
             UiSettingsHide();
+            AboutSettingsHide();
         }
 
         private void AboutButton_Click(object sender, EventArgs e)
@@ -388,6 +391,7 @@ namespace Passave
             AboutButton.Image = Properties.Resources.about_button_activated;
 
             UiSettingsHide();
+            AboutSettingsShow();
         }
 
 
@@ -395,6 +399,11 @@ namespace Passave
         {
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void AboutDevLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.github.com/weazyexe");
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -454,6 +463,20 @@ namespace Passave
             LanguageLabel.Show();
             RussianButton.Show();
             EnglishButton.Show();
+        }
+
+        private void AboutSettingsHide()
+        {
+            LogoPicture.Hide();
+            AboutDevLink.Hide();
+            AboutProgramLabel.Hide();
+        }
+
+        private void AboutSettingsShow()
+        {
+            LogoPicture.Show();
+            AboutDevLink.Show();
+            AboutProgramLabel.Show();
         }
     }
 }
