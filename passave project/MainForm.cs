@@ -803,9 +803,10 @@ namespace Passave
                     changes++;
                 }
             }
-            catch
+            catch (Exception e)
             {
-
+                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                messageBox.ShowDialog();
             }
         }
 
@@ -814,175 +815,183 @@ namespace Passave
         /// </summary>
         private void Edit()
         {
-            if (isSNShow)
+            try
             {
-                AddEditForm form = new AddEditForm(Mode.Edit);
-
-                int i = SNListView.SelectedIndices[0];
-
-                AddEditForm.addEntry.Name = socialNetworkList[i].Name;
-                AddEditForm.addEntry.Login = socialNetworkList[i].Login;
-                AddEditForm.addEntry.Password = socialNetworkList[i].Password;
-                AddEditForm.addEntry.Phone = socialNetworkList[i].Phone;
-                AddEditForm.addEntry.URL = socialNetworkList[i].URL;
-                AddEditForm.addEntry.Notes = socialNetworkList[i].Notes;
-
-                if (form.ShowDialog() == DialogResult.OK)
+                if (isSNShow)
                 {
-                    socialNetworkList[i].Name = AddEditForm.addEntry.Name;
-                    socialNetworkList[i].Login = AddEditForm.addEntry.Login;
-                    socialNetworkList[i].Password = AddEditForm.addEntry.Password;
-                    socialNetworkList[i].Phone = AddEditForm.addEntry.Phone;
-                    socialNetworkList[i].URL = AddEditForm.addEntry.URL;
-                    socialNetworkList[i].Notes = AddEditForm.addEntry.Notes;
+                    AddEditForm form = new AddEditForm(Mode.Edit);
 
-                    ListViewItem lvi = new ListViewItem(AddEditForm.addEntry.Name);
-                    lvi.SubItems.Add(AddEditForm.addEntry.Login);
-                    lvi.SubItems.Add("••••••••••");
-                    lvi.SubItems.Add(AddEditForm.addEntry.Phone);
-                    lvi.SubItems.Add(AddEditForm.addEntry.URL);
-                    lvi.SubItems.Add(AddEditForm.addEntry.Notes);
+                    int i = SNListView.SelectedIndices[0];
 
-                    SNListView.Items.RemoveAt(i);
-                    SNListView.Items.Insert(i, lvi);
+                    AddEditForm.addEntry.Name = socialNetworkList[i].Name;
+                    AddEditForm.addEntry.Login = socialNetworkList[i].Login;
+                    AddEditForm.addEntry.Password = socialNetworkList[i].Password;
+                    AddEditForm.addEntry.Phone = socialNetworkList[i].Phone;
+                    AddEditForm.addEntry.URL = socialNetworkList[i].URL;
+                    AddEditForm.addEntry.Notes = socialNetworkList[i].Notes;
 
-                    changes++;
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        socialNetworkList[i].Name = AddEditForm.addEntry.Name;
+                        socialNetworkList[i].Login = AddEditForm.addEntry.Login;
+                        socialNetworkList[i].Password = AddEditForm.addEntry.Password;
+                        socialNetworkList[i].Phone = AddEditForm.addEntry.Phone;
+                        socialNetworkList[i].URL = AddEditForm.addEntry.URL;
+                        socialNetworkList[i].Notes = AddEditForm.addEntry.Notes;
+
+                        ListViewItem lvi = new ListViewItem(AddEditForm.addEntry.Name);
+                        lvi.SubItems.Add(AddEditForm.addEntry.Login);
+                        lvi.SubItems.Add("••••••••••");
+                        lvi.SubItems.Add(AddEditForm.addEntry.Phone);
+                        lvi.SubItems.Add(AddEditForm.addEntry.URL);
+                        lvi.SubItems.Add(AddEditForm.addEntry.Notes);
+
+                        SNListView.Items.RemoveAt(i);
+                        SNListView.Items.Insert(i, lvi);
+
+                        changes++;
+                    }
+                }
+
+                if (isEmailShow)
+                {
+                    AddEditForm form = new AddEditForm(Mode.Edit);
+
+                    int i = EmailListView.SelectedIndices[0];
+
+                    AddEditForm.addEntry.Name = emailList[i].Name;
+                    AddEditForm.addEntry.Login = emailList[i].Login;
+                    AddEditForm.addEntry.Password = emailList[i].Password;
+                    AddEditForm.addEntry.Phone = emailList[i].Phone;
+                    AddEditForm.addEntry.URL = emailList[i].URL;
+                    AddEditForm.addEntry.Notes = emailList[i].Notes;
+
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        emailList[i].Name = AddEditForm.addEntry.Name;
+                        emailList[i].Login = AddEditForm.addEntry.Login;
+                        emailList[i].Password = AddEditForm.addEntry.Password;
+                        emailList[i].Phone = AddEditForm.addEntry.Phone;
+                        emailList[i].URL = AddEditForm.addEntry.URL;
+                        emailList[i].Notes = AddEditForm.addEntry.Notes;
+
+                        ListViewItem lvi = new ListViewItem(AddEditForm.addEntry.Name);
+                        lvi.SubItems.Add(AddEditForm.addEntry.Login);
+                        lvi.SubItems.Add("••••••••••");
+                        lvi.SubItems.Add(AddEditForm.addEntry.Phone);
+                        lvi.SubItems.Add(AddEditForm.addEntry.URL);
+                        lvi.SubItems.Add(AddEditForm.addEntry.Notes);
+
+                        EmailListView.Items.RemoveAt(i);
+                        EmailListView.Items.Insert(i, lvi);
+
+                        changes++;
+                    }
+                }
+
+                if (isOtherShow)
+                {
+                    AddEditForm form = new AddEditForm(Mode.Edit);
+
+                    int i = OtherListView.SelectedIndices[0];
+
+                    AddEditForm.addEntry.Name = otherList[i].Name;
+                    AddEditForm.addEntry.Login = otherList[i].Login;
+                    AddEditForm.addEntry.Password = otherList[i].Password;
+                    AddEditForm.addEntry.Phone = otherList[i].Phone;
+                    AddEditForm.addEntry.URL = otherList[i].URL;
+                    AddEditForm.addEntry.Notes = otherList[i].Notes;
+
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        otherList[i].Name = AddEditForm.addEntry.Name;
+                        otherList[i].Login = AddEditForm.addEntry.Login;
+                        otherList[i].Password = AddEditForm.addEntry.Password;
+                        otherList[i].Phone = AddEditForm.addEntry.Phone;
+                        otherList[i].URL = AddEditForm.addEntry.URL;
+                        otherList[i].Notes = AddEditForm.addEntry.Notes;
+
+                        ListViewItem lvi = new ListViewItem(AddEditForm.addEntry.Name);
+                        lvi.SubItems.Add(AddEditForm.addEntry.Login);
+                        lvi.SubItems.Add("••••••••••");
+                        lvi.SubItems.Add(AddEditForm.addEntry.Phone);
+                        lvi.SubItems.Add(AddEditForm.addEntry.URL);
+                        lvi.SubItems.Add(AddEditForm.addEntry.Notes);
+
+                        OtherListView.Items.RemoveAt(i);
+                        OtherListView.Items.Insert(i, lvi);
+
+                        changes++;
+                    }
+                }
+
+                if (isHomebankingShow)
+                {
+                    AddEditForm form = new AddEditForm(Mode.Edit);
+
+                    int i = HomebankingListView.SelectedIndices[0];
+
+                    AddEditForm.addHomebankingEntry.Name = homebankingList[i].Name;
+                    AddEditForm.addHomebankingEntry.CardNumber = homebankingList[i].CardNumber;
+                    AddEditForm.addHomebankingEntry.Date = homebankingList[i].Date;
+                    AddEditForm.addHomebankingEntry.CVC = homebankingList[i].CVC;
+                    AddEditForm.addHomebankingEntry.Phone = homebankingList[i].Phone;
+                    AddEditForm.addHomebankingEntry.Notes = homebankingList[i].Notes;
+
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        homebankingList[i].Name = AddEditForm.addHomebankingEntry.Name;
+                        homebankingList[i].CardNumber = AddEditForm.addHomebankingEntry.CardNumber;
+                        homebankingList[i].Date = AddEditForm.addHomebankingEntry.Date;
+                        homebankingList[i].CVC = AddEditForm.addHomebankingEntry.CVC;
+                        homebankingList[i].Phone = AddEditForm.addHomebankingEntry.Phone;
+                        homebankingList[i].Notes = AddEditForm.addHomebankingEntry.Notes;
+
+                        ListViewItem lvi = new ListViewItem(AddEditForm.addHomebankingEntry.Name);
+                        lvi.SubItems.Add(AddEditForm.addHomebankingEntry.CardNumber);
+                        lvi.SubItems.Add(AddEditForm.addHomebankingEntry.Date);
+                        lvi.SubItems.Add("•••");
+                        lvi.SubItems.Add(AddEditForm.addHomebankingEntry.Phone);
+                        lvi.SubItems.Add(AddEditForm.addHomebankingEntry.Notes);
+
+                        HomebankingListView.Items.RemoveAt(i);
+                        HomebankingListView.Items.Insert(i, lvi);
+
+                        changes++;
+                    }
+                }
+
+                if (isLicensesShow)
+                {
+                    AddEditForm form = new AddEditForm(Mode.Edit);
+
+                    int i = LicensesListView.SelectedIndices[0];
+
+                    AddEditForm.addLicenseEntry.Name = licensesList[i].Name;
+                    AddEditForm.addLicenseEntry.Key = licensesList[i].Key;
+                    AddEditForm.addLicenseEntry.Notes = licensesList[i].Notes;
+
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        licensesList[i].Name = AddEditForm.addLicenseEntry.Name;
+                        licensesList[i].Key = AddEditForm.addLicenseEntry.Key;
+                        licensesList[i].Notes = AddEditForm.addLicenseEntry.Notes;
+
+                        ListViewItem lvi = new ListViewItem(AddEditForm.addLicenseEntry.Name);
+                        lvi.SubItems.Add(AddEditForm.addLicenseEntry.Key);
+                        lvi.SubItems.Add(AddEditForm.addLicenseEntry.Notes);
+
+                        LicensesListView.Items.RemoveAt(i);
+                        LicensesListView.Items.Insert(i, lvi);
+
+                        changes++;
+                    }
                 }
             }
-
-            if (isEmailShow)
+            catch (Exception e)
             {
-                AddEditForm form = new AddEditForm(Mode.Edit);
-
-                int i = EmailListView.SelectedIndices[0];
-
-                AddEditForm.addEntry.Name = emailList[i].Name;
-                AddEditForm.addEntry.Login = emailList[i].Login;
-                AddEditForm.addEntry.Password = emailList[i].Password;
-                AddEditForm.addEntry.Phone = emailList[i].Phone;
-                AddEditForm.addEntry.URL = emailList[i].URL;
-                AddEditForm.addEntry.Notes = emailList[i].Notes;
-
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    emailList[i].Name = AddEditForm.addEntry.Name;
-                    emailList[i].Login = AddEditForm.addEntry.Login;
-                    emailList[i].Password = AddEditForm.addEntry.Password;
-                    emailList[i].Phone = AddEditForm.addEntry.Phone;
-                    emailList[i].URL = AddEditForm.addEntry.URL;
-                    emailList[i].Notes = AddEditForm.addEntry.Notes;
-
-                    ListViewItem lvi = new ListViewItem(AddEditForm.addEntry.Name);
-                    lvi.SubItems.Add(AddEditForm.addEntry.Login);
-                    lvi.SubItems.Add("••••••••••");
-                    lvi.SubItems.Add(AddEditForm.addEntry.Phone);
-                    lvi.SubItems.Add(AddEditForm.addEntry.URL);
-                    lvi.SubItems.Add(AddEditForm.addEntry.Notes);
-
-                    EmailListView.Items.RemoveAt(i);
-                    EmailListView.Items.Insert(i, lvi);
-
-                    changes++;
-                }
-            }
-
-            if (isOtherShow)
-            {
-                AddEditForm form = new AddEditForm(Mode.Edit);
-
-                int i = OtherListView.SelectedIndices[0];
-
-                AddEditForm.addEntry.Name = otherList[i].Name;
-                AddEditForm.addEntry.Login = otherList[i].Login;
-                AddEditForm.addEntry.Password = otherList[i].Password;
-                AddEditForm.addEntry.Phone = otherList[i].Phone;
-                AddEditForm.addEntry.URL = otherList[i].URL;
-                AddEditForm.addEntry.Notes = otherList[i].Notes;
-
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    otherList[i].Name = AddEditForm.addEntry.Name;
-                    otherList[i].Login = AddEditForm.addEntry.Login;
-                    otherList[i].Password = AddEditForm.addEntry.Password;
-                    otherList[i].Phone = AddEditForm.addEntry.Phone;
-                    otherList[i].URL = AddEditForm.addEntry.URL;
-                    otherList[i].Notes = AddEditForm.addEntry.Notes;
-
-                    ListViewItem lvi = new ListViewItem(AddEditForm.addEntry.Name);
-                    lvi.SubItems.Add(AddEditForm.addEntry.Login);
-                    lvi.SubItems.Add("••••••••••");
-                    lvi.SubItems.Add(AddEditForm.addEntry.Phone);
-                    lvi.SubItems.Add(AddEditForm.addEntry.URL);
-                    lvi.SubItems.Add(AddEditForm.addEntry.Notes);
-
-                    OtherListView.Items.RemoveAt(i);
-                    OtherListView.Items.Insert(i, lvi);
-
-                    changes++;
-                }
-            }
-
-            if (isHomebankingShow)
-            {
-                AddEditForm form = new AddEditForm(Mode.Edit);
-
-                int i = HomebankingListView.SelectedIndices[0];
-
-                AddEditForm.addHomebankingEntry.Name = homebankingList[i].Name;
-                AddEditForm.addHomebankingEntry.CardNumber = homebankingList[i].CardNumber;
-                AddEditForm.addHomebankingEntry.Date = homebankingList[i].Date;
-                AddEditForm.addHomebankingEntry.CVC = homebankingList[i].CVC;
-                AddEditForm.addHomebankingEntry.Phone = homebankingList[i].Phone;
-                AddEditForm.addHomebankingEntry.Notes = homebankingList[i].Notes;
-
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    homebankingList[i].Name = AddEditForm.addHomebankingEntry.Name;
-                    homebankingList[i].CardNumber = AddEditForm.addHomebankingEntry.CardNumber;
-                    homebankingList[i].Date = AddEditForm.addHomebankingEntry.Date;
-                    homebankingList[i].CVC = AddEditForm.addHomebankingEntry.CVC;
-                    homebankingList[i].Phone = AddEditForm.addHomebankingEntry.Phone;
-                    homebankingList[i].Notes = AddEditForm.addHomebankingEntry.Notes;
-
-                    ListViewItem lvi = new ListViewItem(AddEditForm.addHomebankingEntry.Name);
-                    lvi.SubItems.Add(AddEditForm.addHomebankingEntry.CardNumber);
-                    lvi.SubItems.Add(AddEditForm.addHomebankingEntry.Date);
-                    lvi.SubItems.Add("•••");
-                    lvi.SubItems.Add(AddEditForm.addHomebankingEntry.Phone);
-                    lvi.SubItems.Add(AddEditForm.addHomebankingEntry.Notes);
-
-                    HomebankingListView.Items.RemoveAt(i);
-                    HomebankingListView.Items.Insert(i, lvi);
-
-                    changes++;
-                }
-            }
-
-            if (isLicensesShow)
-            {
-                AddEditForm form = new AddEditForm(Mode.Edit);
-
-                int i = LicensesListView.SelectedIndices[0];
-
-                AddEditForm.addLicenseEntry.Name = licensesList[i].Name;
-                AddEditForm.addLicenseEntry.Key = licensesList[i].Key;
-                AddEditForm.addLicenseEntry.Notes = licensesList[i].Notes;
-
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    licensesList[i].Name = AddEditForm.addLicenseEntry.Name;
-                    licensesList[i].Key = AddEditForm.addLicenseEntry.Key;
-                    licensesList[i].Notes = AddEditForm.addLicenseEntry.Notes;
-
-                    ListViewItem lvi = new ListViewItem(AddEditForm.addLicenseEntry.Name);
-                    lvi.SubItems.Add(AddEditForm.addLicenseEntry.Key);
-                    lvi.SubItems.Add(AddEditForm.addLicenseEntry.Notes);
-
-                    LicensesListView.Items.RemoveAt(i);
-                    LicensesListView.Items.Insert(i, lvi);
-
-                    changes++;
-                }
+                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                messageBox.ShowDialog();
             }
         }
 
@@ -1091,7 +1100,7 @@ namespace Passave
             }
             catch (Exception e)
             {
-                NewMessageBox messageBox = new NewMessageBox(String.Format("Unknown error: {0}", e.Message));
+                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
                 messageBox.ShowDialog();
             }
         }
@@ -1121,92 +1130,100 @@ namespace Passave
         /// </summary>
         private void Save()
         {
-            using (SaveFileDialog sfd = new SaveFileDialog())
+            try
             {
-                sfd.Title = "Save database";
-                sfd.Filter = "Passave Database (*.psv)|*.psv";
-                
-                if (sfd.ShowDialog() == DialogResult.OK)
+                using (SaveFileDialog sfd = new SaveFileDialog())
                 {
-                    string saved = "";
+                    sfd.Title = "Save database";
+                    sfd.Filter = "Passave Database (*.psv)|*.psv";
 
-                    if (SettingsForm.language == Language.English)
-                        saved += "ENGLISH\n";
-                    if (SettingsForm.language == Language.Russian)
-                        saved += "RUSSIAN\n";
-
-                    if (theme == Theme.Forest)
-                        saved += "FOREST\n";
-                    if (theme == Theme.Desert)
-                        saved += "DESERT\n";
-                    if (theme == Theme.Mountains)
-                        saved += "MOUNTAINS\n";
-                    if (theme == Theme.City)
-                        saved += "CITY\n";
-                    if (theme == Theme.Sunset)
-                        saved += "SUNSET\n";
-
-                    saved += "SOCIAL_NETWORK\n";
-                    foreach (Entry item in socialNetworkList)
+                    if (sfd.ShowDialog() == DialogResult.OK)
                     {
-                        saved += item.Name + '\n';
-                        saved += item.Login + '\n';
-                        saved += item.Password + '\n';
-                        saved += item.Phone + '\n';
-                        saved += item.URL + '\n';
-                        saved += item.Notes + '\n';
-                    }
+                        string saved = "";
 
-                    saved += "EMAIL\n";
-                    foreach (Entry item in emailList)
-                    {
-                        saved += item.Name + '\n';
-                        saved += item.Login + '\n';
-                        saved += item.Password + '\n';
-                        saved += item.Phone + '\n';
-                        saved += item.URL + '\n';
-                        saved += item.Notes + '\n';
-                    }
+                        if (SettingsForm.language == Language.English)
+                            saved += "ENGLISH\n";
+                        if (SettingsForm.language == Language.Russian)
+                            saved += "RUSSIAN\n";
 
-                    saved += "HOMEBANKING\n";
-                    foreach (BankEntry item in homebankingList)
-                    {
-                        saved += item.Name + '\n';
-                        saved += item.CardNumber + '\n';
-                        saved += item.Date + '\n';
-                        saved += item.CVC + '\n';
-                        saved += item.Phone + '\n';
-                        saved += item.Notes + '\n';
-                    }
+                        if (theme == Theme.Forest)
+                            saved += "FOREST\n";
+                        if (theme == Theme.Desert)
+                            saved += "DESERT\n";
+                        if (theme == Theme.Mountains)
+                            saved += "MOUNTAINS\n";
+                        if (theme == Theme.City)
+                            saved += "CITY\n";
+                        if (theme == Theme.Sunset)
+                            saved += "SUNSET\n";
 
-                    saved += "LICENSES\n";
-                    foreach (LicenseEntry item in licensesList)
-                    {
-                        saved += item.Name + '\n';
-                        saved += item.Key + '\n';
-                        saved += item.Notes + '\n';
-                    }
+                        saved += "SOCIAL_NETWORK\n";
+                        foreach (Entry item in socialNetworkList)
+                        {
+                            saved += item.Name + '\n';
+                            saved += item.Login + '\n';
+                            saved += item.Password + '\n';
+                            saved += item.Phone + '\n';
+                            saved += item.URL + '\n';
+                            saved += item.Notes + '\n';
+                        }
 
-                    saved += "OTHER\n";
-                    foreach (Entry item in otherList)
-                    {
-                        saved += item.Name + '\n';
-                        saved += item.Login + '\n';
-                        saved += item.Password + '\n';
-                        saved += item.Phone + '\n';
-                        saved += item.URL + '\n';
-                        saved += item.Notes + '\n';
-                    }
+                        saved += "EMAIL\n";
+                        foreach (Entry item in emailList)
+                        {
+                            saved += item.Name + '\n';
+                            saved += item.Login + '\n';
+                            saved += item.Password + '\n';
+                            saved += item.Phone + '\n';
+                            saved += item.URL + '\n';
+                            saved += item.Notes + '\n';
+                        }
 
-                    // TODO: ENCRYPTION HERE
+                        saved += "HOMEBANKING\n";
+                        foreach (BankEntry item in homebankingList)
+                        {
+                            saved += item.Name + '\n';
+                            saved += item.CardNumber + '\n';
+                            saved += item.Date + '\n';
+                            saved += item.CVC + '\n';
+                            saved += item.Phone + '\n';
+                            saved += item.Notes + '\n';
+                        }
 
-                    using (StreamWriter sw = new StreamWriter(sfd.FileName))
-                    {
-                        sw.Write(saved);
+                        saved += "LICENSES\n";
+                        foreach (LicenseEntry item in licensesList)
+                        {
+                            saved += item.Name + '\n';
+                            saved += item.Key + '\n';
+                            saved += item.Notes + '\n';
+                        }
+
+                        saved += "OTHER\n";
+                        foreach (Entry item in otherList)
+                        {
+                            saved += item.Name + '\n';
+                            saved += item.Login + '\n';
+                            saved += item.Password + '\n';
+                            saved += item.Phone + '\n';
+                            saved += item.URL + '\n';
+                            saved += item.Notes + '\n';
+                        }
+
+                        // TODO: ENCRYPTION HERE
+
+                        using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                        {
+                            sw.Write(saved);
+                        }
                     }
                 }
+                changes = 0;
             }
-            changes = 0;
+            catch (Exception e)
+            {
+                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                messageBox.ShowDialog();
+            }
         }
 
         /// <summary>
@@ -1214,190 +1231,198 @@ namespace Passave
         /// </summary>
         private void Open()
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            try
             {
-                ofd.Title = "Save database";
-                ofd.Filter = "Passave Database (*.psv)|*.psv";
-
-                if (ofd.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog ofd = new OpenFileDialog())
                 {
-                    using (StreamReader sr = new StreamReader(ofd.FileName))
+                    ofd.Title = "Save database";
+                    ofd.Filter = "Passave Database (*.psv)|*.psv";
+
+                    if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        Entry tempEntry = new Entry();
-                        BankEntry tempBankEntry = new BankEntry();
-                        LicenseEntry tempLicenseEntry = new LicenseEntry();
-
-                        // TODO: DECRYPTION HERE
-
-                        bool isFirst = true;
-                        string readed = sr.ReadLine();
-
-                        if (readed == "ENGLISH")
-                            SettingsForm.language = Language.English;
-                        if (readed == "RUSSIAN")
-                            SettingsForm.language = Language.Russian;
-
-                        readed = sr.ReadLine();
-
-                        if (readed == "FOREST")
+                        using (StreamReader sr = new StreamReader(ofd.FileName))
                         {
-                            theme = Theme.Forest;
-                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+                            Entry tempEntry = new Entry();
+                            BankEntry tempBankEntry = new BankEntry();
+                            LicenseEntry tempLicenseEntry = new LicenseEntry();
+
+                            // TODO: DECRYPTION HERE
+
+                            bool isFirst = true;
+                            string readed = sr.ReadLine();
+
+                            if (readed == "ENGLISH")
+                                SettingsForm.language = Language.English;
+                            if (readed == "RUSSIAN")
+                                SettingsForm.language = Language.Russian;
+
+                            readed = sr.ReadLine();
+
+                            if (readed == "FOREST")
+                            {
+                                theme = Theme.Forest;
+                                MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+                            }
+                            if (readed == "DESERT")
+                            {
+                                theme = Theme.Desert;
+                                MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
+                            }
+                            if (readed == "MOUNTAINS")
+                            {
+                                theme = Theme.Mountains;
+                                MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
+                            }
+                            if (readed == "CITY")
+                            {
+                                theme = Theme.City;
+                                MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
+                            }
+                            if (readed == "SUNSET")
+                            {
+                                theme = Theme.Sunset;
+                                MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+                            }
+
+                            readed = sr.ReadLine();
+                            while (readed != "EMAIL")
+                            {
+                                if (isFirst) readed = sr.ReadLine();
+                                if (readed == "EMAIL") break;
+                                tempEntry.Name = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Login = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Password = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Phone = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.URL = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Notes = readed;
+
+                                socialNetworkList.Add(tempEntry);
+                                readed = sr.ReadLine();
+                                isFirst = false;
+                                tempEntry = new Entry();
+                            }
+
+                            isFirst = true;
+                            while (readed != "HOMEBANKING")
+                            {
+                                if (isFirst) readed = sr.ReadLine();
+                                if (readed == "HOMEBANKING") break;
+                                tempEntry.Name = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Login = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Password = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Phone = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.URL = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Notes = readed;
+
+                                emailList.Add(tempEntry);
+                                readed = sr.ReadLine();
+                                isFirst = false;
+                                tempEntry = new Entry();
+                            }
+
+                            isFirst = true;
+                            while (readed != "LICENSES")
+                            {
+                                if (isFirst) readed = sr.ReadLine();
+                                if (readed == "LICENSES") break;
+                                tempBankEntry.Name = readed;
+
+                                readed = sr.ReadLine();
+                                tempBankEntry.CardNumber = readed;
+
+                                readed = sr.ReadLine();
+                                tempBankEntry.Date = readed;
+
+                                readed = sr.ReadLine();
+                                tempBankEntry.CVC = readed;
+
+                                readed = sr.ReadLine();
+                                tempBankEntry.Phone = readed;
+
+                                readed = sr.ReadLine();
+                                tempBankEntry.Notes = readed;
+
+                                homebankingList.Add(tempBankEntry);
+                                readed = sr.ReadLine();
+                                isFirst = false;
+                                tempBankEntry = new BankEntry();
+                            }
+
+                            isFirst = true;
+                            while (readed != "OTHER")
+                            {
+                                if (isFirst) readed = sr.ReadLine();
+                                if (readed == "OTHER") break;
+                                tempLicenseEntry.Name = readed;
+
+                                readed = sr.ReadLine();
+                                tempLicenseEntry.Key = readed;
+
+                                readed = sr.ReadLine();
+                                tempLicenseEntry.Notes = readed;
+
+                                licensesList.Add(tempLicenseEntry);
+                                readed = sr.ReadLine();
+                                isFirst = false;
+                                tempLicenseEntry = new LicenseEntry();
+                            }
+
+                            isFirst = true;
+                            while (!sr.EndOfStream)
+                            {
+                                if (isFirst) readed = sr.ReadLine();
+                                tempEntry.Name = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Login = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Password = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Phone = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.URL = readed;
+
+                                readed = sr.ReadLine();
+                                tempEntry.Notes = readed;
+
+                                otherList.Add(tempEntry);
+                                readed = sr.ReadLine();
+                                isFirst = false;
+                                tempEntry = new Entry();
+                            }
+
+                            FullListView();
                         }
-                        if (readed == "DESERT")
-                        {
-                            theme = Theme.Desert;
-                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
-                        }
-                        if (readed == "MOUNTAINS")
-                        {
-                            theme = Theme.Mountains;
-                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
-                        }
-                        if (readed == "CITY")
-                        {
-                            theme = Theme.City;
-                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
-                        }
-                        if (readed == "SUNSET")
-                        {
-                            theme = Theme.Sunset;
-                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
-                        }
-
-                        readed = sr.ReadLine();
-                        while (readed != "EMAIL")
-                        {
-                            if (isFirst) readed = sr.ReadLine();
-                            if (readed == "EMAIL") break;
-                            tempEntry.Name = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Login = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Password = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Phone = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.URL = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Notes = readed;
-
-                            socialNetworkList.Add(tempEntry);
-                            readed = sr.ReadLine();
-                            isFirst = false;
-                            tempEntry = new Entry();
-                        }
-
-                        isFirst = true;
-                        while (readed != "HOMEBANKING")
-                        {
-                            if (isFirst) readed = sr.ReadLine();
-                            if (readed == "HOMEBANKING") break;
-                            tempEntry.Name = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Login = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Password = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Phone = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.URL = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Notes = readed;
-
-                            emailList.Add(tempEntry);
-                            readed = sr.ReadLine();
-                            isFirst = false;
-                            tempEntry = new Entry();
-                        }
-
-                        isFirst = true;
-                        while (readed != "LICENSES")
-                        {
-                            if (isFirst) readed = sr.ReadLine();
-                            if (readed == "LICENSES") break;
-                            tempBankEntry.Name = readed;
-
-                            readed = sr.ReadLine();
-                            tempBankEntry.CardNumber = readed;
-
-                            readed = sr.ReadLine();
-                            tempBankEntry.Date = readed;
-
-                            readed = sr.ReadLine();
-                            tempBankEntry.CVC = readed;
-
-                            readed = sr.ReadLine();
-                            tempBankEntry.Phone = readed;
-
-                            readed = sr.ReadLine();
-                            tempBankEntry.Notes = readed;
-
-                            homebankingList.Add(tempBankEntry);
-                            readed = sr.ReadLine();
-                            isFirst = false;
-                            tempBankEntry = new BankEntry();
-                        }
-
-                        isFirst = true;
-                        while (readed != "OTHER")
-                        {
-                            if (isFirst) readed = sr.ReadLine();
-                            if (readed == "OTHER") break;
-                            tempLicenseEntry.Name = readed;
-
-                            readed = sr.ReadLine();
-                            tempLicenseEntry.Key = readed;
-
-                            readed = sr.ReadLine();
-                            tempLicenseEntry.Notes = readed;
-
-                            licensesList.Add(tempLicenseEntry);
-                            readed = sr.ReadLine();
-                            isFirst = false;
-                            tempLicenseEntry = new LicenseEntry();
-                        }
-
-                        isFirst = true;
-                        while (!sr.EndOfStream)
-                        {
-                            if (isFirst) readed = sr.ReadLine();
-                            tempEntry.Name = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Login = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Password = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Phone = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.URL = readed;
-
-                            readed = sr.ReadLine();
-                            tempEntry.Notes = readed;
-
-                            otherList.Add(tempEntry);
-                            readed = sr.ReadLine();
-                            isFirst = false;
-                            tempEntry = new Entry();
-                        }
-
-                        FullListView();
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                messageBox.ShowDialog();
             }
         }
 
