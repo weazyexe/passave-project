@@ -45,6 +45,12 @@ namespace Passave
             //// 1 - bar (name), 2 - upper bar, 3 - ?, 4 - primary color tabpage, 5 - text color (theme)
             //materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey900, Primary.Grey900, Primary.Green400, Accent.Blue400, TextShade.BLACK);
         }
+
+        public MainForm(string caller)
+        {
+            InitializeComponent();
+            OpenFromSystem(caller);
+        }
         #endregion
 
         #region GUI
@@ -705,14 +711,14 @@ namespace Passave
                 if (dr == DialogResult.Yes)
                 {
                     Save();
-                    Open();
+                    OpenFromFile();
                 }
                 else if (dr == DialogResult.No)
                 {
-                    Open();
+                    OpenFromFile();
                 }
             }
-            else Open();
+            else OpenFromFile();
         }
 
 
@@ -1229,7 +1235,7 @@ namespace Passave
         /// <summary>
         /// Open database from file
         /// </summary>
-        private void Open()
+        private void OpenFromFile()
         {
             try
             {
@@ -1423,6 +1429,186 @@ namespace Passave
             {
                 NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
                 messageBox.ShowDialog();
+            }
+        }
+
+        private void OpenFromSystem(string file)
+        {
+            using (StreamReader sr = new StreamReader(file))
+            {
+                Entry tempEntry = new Entry();
+                BankEntry tempBankEntry = new BankEntry();
+                LicenseEntry tempLicenseEntry = new LicenseEntry();
+
+                // TODO: DECRYPTION HERE
+
+                bool isFirst = true;
+                string readed = sr.ReadLine();
+
+                if (readed == "ENGLISH")
+                    SettingsForm.language = Language.English;
+                if (readed == "RUSSIAN")
+                    SettingsForm.language = Language.Russian;
+
+                readed = sr.ReadLine();
+
+                if (readed == "FOREST")
+                {
+                    theme = Theme.Forest;
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+                }
+                if (readed == "DESERT")
+                {
+                    theme = Theme.Desert;
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
+                }
+                if (readed == "MOUNTAINS")
+                {
+                    theme = Theme.Mountains;
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
+                }
+                if (readed == "CITY")
+                {
+                    theme = Theme.City;
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
+                }
+                if (readed == "SUNSET")
+                {
+                    theme = Theme.Sunset;
+                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+                }
+
+                readed = sr.ReadLine();
+                while (readed != "EMAIL")
+                {
+                    if (isFirst) readed = sr.ReadLine();
+                    if (readed == "EMAIL") break;
+                    tempEntry.Name = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Login = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Password = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Phone = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.URL = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Notes = readed;
+
+                    socialNetworkList.Add(tempEntry);
+                    readed = sr.ReadLine();
+                    isFirst = false;
+                    tempEntry = new Entry();
+                }
+
+                isFirst = true;
+                while (readed != "HOMEBANKING")
+                {
+                    if (isFirst) readed = sr.ReadLine();
+                    if (readed == "HOMEBANKING") break;
+                    tempEntry.Name = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Login = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Password = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Phone = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.URL = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Notes = readed;
+
+                    emailList.Add(tempEntry);
+                    readed = sr.ReadLine();
+                    isFirst = false;
+                    tempEntry = new Entry();
+                }
+
+                isFirst = true;
+                while (readed != "LICENSES")
+                {
+                    if (isFirst) readed = sr.ReadLine();
+                    if (readed == "LICENSES") break;
+                    tempBankEntry.Name = readed;
+
+                    readed = sr.ReadLine();
+                    tempBankEntry.CardNumber = readed;
+
+                    readed = sr.ReadLine();
+                    tempBankEntry.Date = readed;
+
+                    readed = sr.ReadLine();
+                    tempBankEntry.CVC = readed;
+
+                    readed = sr.ReadLine();
+                    tempBankEntry.Phone = readed;
+
+                    readed = sr.ReadLine();
+                    tempBankEntry.Notes = readed;
+
+                    homebankingList.Add(tempBankEntry);
+                    readed = sr.ReadLine();
+                    isFirst = false;
+                    tempBankEntry = new BankEntry();
+                }
+
+                isFirst = true;
+                while (readed != "OTHER")
+                {
+                    if (isFirst) readed = sr.ReadLine();
+                    if (readed == "OTHER") break;
+                    tempLicenseEntry.Name = readed;
+
+                    readed = sr.ReadLine();
+                    tempLicenseEntry.Key = readed;
+
+                    readed = sr.ReadLine();
+                    tempLicenseEntry.Notes = readed;
+
+                    licensesList.Add(tempLicenseEntry);
+                    readed = sr.ReadLine();
+                    isFirst = false;
+                    tempLicenseEntry = new LicenseEntry();
+                }
+
+                isFirst = true;
+                while (!sr.EndOfStream)
+                {
+                    if (isFirst) readed = sr.ReadLine();
+                    tempEntry.Name = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Login = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Password = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Phone = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.URL = readed;
+
+                    readed = sr.ReadLine();
+                    tempEntry.Notes = readed;
+
+                    otherList.Add(tempEntry);
+                    readed = sr.ReadLine();
+                    isFirst = false;
+                    tempEntry = new Entry();
+                }
+
+                FullListView();
             }
         }
 

@@ -179,6 +179,7 @@
             this.Controls.Add(this.BorderPanel);
             this.Controls.Add(this.MenuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NewMessageBox";

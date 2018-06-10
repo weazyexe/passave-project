@@ -38,6 +38,8 @@
             this.mDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.EnglishButton = new System.Windows.Forms.Button();
             this.RussianButton = new System.Windows.Forms.Button();
+            this.AboutProgramLabel = new System.Windows.Forms.Label();
+            this.AboutDevLink = new System.Windows.Forms.LinkLabel();
             this.LogoPicture = new System.Windows.Forms.PictureBox();
             this.SunsetButton = new System.Windows.Forms.PictureBox();
             this.CityButton = new System.Windows.Forms.PictureBox();
@@ -49,8 +51,6 @@
             this.AboutButton = new System.Windows.Forms.PictureBox();
             this.SecureButton = new System.Windows.Forms.PictureBox();
             this.UIButton = new System.Windows.Forms.PictureBox();
-            this.AboutProgramLabel = new System.Windows.Forms.Label();
-            this.AboutDevLink = new System.Windows.Forms.LinkLabel();
             this.BorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).BeginInit();
@@ -184,6 +184,34 @@
             this.RussianButton.Text = "РУССКИЙ";
             this.RussianButton.UseVisualStyleBackColor = true;
             this.RussianButton.Click += new System.EventHandler(this.RussianButton_Click);
+            // 
+            // AboutProgramLabel
+            // 
+            this.AboutProgramLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutProgramLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AboutProgramLabel.Location = new System.Drawing.Point(269, 253);
+            this.AboutProgramLabel.Name = "AboutProgramLabel";
+            this.AboutProgramLabel.Size = new System.Drawing.Size(413, 99);
+            this.AboutProgramLabel.TabIndex = 25;
+            this.AboutProgramLabel.Text = "Passave - simple and beautiful password manager\r\nAn open source project (dev link" +
+    " is clickable to github)\r\nCompilation date: 08.06.2018";
+            this.AboutProgramLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AboutDevLink
+            // 
+            this.AboutDevLink.ActiveLinkColor = System.Drawing.Color.Gray;
+            this.AboutDevLink.AutoSize = true;
+            this.AboutDevLink.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutDevLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.AboutDevLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.AboutDevLink.Location = new System.Drawing.Point(401, 365);
+            this.AboutDevLink.Name = "AboutDevLink";
+            this.AboutDevLink.Size = new System.Drawing.Size(163, 20);
+            this.AboutDevLink.TabIndex = 26;
+            this.AboutDevLink.TabStop = true;
+            this.AboutDevLink.Text = "Developer: weazy.exe";
+            this.AboutDevLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AboutDevLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutDevLink_LinkClicked);
             // 
             // LogoPicture
             // 
@@ -326,34 +354,6 @@
             this.UIButton.MouseLeave += new System.EventHandler(this.UIButton_MouseLeave);
             this.UIButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UIButton_MouseMove);
             // 
-            // AboutProgramLabel
-            // 
-            this.AboutProgramLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AboutProgramLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AboutProgramLabel.Location = new System.Drawing.Point(269, 253);
-            this.AboutProgramLabel.Name = "AboutProgramLabel";
-            this.AboutProgramLabel.Size = new System.Drawing.Size(413, 99);
-            this.AboutProgramLabel.TabIndex = 25;
-            this.AboutProgramLabel.Text = "Passave - simple and beautiful password manager\r\nAn open source project (dev link" +
-    " is clickable to github)\r\nCompilation date: 08.06.2018";
-            this.AboutProgramLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // AboutDevLink
-            // 
-            this.AboutDevLink.ActiveLinkColor = System.Drawing.Color.Gray;
-            this.AboutDevLink.AutoSize = true;
-            this.AboutDevLink.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AboutDevLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.AboutDevLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.AboutDevLink.Location = new System.Drawing.Point(401, 365);
-            this.AboutDevLink.Name = "AboutDevLink";
-            this.AboutDevLink.Size = new System.Drawing.Size(163, 20);
-            this.AboutDevLink.TabIndex = 26;
-            this.AboutDevLink.TabStop = true;
-            this.AboutDevLink.Text = "Developer: weazy.exe";
-            this.AboutDevLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AboutDevLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutDevLink_LinkClicked);
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +377,7 @@
             this.Controls.Add(this.BorderPanel);
             this.Controls.Add(this.MenuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
