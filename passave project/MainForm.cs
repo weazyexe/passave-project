@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using MaterialSkin;
@@ -18,6 +12,7 @@ namespace Passave
 
     public partial class MainForm : Form
     {
+        #region Fields
         List<Entry> socialNetworkList = new List<Entry>();
         List<Entry> emailList = new List<Entry>();
         List<BankEntry> homebankingList = new List<BankEntry>();
@@ -29,7 +24,9 @@ namespace Passave
         public static int changes = 0;
 
         public static Theme theme = Theme.Desert;
+        #endregion
 
+        #region Constructor
         public MainForm()
         {
             InitializeComponent();
@@ -48,6 +45,7 @@ namespace Passave
             //// 1 - bar (name), 2 - upper bar, 3 - ?, 4 - primary color tabpage, 5 - text color (theme)
             //materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey900, Primary.Grey900, Primary.Green400, Accent.Blue400, TextShade.BLACK);
         }
+        #endregion
 
         #region GUI
 
@@ -232,16 +230,6 @@ namespace Passave
             MinimizeButton.Image = Properties.Resources.minimize_button_default;
         }
 
-        private void SearchButton_MouseMove(object sender, MouseEventArgs e)
-        {
-            SearchButton.Image = Properties.Resources.search_button_activated;
-        }
-
-        private void SearchButton_MouseLeave(object sender, EventArgs e)
-        {
-            SearchButton.Image = Properties.Resources.search_button_default;
-        }
-
         private void SaveButton_MouseMove(object sender, MouseEventArgs e)
         {
             SaveButton.Image = Properties.Resources.save_button_activated;
@@ -379,6 +367,7 @@ namespace Passave
 
         #endregion
 
+        #region UI handling
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (changes != 0)
@@ -746,6 +735,17 @@ namespace Passave
         }
 
 
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        #endregion
+
+        #region Actions w/ entries & database
+        /// <summary>
+        /// Add entry
+        /// </summary>
         private void Add()
         {
             try
@@ -809,6 +809,9 @@ namespace Passave
             }
         }
 
+        /// <summary>
+        /// Edit entry
+        /// </summary>
         private void Edit()
         {
             if (isSNShow)
@@ -983,6 +986,9 @@ namespace Passave
             }
         }
 
+        /// <summary>
+        /// Delete entry
+        /// </summary>
         private void Delete()
         {
             try
@@ -1090,6 +1096,9 @@ namespace Passave
             }
         }
 
+        /// <summary>
+        /// Create new database
+        /// </summary>
         private void New()
         {
             socialNetworkList.Clear();
@@ -1107,6 +1116,9 @@ namespace Passave
             changes = 0;
         }
 
+        /// <summary>
+        /// Save database to file
+        /// </summary>
         private void Save()
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
@@ -1197,6 +1209,9 @@ namespace Passave
             changes = 0;
         }
 
+        /// <summary>
+        /// Open database from file
+        /// </summary>
         private void Open()
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -1380,78 +1395,217 @@ namespace Passave
                             tempEntry = new Entry();
                         }
 
-                        for (int i = 0; i < socialNetworkList.Count; i++)
+                        FullListView();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Search entry. Searched string - SearchTextBox.Text
+        /// </summary>
+        private void Search()
+        {
+            if (SearchTextBox.Text == "")
+            {
+                SNListView.Items.Clear();
+                EmailListView.Items.Clear();
+                HomebankingListView.Items.Clear();
+                LicensesListView.Items.Clear();
+                OtherListView.Items.Clear();
+
+                FullListView();
+            }
+            else
+            {
+                if (isSNShow)
+                {
+                    SNListView.Items.Clear();
+
+                    foreach (Entry entry in socialNetworkList)
+                    {
+                        if (entry.Name.Contains(SearchTextBox.Text) || entry.Login.Contains(SearchTextBox.Text) || entry.Phone.Contains(SearchTextBox.Text)
+                            || entry.URL.Contains(SearchTextBox.Text) || entry.Notes.Contains(SearchTextBox.Text))
                         {
-                            ListViewItem lvi = new ListViewItem(socialNetworkList[i].Name);
-                            lvi.SubItems.Add(socialNetworkList[i].Login);
+                            ListViewItem lvi = new ListViewItem(entry.Name);
+                            lvi.SubItems.Add(entry.Login);
                             lvi.SubItems.Add("••••••••••");
-                            lvi.SubItems.Add(socialNetworkList[i].Phone);
-                            lvi.SubItems.Add(socialNetworkList[i].URL);
-                            lvi.SubItems.Add(socialNetworkList[i].Notes);
+                            lvi.SubItems.Add(entry.Phone);
+                            lvi.SubItems.Add(entry.URL);
+                            lvi.SubItems.Add(entry.Notes);
 
                             SNListView.Items.Add(lvi);
                         }
+                    }
+                }
 
-                        for (int i = 0; i < emailList.Count; i++)
+                if (isEmailShow)
+                {
+                    EmailListView.Items.Clear();
+
+                    foreach (Entry entry in emailList)
+                    {
+                        if (entry.Name.Contains(SearchTextBox.Text) || entry.Login.Contains(SearchTextBox.Text) || entry.Phone.Contains(SearchTextBox.Text)
+                            || entry.URL.Contains(SearchTextBox.Text) || entry.Notes.Contains(SearchTextBox.Text))
                         {
-                            ListViewItem lvi = new ListViewItem(emailList[i].Name);
-                            lvi.SubItems.Add(emailList[i].Login);
+                            ListViewItem lvi = new ListViewItem(entry.Name);
+                            lvi.SubItems.Add(entry.Login);
                             lvi.SubItems.Add("••••••••••");
-                            lvi.SubItems.Add(emailList[i].Phone);
-                            lvi.SubItems.Add(emailList[i].URL);
-                            lvi.SubItems.Add(emailList[i].Notes);
+                            lvi.SubItems.Add(entry.Phone);
+                            lvi.SubItems.Add(entry.URL);
+                            lvi.SubItems.Add(entry.Notes);
 
                             EmailListView.Items.Add(lvi);
                         }
+                    }
+                }
 
-                        for (int i = 0; i < homebankingList.Count; i++)
+                if (isOtherShow)
+                {
+                    OtherListView.Items.Clear();
+
+                    foreach (Entry entry in otherList)
+                    {
+                        if (entry.Name.Contains(SearchTextBox.Text) || entry.Login.Contains(SearchTextBox.Text) || entry.Phone.Contains(SearchTextBox.Text)
+                            || entry.URL.Contains(SearchTextBox.Text) || entry.Notes.Contains(SearchTextBox.Text))
                         {
-                            ListViewItem lvi = new ListViewItem(homebankingList[i].Name);
-                            lvi.SubItems.Add(homebankingList[i].CardNumber);
-                            lvi.SubItems.Add(homebankingList[i].Date);
-                            lvi.SubItems.Add("•••");
-                            lvi.SubItems.Add(homebankingList[i].Phone);
-                            lvi.SubItems.Add(homebankingList[i].Notes);
-
-                            HomebankingListView.Items.Add(lvi);
-                        }
-
-                        for (int i = 0; i < licensesList.Count; i++)
-                        {
-                            ListViewItem lvi = new ListViewItem(licensesList[i].Name);
-                            lvi.SubItems.Add(licensesList[i].Key);
-                            lvi.SubItems.Add(licensesList[i].Notes);
-
-                            LicensesListView.Items.Add(lvi);
-                        }
-
-                        for (int i = 0; i < otherList.Count; i++)
-                        {
-                            ListViewItem lvi = new ListViewItem(otherList[i].Name);
-                            lvi.SubItems.Add(otherList[i].Login);
+                            ListViewItem lvi = new ListViewItem(entry.Name);
+                            lvi.SubItems.Add(entry.Login);
                             lvi.SubItems.Add("••••••••••");
-                            lvi.SubItems.Add(otherList[i].Phone);
-                            lvi.SubItems.Add(otherList[i].URL);
-                            lvi.SubItems.Add(otherList[i].Notes);
+                            lvi.SubItems.Add(entry.Phone);
+                            lvi.SubItems.Add(entry.URL);
+                            lvi.SubItems.Add(entry.Notes);
 
                             OtherListView.Items.Add(lvi);
                         }
                     }
                 }
+
+                if (isHomebankingShow)
+                {
+                    HomebankingListView.Items.Clear();
+
+                    foreach (BankEntry entry in homebankingList)
+                    {
+                        if (entry.Name.Contains(SearchTextBox.Text) || entry.CardNumber.Contains(SearchTextBox.Text)
+                            || entry.Date.Contains(SearchTextBox.Text) || entry.Phone.Contains(SearchTextBox.Text) || entry.Notes.Contains(SearchTextBox.Text))
+                        {
+                            ListViewItem lvi = new ListViewItem(entry.Name);
+                            lvi.SubItems.Add(entry.CardNumber);
+                            lvi.SubItems.Add(entry.Date);
+                            lvi.SubItems.Add("•••");
+                            lvi.SubItems.Add(entry.Phone);
+                            lvi.SubItems.Add(entry.Notes);
+
+                            HomebankingListView.Items.Add(lvi);
+                        }
+                    }
+                }
+
+                if (isLicensesShow)
+                {
+                    LicensesListView.Items.Clear();
+
+                    foreach (LicenseEntry entry in licensesList)
+                    {
+                        if (entry.Name.Contains(SearchTextBox.Text) || entry.Key.Contains(SearchTextBox.Text) || entry.Notes.Contains(SearchTextBox.Text))
+                        {
+                            ListViewItem lvi = new ListViewItem(entry.Name);
+                            lvi.SubItems.Add(entry.Key);
+                            lvi.SubItems.Add(entry.Notes);
+
+                            LicensesListView.Items.Add(lvi);
+                        }
+                    }
+                }
             }
         }
+
+        /// <summary>
+        /// Full all tables from lists
+        /// </summary>
+        private void FullListView()
+        {
+            for (int i = 0; i < socialNetworkList.Count; i++)
+            {
+                ListViewItem lvi = new ListViewItem(socialNetworkList[i].Name);
+                lvi.SubItems.Add(socialNetworkList[i].Login);
+                lvi.SubItems.Add("••••••••••");
+                lvi.SubItems.Add(socialNetworkList[i].Phone);
+                lvi.SubItems.Add(socialNetworkList[i].URL);
+                lvi.SubItems.Add(socialNetworkList[i].Notes);
+
+                SNListView.Items.Add(lvi);
+            }
+
+            for (int i = 0; i < emailList.Count; i++)
+            {
+                ListViewItem lvi = new ListViewItem(emailList[i].Name);
+                lvi.SubItems.Add(emailList[i].Login);
+                lvi.SubItems.Add("••••••••••");
+                lvi.SubItems.Add(emailList[i].Phone);
+                lvi.SubItems.Add(emailList[i].URL);
+                lvi.SubItems.Add(emailList[i].Notes);
+
+                EmailListView.Items.Add(lvi);
+            }
+
+            for (int i = 0; i < homebankingList.Count; i++)
+            {
+                ListViewItem lvi = new ListViewItem(homebankingList[i].Name);
+                lvi.SubItems.Add(homebankingList[i].CardNumber);
+                lvi.SubItems.Add(homebankingList[i].Date);
+                lvi.SubItems.Add("•••");
+                lvi.SubItems.Add(homebankingList[i].Phone);
+                lvi.SubItems.Add(homebankingList[i].Notes);
+
+                HomebankingListView.Items.Add(lvi);
+            }
+
+            for (int i = 0; i < licensesList.Count; i++)
+            {
+                ListViewItem lvi = new ListViewItem(licensesList[i].Name);
+                lvi.SubItems.Add(licensesList[i].Key);
+                lvi.SubItems.Add(licensesList[i].Notes);
+
+                LicensesListView.Items.Add(lvi);
+            }
+
+            for (int i = 0; i < otherList.Count; i++)
+            {
+                ListViewItem lvi = new ListViewItem(otherList[i].Name);
+                lvi.SubItems.Add(otherList[i].Login);
+                lvi.SubItems.Add("••••••••••");
+                lvi.SubItems.Add(otherList[i].Phone);
+                lvi.SubItems.Add(otherList[i].URL);
+                lvi.SubItems.Add(otherList[i].Notes);
+
+                OtherListView.Items.Add(lvi);
+            }
+        }
+
+        #endregion
     }
 
+    /// <summary>
+    /// For add/edit form
+    /// </summary>
     public enum Mode
     {
         Add, Edit
     }
 
+    /// <summary>
+    /// UI theme
+    /// </summary>
     public enum Theme
     {
         Forest, Desert, Mountains, City, Sunset
     }
 
+    /// <summary>
+    /// App language
+    /// </summary>
     public enum Language
     {
         Russian, English

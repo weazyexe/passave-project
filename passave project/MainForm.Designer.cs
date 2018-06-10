@@ -44,7 +44,6 @@
             this.CopyLoginButton = new System.Windows.Forms.ToolStripMenuItem();
             this.CopyPasswordButton = new System.Windows.Forms.ToolStripMenuItem();
             this.BorderPanel = new System.Windows.Forms.Panel();
-            this.SearchButton = new System.Windows.Forms.PictureBox();
             this.SearchTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SaveButton = new System.Windows.Forms.PictureBox();
             this.OpenButton = new System.Windows.Forms.PictureBox();
@@ -98,7 +97,6 @@
             this.SNButton = new System.Windows.Forms.PictureBox();
             this.TableContextMenu.SuspendLayout();
             this.BorderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewButton)).BeginInit();
@@ -228,7 +226,6 @@
             // 
             // BorderPanel
             // 
-            this.BorderPanel.Controls.Add(this.SearchButton);
             this.BorderPanel.Controls.Add(this.SearchTextBox);
             this.BorderPanel.Controls.Add(this.SaveButton);
             this.BorderPanel.Controls.Add(this.OpenButton);
@@ -241,19 +238,6 @@
             this.BorderPanel.Size = new System.Drawing.Size(720, 59);
             this.BorderPanel.TabIndex = 3;
             this.BorderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BorderPanel_MouseDown);
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.ErrorImage = null;
-            this.SearchButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchButton.Image")));
-            this.SearchButton.Location = new System.Drawing.Point(311, 12);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(30, 35);
-            this.SearchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SearchButton.TabIndex = 6;
-            this.SearchButton.TabStop = false;
-            this.SearchButton.MouseLeave += new System.EventHandler(this.SearchButton_MouseLeave);
-            this.SearchButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SearchButton_MouseMove);
             // 
             // SearchTextBox
             // 
@@ -271,6 +255,7 @@
             this.SearchTextBox.TabIndex = 5;
             this.SearchTextBox.TabStop = false;
             this.SearchTextBox.UseSystemPasswordChar = false;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // SaveButton
             // 
@@ -760,7 +745,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.TableContextMenu.ResumeLayout(false);
             this.BorderPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SearchButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewButton)).EndInit();
@@ -791,7 +775,6 @@
         private System.Windows.Forms.Panel BorderPanel;
         private System.Windows.Forms.PictureBox MinimizeButton;
         private System.Windows.Forms.PictureBox CloseButton;
-        private System.Windows.Forms.PictureBox SearchButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField SearchTextBox;
         private System.Windows.Forms.PictureBox SaveButton;
         private System.Windows.Forms.PictureBox OpenButton;

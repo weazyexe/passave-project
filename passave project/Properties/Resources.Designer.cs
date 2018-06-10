@@ -423,26 +423,6 @@ namespace Passave.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search_button_activated {
-            get {
-                object obj = ResourceManager.GetObject("search_button_activated", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_button_default {
-            get {
-                object obj = ResourceManager.GetObject("search_button_default", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap secure_button_activated {
             get {
                 object obj = ResourceManager.GetObject("secure_button_activated", resourceCulture);
