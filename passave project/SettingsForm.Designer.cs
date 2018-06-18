@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.BorderPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
+            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.ThemeLabel = new System.Windows.Forms.Label();
             this.ApplyButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.CancelButton = new MaterialSkin.Controls.MaterialFlatButton();
@@ -46,19 +47,28 @@
             this.MountainsButton = new System.Windows.Forms.PictureBox();
             this.DesertButton = new System.Windows.Forms.PictureBox();
             this.ForestButton = new System.Windows.Forms.PictureBox();
-            this.CloseButton = new System.Windows.Forms.PictureBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.AboutButton = new System.Windows.Forms.PictureBox();
             this.SecureButton = new System.Windows.Forms.PictureBox();
             this.UIButton = new System.Windows.Forms.PictureBox();
+            this.ChangePassLabel = new System.Windows.Forms.Label();
+            this.OldPasswordTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.NewPasswordTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.ConfirmPasswordTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.ChangeButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.CreateKeyButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.CreateKeyLabel = new System.Windows.Forms.Label();
+            this.SecureKeyDescLabel = new System.Windows.Forms.Label();
+            this.WarningLabel = new System.Windows.Forms.Label();
             this.BorderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CityButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MountainsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DesertButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ForestButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AboutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecureButton)).BeginInit();
@@ -87,12 +97,26 @@
             this.HeaderLabel.TabIndex = 3;
             this.HeaderLabel.Text = "SETTINGS";
             // 
+            // CloseButton
+            // 
+            this.CloseButton.BackColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
+            this.CloseButton.Location = new System.Drawing.Point(591, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(22, 22);
+            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CloseButton.TabIndex = 2;
+            this.CloseButton.TabStop = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
+            this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
+            // 
             // ThemeLabel
             // 
             this.ThemeLabel.AutoSize = true;
             this.ThemeLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ThemeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ThemeLabel.Location = new System.Drawing.Point(192, 68);
+            this.ThemeLabel.Location = new System.Drawing.Point(192, 91);
             this.ThemeLabel.Name = "ThemeLabel";
             this.ThemeLabel.Size = new System.Drawing.Size(62, 20);
             this.ThemeLabel.TabIndex = 11;
@@ -137,7 +161,7 @@
             this.LanguageLabel.AutoSize = true;
             this.LanguageLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LanguageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.LanguageLabel.Location = new System.Drawing.Point(192, 359);
+            this.LanguageLabel.Location = new System.Drawing.Point(192, 382);
             this.LanguageLabel.Name = "LanguageLabel";
             this.LanguageLabel.Size = new System.Drawing.Size(84, 20);
             this.LanguageLabel.TabIndex = 20;
@@ -147,7 +171,7 @@
             // 
             this.mDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mDivider1.Depth = 0;
-            this.mDivider1.Location = new System.Drawing.Point(196, 346);
+            this.mDivider1.Location = new System.Drawing.Point(196, 369);
             this.mDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.mDivider1.Name = "mDivider1";
             this.mDivider1.Size = new System.Drawing.Size(560, 1);
@@ -162,7 +186,7 @@
             this.EnglishButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EnglishButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EnglishButton.ForeColor = System.Drawing.Color.White;
-            this.EnglishButton.Location = new System.Drawing.Point(196, 393);
+            this.EnglishButton.Location = new System.Drawing.Point(196, 416);
             this.EnglishButton.Name = "EnglishButton";
             this.EnglishButton.Size = new System.Drawing.Size(106, 44);
             this.EnglishButton.TabIndex = 22;
@@ -177,7 +201,7 @@
             this.RussianButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RussianButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RussianButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
-            this.RussianButton.Location = new System.Drawing.Point(309, 393);
+            this.RussianButton.Location = new System.Drawing.Point(309, 416);
             this.RussianButton.Name = "RussianButton";
             this.RussianButton.Size = new System.Drawing.Size(107, 44);
             this.RussianButton.TabIndex = 23;
@@ -189,12 +213,12 @@
             // 
             this.AboutProgramLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AboutProgramLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AboutProgramLabel.Location = new System.Drawing.Point(269, 253);
+            this.AboutProgramLabel.Location = new System.Drawing.Point(269, 276);
             this.AboutProgramLabel.Name = "AboutProgramLabel";
             this.AboutProgramLabel.Size = new System.Drawing.Size(413, 99);
             this.AboutProgramLabel.TabIndex = 25;
             this.AboutProgramLabel.Text = "Passave - simple and beautiful password manager\r\nAn open source project (dev link" +
-    " is clickable to github)\r\nCompilation date: 08.06.2018";
+    " is clickable to github)\r\nCompilation date: 18.06.2018";
             this.AboutProgramLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AboutDevLink
@@ -204,7 +228,7 @@
             this.AboutDevLink.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AboutDevLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.AboutDevLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.AboutDevLink.Location = new System.Drawing.Point(401, 365);
+            this.AboutDevLink.Location = new System.Drawing.Point(401, 388);
             this.AboutDevLink.Name = "AboutDevLink";
             this.AboutDevLink.Size = new System.Drawing.Size(163, 20);
             this.AboutDevLink.TabIndex = 26;
@@ -216,7 +240,7 @@
             // LogoPicture
             // 
             this.LogoPicture.Image = global::Passave.Properties.Resources.logo;
-            this.LogoPicture.Location = new System.Drawing.Point(354, 66);
+            this.LogoPicture.Location = new System.Drawing.Point(354, 89);
             this.LogoPicture.Name = "LogoPicture";
             this.LogoPicture.Size = new System.Drawing.Size(237, 184);
             this.LogoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -226,7 +250,7 @@
             // SunsetButton
             // 
             this.SunsetButton.Image = global::Passave.Properties.Resources.menuimage_sunset;
-            this.SunsetButton.Location = new System.Drawing.Point(648, 99);
+            this.SunsetButton.Location = new System.Drawing.Point(648, 122);
             this.SunsetButton.Name = "SunsetButton";
             this.SunsetButton.Size = new System.Drawing.Size(107, 231);
             this.SunsetButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -239,7 +263,7 @@
             // CityButton
             // 
             this.CityButton.Image = global::Passave.Properties.Resources.menuimage_city;
-            this.CityButton.Location = new System.Drawing.Point(535, 99);
+            this.CityButton.Location = new System.Drawing.Point(535, 122);
             this.CityButton.Name = "CityButton";
             this.CityButton.Size = new System.Drawing.Size(107, 231);
             this.CityButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -252,7 +276,7 @@
             // MountainsButton
             // 
             this.MountainsButton.Image = global::Passave.Properties.Resources.menuimage_mountains;
-            this.MountainsButton.Location = new System.Drawing.Point(422, 99);
+            this.MountainsButton.Location = new System.Drawing.Point(422, 122);
             this.MountainsButton.Name = "MountainsButton";
             this.MountainsButton.Size = new System.Drawing.Size(107, 231);
             this.MountainsButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -265,7 +289,7 @@
             // DesertButton
             // 
             this.DesertButton.Image = global::Passave.Properties.Resources.menuimage_desert;
-            this.DesertButton.Location = new System.Drawing.Point(309, 99);
+            this.DesertButton.Location = new System.Drawing.Point(309, 122);
             this.DesertButton.Name = "DesertButton";
             this.DesertButton.Size = new System.Drawing.Size(107, 231);
             this.DesertButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -278,7 +302,7 @@
             // ForestButton
             // 
             this.ForestButton.Image = global::Passave.Properties.Resources.menuimage_forest;
-            this.ForestButton.Location = new System.Drawing.Point(195, 99);
+            this.ForestButton.Location = new System.Drawing.Point(195, 122);
             this.ForestButton.Name = "ForestButton";
             this.ForestButton.Size = new System.Drawing.Size(107, 231);
             this.ForestButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -287,20 +311,6 @@
             this.ForestButton.Click += new System.EventHandler(this.ForestButton_Click);
             this.ForestButton.MouseLeave += new System.EventHandler(this.ForestButton_MouseLeave);
             this.ForestButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ForestButton_MouseMove);
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.BackColor = System.Drawing.SystemColors.Control;
-            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
-            this.CloseButton.Location = new System.Drawing.Point(591, 12);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(22, 22);
-            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CloseButton.TabIndex = 2;
-            this.CloseButton.TabStop = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
-            this.CloseButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseMove);
             // 
             // MenuPanel
             // 
@@ -354,11 +364,160 @@
             this.UIButton.MouseLeave += new System.EventHandler(this.UIButton_MouseLeave);
             this.UIButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UIButton_MouseMove);
             // 
+            // ChangePassLabel
+            // 
+            this.ChangePassLabel.AutoSize = true;
+            this.ChangePassLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangePassLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ChangePassLabel.Location = new System.Drawing.Point(191, 91);
+            this.ChangePassLabel.Name = "ChangePassLabel";
+            this.ChangePassLabel.Size = new System.Drawing.Size(140, 20);
+            this.ChangePassLabel.TabIndex = 27;
+            this.ChangePassLabel.Text = "Change password:";
+            // 
+            // OldPasswordTextBox
+            // 
+            this.OldPasswordTextBox.Depth = 0;
+            this.OldPasswordTextBox.Hint = "Old password";
+            this.OldPasswordTextBox.Location = new System.Drawing.Point(195, 122);
+            this.OldPasswordTextBox.MaxLength = 32767;
+            this.OldPasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.OldPasswordTextBox.Name = "OldPasswordTextBox";
+            this.OldPasswordTextBox.PasswordChar = '\0';
+            this.OldPasswordTextBox.SelectedText = "";
+            this.OldPasswordTextBox.SelectionLength = 0;
+            this.OldPasswordTextBox.SelectionStart = 0;
+            this.OldPasswordTextBox.Size = new System.Drawing.Size(200, 23);
+            this.OldPasswordTextBox.TabIndex = 28;
+            this.OldPasswordTextBox.TabStop = false;
+            this.OldPasswordTextBox.UseSystemPasswordChar = false;
+            // 
+            // NewPasswordTextBox
+            // 
+            this.NewPasswordTextBox.Depth = 0;
+            this.NewPasswordTextBox.Hint = "New password";
+            this.NewPasswordTextBox.Location = new System.Drawing.Point(195, 163);
+            this.NewPasswordTextBox.MaxLength = 32767;
+            this.NewPasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.NewPasswordTextBox.Name = "NewPasswordTextBox";
+            this.NewPasswordTextBox.PasswordChar = '\0';
+            this.NewPasswordTextBox.SelectedText = "";
+            this.NewPasswordTextBox.SelectionLength = 0;
+            this.NewPasswordTextBox.SelectionStart = 0;
+            this.NewPasswordTextBox.Size = new System.Drawing.Size(200, 23);
+            this.NewPasswordTextBox.TabIndex = 29;
+            this.NewPasswordTextBox.TabStop = false;
+            this.NewPasswordTextBox.UseSystemPasswordChar = false;
+            // 
+            // ConfirmPasswordTextBox
+            // 
+            this.ConfirmPasswordTextBox.Depth = 0;
+            this.ConfirmPasswordTextBox.Hint = "Confirm new password";
+            this.ConfirmPasswordTextBox.Location = new System.Drawing.Point(195, 205);
+            this.ConfirmPasswordTextBox.MaxLength = 32767;
+            this.ConfirmPasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
+            this.ConfirmPasswordTextBox.PasswordChar = '\0';
+            this.ConfirmPasswordTextBox.SelectedText = "";
+            this.ConfirmPasswordTextBox.SelectionLength = 0;
+            this.ConfirmPasswordTextBox.SelectionStart = 0;
+            this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(200, 23);
+            this.ConfirmPasswordTextBox.TabIndex = 30;
+            this.ConfirmPasswordTextBox.TabStop = false;
+            this.ConfirmPasswordTextBox.UseSystemPasswordChar = false;
+            // 
+            // ChangeButton
+            // 
+            this.ChangeButton.AutoSize = true;
+            this.ChangeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeButton.Depth = 0;
+            this.ChangeButton.Icon = null;
+            this.ChangeButton.Location = new System.Drawing.Point(195, 256);
+            this.ChangeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangeButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangeButton.Name = "ChangeButton";
+            this.ChangeButton.Primary = false;
+            this.ChangeButton.Size = new System.Drawing.Size(76, 36);
+            this.ChangeButton.TabIndex = 31;
+            this.ChangeButton.Text = "Change";
+            this.ChangeButton.UseVisualStyleBackColor = true;
+            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(195, 301);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(560, 1);
+            this.materialDivider1.TabIndex = 32;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // CreateKeyButton
+            // 
+            this.CreateKeyButton.AutoSize = true;
+            this.CreateKeyButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CreateKeyButton.Depth = 0;
+            this.CreateKeyButton.Icon = null;
+            this.CreateKeyButton.Location = new System.Drawing.Point(195, 408);
+            this.CreateKeyButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CreateKeyButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CreateKeyButton.Name = "CreateKeyButton";
+            this.CreateKeyButton.Primary = false;
+            this.CreateKeyButton.Size = new System.Drawing.Size(153, 36);
+            this.CreateKeyButton.TabIndex = 33;
+            this.CreateKeyButton.Text = "Create secure key";
+            this.CreateKeyButton.UseVisualStyleBackColor = true;
+            this.CreateKeyButton.Click += new System.EventHandler(this.CreateKeyButton_Click);
+            // 
+            // CreateKeyLabel
+            // 
+            this.CreateKeyLabel.AutoSize = true;
+            this.CreateKeyLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CreateKeyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CreateKeyLabel.Location = new System.Drawing.Point(191, 316);
+            this.CreateKeyLabel.Name = "CreateKeyLabel";
+            this.CreateKeyLabel.Size = new System.Drawing.Size(132, 20);
+            this.CreateKeyLabel.TabIndex = 34;
+            this.CreateKeyLabel.Text = "Create secure key";
+            // 
+            // SecureKeyDescLabel
+            // 
+            this.SecureKeyDescLabel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SecureKeyDescLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SecureKeyDescLabel.Location = new System.Drawing.Point(192, 340);
+            this.SecureKeyDescLabel.Name = "SecureKeyDescLabel";
+            this.SecureKeyDescLabel.Size = new System.Drawing.Size(321, 62);
+            this.SecureKeyDescLabel.TabIndex = 35;
+            this.SecureKeyDescLabel.Text = "Secure key - the key you need to open your database, if you forgot password. Keep" +
+    " it safe. Restore access to database otherwise impossible!\r\n";
+            // 
+            // WarningLabel
+            // 
+            this.WarningLabel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WarningLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.WarningLabel.Location = new System.Drawing.Point(402, 122);
+            this.WarningLabel.Name = "WarningLabel";
+            this.WarningLabel.Size = new System.Drawing.Size(168, 87);
+            this.WarningLabel.TabIndex = 36;
+            this.WarningLabel.Text = "If you will change password, your old secure key will be disabled!\r\n";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 522);
+            this.Controls.Add(this.WarningLabel);
+            this.Controls.Add(this.SecureKeyDescLabel);
+            this.Controls.Add(this.CreateKeyLabel);
+            this.Controls.Add(this.CreateKeyButton);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.ChangeButton);
+            this.Controls.Add(this.ConfirmPasswordTextBox);
+            this.Controls.Add(this.NewPasswordTextBox);
+            this.Controls.Add(this.OldPasswordTextBox);
+            this.Controls.Add(this.ChangePassLabel);
             this.Controls.Add(this.AboutDevLink);
             this.Controls.Add(this.AboutProgramLabel);
             this.Controls.Add(this.LogoPicture);
@@ -382,16 +541,15 @@
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SettingsForm";
-            this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.BorderPanel.ResumeLayout(false);
             this.BorderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SunsetButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CityButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MountainsButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DesertButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ForestButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AboutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecureButton)).EndInit();
@@ -425,5 +583,15 @@
         private System.Windows.Forms.PictureBox LogoPicture;
         private System.Windows.Forms.Label AboutProgramLabel;
         private System.Windows.Forms.LinkLabel AboutDevLink;
+        private System.Windows.Forms.Label ChangePassLabel;
+        private MaterialSkin.Controls.MaterialSingleLineTextField OldPasswordTextBox;
+        private MaterialSkin.Controls.MaterialSingleLineTextField NewPasswordTextBox;
+        private MaterialSkin.Controls.MaterialSingleLineTextField ConfirmPasswordTextBox;
+        private MaterialSkin.Controls.MaterialFlatButton ChangeButton;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialFlatButton CreateKeyButton;
+        private System.Windows.Forms.Label CreateKeyLabel;
+        private System.Windows.Forms.Label SecureKeyDescLabel;
+        private System.Windows.Forms.Label WarningLabel;
     }
 }

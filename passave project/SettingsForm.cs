@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Passave
 {
@@ -77,6 +79,10 @@ namespace Passave
                 RussianButton.FlatAppearance.BorderColor = currentColor;
             }
 
+            if (!MainForm.havePassword) OldPasswordTextBox.Enabled = false;
+            else OldPasswordTextBox.Enabled = true;
+
+            SecureSettingsHide();
             AboutSettingsHide();
             UIButton.Image = Properties.Resources.ui_button_activated;
         }
@@ -346,11 +352,6 @@ namespace Passave
             currentColor = pink;
         }
 
-        private void SettingsForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void UIButton_Click(object sender, EventArgs e)
         {
@@ -363,6 +364,7 @@ namespace Passave
             AboutButton.Image = Properties.Resources.about_button_default;
 
             UiSettingsShow();
+            SecureSettingsHide();
             AboutSettingsHide();
         }
 
@@ -377,6 +379,7 @@ namespace Passave
             AboutButton.Image = Properties.Resources.about_button_default;
 
             UiSettingsHide();
+            SecureSettingsShow();
             AboutSettingsHide();
         }
 
@@ -391,6 +394,7 @@ namespace Passave
             AboutButton.Image = Properties.Resources.about_button_activated;
 
             UiSettingsHide();
+            SecureSettingsHide();
             AboutSettingsShow();
         }
 
@@ -404,6 +408,58 @@ namespace Passave
         private void AboutDevLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.github.com/weazyexe");
+        }
+
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            if (!MainForm.havePassword)
+            {
+                MainForm.password = NewPasswordTextBox.Text;
+                NewMessageBox messageBox = new NewMessageBox("Password sets!", "SUCCESS", MessageBoxButtons.OK);
+                messageBox.ShowDialog();
+                MainForm.havePassword = true;
+            }
+            else if (OldPasswordTextBox.Text == MainForm.password && NewPasswordTextBox.Text == ConfirmPasswordTextBox.Text)
+            {
+                MainForm.password = NewPasswordTextBox.Text;
+                NewMessageBox messageBox = new NewMessageBox("Password changed!", "SUCCESS", MessageBoxButtons.OK);
+                messageBox.ShowDialog();
+                MainForm.havePassword = true;
+            }
+        }
+
+        private void CreateKeyButton_Click(object sender, EventArgs e)
+        {
+            if (MainForm.havePassword)
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Title = "Create secure key";
+                    sfd.Filter = "Passave Secure Key (*.psvkey)|*.psvkey";
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                        {
+                            string hash;
+                            using (MD5 md5hash = MD5.Create())
+                            {
+                                hash = MainForm.GetMD5Hash(md5hash, MainForm.password);
+                                sw.Write(hash);
+
+                                MainForm.password = NewPasswordTextBox.Text;
+                                NewMessageBox messageBox = new NewMessageBox("Create successful. Keep it safe :)", "SUCCESS", MessageBoxButtons.OK);
+                                messageBox.ShowDialog();
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                NewMessageBox messageBox = new NewMessageBox("You haven't password! Please, set the password and create secure key after it.", "INFO", MessageBoxButtons.OK);
+                messageBox.Show();
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -477,6 +533,34 @@ namespace Passave
             LogoPicture.Show();
             AboutDevLink.Show();
             AboutProgramLabel.Show();
+        }
+
+        private void SecureSettingsHide()
+        {
+            ChangePassLabel.Hide();
+            OldPasswordTextBox.Hide();
+            NewPasswordTextBox.Hide();
+            ConfirmPasswordTextBox.Hide();
+            ChangeButton.Hide();
+            materialDivider1.Hide();
+            CreateKeyLabel.Hide();
+            SecureKeyDescLabel.Hide();
+            CreateKeyButton.Hide();
+            WarningLabel.Hide();
+        }
+
+        private void SecureSettingsShow()
+        {
+            ChangePassLabel.Show();
+            OldPasswordTextBox.Show();
+            NewPasswordTextBox.Show();
+            ConfirmPasswordTextBox.Show();
+            ChangeButton.Show();
+            materialDivider1.Show();
+            CreateKeyLabel.Show();
+            SecureKeyDescLabel.Show();
+            CreateKeyButton.Show();
+            WarningLabel.Show();
         }
     }
 }

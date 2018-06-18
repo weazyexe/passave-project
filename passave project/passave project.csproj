@@ -58,6 +58,7 @@
     <Compile Include="AddEditForm.Designer.cs">
       <DependentUpon>AddEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AES.cs" />
     <Compile Include="BankEntry.cs" />
     <Compile Include="BaseEntry.cs" />
     <Compile Include="Entry.cs" />
@@ -73,6 +74,12 @@
     </Compile>
     <Compile Include="NewMessageBox.Designer.cs">
       <DependentUpon>NewMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordForm.Designer.cs">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewMessageBox.resx">
       <DependentUpon>NewMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordForm.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

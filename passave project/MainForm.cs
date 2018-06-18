@@ -1,9 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 using System.IO;
+using System.Text;
+using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+
 using MaterialSkin;
 using MaterialSkin.Controls;
+
+using Cryptography;
+
 
 namespace Passave
 {
@@ -11,7 +17,6 @@ namespace Passave
     // settings: change password, create secure key, clipboard clear timer at secure
     // set new icons
     // languages
-    // CRYPT!!!
 
     public partial class MainForm : Form
     {
@@ -22,11 +27,15 @@ namespace Passave
         List<LicenseEntry> licensesList = new List<LicenseEntry>();
         List<Entry> otherList = new List<Entry>();
 
-        public static bool isSNShow = true, isEmailShow = false, isHomebankingShow = false, isLicensesShow = false, isOtherShow = false;
+        Cryptography.AES aes;
+
+        public static bool isSNShow = true, isEmailShow = false, isHomebankingShow = false, isLicensesShow = false, isOtherShow = false, isSecureKey = false, havePassword = false;
 
         public static int changes = 0;
 
         public static Theme theme = Theme.Desert;
+
+        public static string password;
         #endregion
 
         #region Constructors
@@ -1119,19 +1128,7 @@ namespace Passave
         /// </summary>
         private void New()
         {
-            socialNetworkList.Clear();
-            emailList.Clear();
-            homebankingList.Clear();
-            licensesList.Clear();
-            otherList.Clear();
-
-            SNListView.Items.Clear();
-            EmailListView.Items.Clear();
-            HomebankingListView.Items.Clear();
-            LicensesListView.Items.Clear();
-            OtherListView.Items.Clear();
-
-            changes = 0;
+            ClearAll();
         }
 
         /// <summary>
@@ -1218,11 +1215,50 @@ namespace Passave
                             saved += item.Notes + '\n';
                         }
 
-                        // TODO: ENCRYPTION HERE
+                        bool isEncrypted = false;
+                        byte[] encrypted = new byte[16];
 
-                        using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                            if (!havePassword)
+                            {
+                                PasswordForm form = new PasswordForm();
+                                string hash;
+                                if (form.ShowDialog() == DialogResult.OK)
+                                {
+                                    using (MD5 md5hash = MD5.Create())
+                                    {
+                                        hash = GetMD5Hash(md5hash, password);
+                                        byte[,] key = StringToByteBlock(hash);
+                                        aes = new AES(key);
+                                        encrypted = AES.Encrypt(saved);
+                                        havePassword = true;
+                                        isEncrypted = true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                string hash;
+                                using (MD5 md5hash = MD5.Create())
+                                {
+                                    hash = GetMD5Hash(md5hash, password);
+                                    byte[,] key = StringToByteBlock(hash);
+                                    aes = new AES(key);
+                                    encrypted = AES.Encrypt(saved);
+                                    havePassword = true;
+                                    isEncrypted = true;
+                                }
+                            }
+
+                        if (isEncrypted)
                         {
-                            sw.Write(saved);
+                            using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                            {
+                                for (int i = 0; i < encrypted.Length; i++)
+                                {
+                                    if (i != encrypted.Length - 1) sw.Write(Convert.ToString(encrypted[i], 16) + ' ');
+                                    else sw.Write(Convert.ToString(encrypted[i], 16));
+                                }
+                            }
                         }
                     }
                 }
@@ -1249,17 +1285,326 @@ namespace Passave
 
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
+                        string rd = "";
+                        bool isDecrypted = false;
+                        string decrypted = "";
                         using (StreamReader sr = new StreamReader(ofd.FileName))
                         {
-                            Entry tempEntry = new Entry();
-                            BankEntry tempBankEntry = new BankEntry();
-                            LicenseEntry tempLicenseEntry = new LicenseEntry();
+                            PasswordForm form = new PasswordForm();
+                            DialogResult dr = form.ShowDialog();
+                            if (dr == DialogResult.OK)
+                            {
+                                using (MD5 md5hash = MD5.Create())
+                                {
+                                    rd = sr.ReadLine();
+                                    string[] temp = rd.Split();
+                                    byte[] rdb = new byte[temp.Length];
+                                    for (int i = 0; i < temp.Length; i++)
+                                        rdb[i] = Convert.ToByte(temp[i], 16);
 
-                            // TODO: DECRYPTION HERE
+                                    string hash = GetMD5Hash(md5hash, password);
+                                    byte[,] key = StringToByteBlock(hash);
+                                    aes = new AES(key);
 
-                            bool isFirst = true;
-                            string readed = sr.ReadLine();
+                                    decrypted = AES.Decrypt(rdb);
+                                    isDecrypted = true;
+                                }
+                            }
+                            else if (dr == DialogResult.Yes)
+                            {
+                                rd = sr.ReadLine();
+                                string[] temp = rd.Split();
+                                byte[] rdb = new byte[temp.Length];
+                                for (int i = 0; i < temp.Length; i++)
+                                    rdb[i] = Convert.ToByte(temp[i], 16);
 
+                                aes = new AES(PasswordForm.secureKey);
+                                decrypted = AES.Decrypt(rdb);
+                                isDecrypted = true;
+                            }
+                        }
+
+                        if (isDecrypted)
+                        {
+                            using (StreamWriter sw = new StreamWriter(ofd.FileName))
+                            {
+                                sw.Write(decrypted);
+                            }
+
+                            using (StreamReader sr = new StreamReader(ofd.FileName))
+                            {
+                                havePassword = true;
+                                try
+                                {
+                                    Entry tempEntry = new Entry();
+                                    BankEntry tempBankEntry = new BankEntry();
+                                    LicenseEntry tempLicenseEntry = new LicenseEntry();
+
+                                    bool isFirst = true;
+                                    string readed = sr.ReadLine();
+                                    if (readed != "ENGLISH" && readed != "RUSSIAN")
+                                    {
+                                        NewMessageBox messageBox = new NewMessageBox("Wrong password!", "ERROR", MessageBoxButtons.OK);
+                                        messageBox.ShowDialog();
+                                        ClearAll();
+                                    }
+                                    else
+                                    {
+                                        if (readed == "ENGLISH")
+                                            SettingsForm.language = Language.English;
+                                        if (readed == "RUSSIAN")
+                                            SettingsForm.language = Language.Russian;
+
+                                        readed = sr.ReadLine();
+
+                                        if (readed == "FOREST")
+                                        {
+                                            theme = Theme.Forest;
+                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+                                        }
+                                        if (readed == "DESERT")
+                                        {
+                                            theme = Theme.Desert;
+                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
+                                        }
+                                        if (readed == "MOUNTAINS")
+                                        {
+                                            theme = Theme.Mountains;
+                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
+                                        }
+                                        if (readed == "CITY")
+                                        {
+                                            theme = Theme.City;
+                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
+                                        }
+                                        if (readed == "SUNSET")
+                                        {
+                                            theme = Theme.Sunset;
+                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+                                        }
+
+                                        readed = sr.ReadLine();
+                                        while (readed != "EMAIL")
+                                        {
+                                            if (isFirst) readed = sr.ReadLine();
+                                            if (readed == "EMAIL") break;
+                                            tempEntry.Name = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Login = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Password = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Phone = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.URL = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Notes = readed;
+
+                                            socialNetworkList.Add(tempEntry);
+                                            readed = sr.ReadLine();
+                                            isFirst = false;
+                                            tempEntry = new Entry();
+                                        }
+
+                                        isFirst = true;
+                                        while (readed != "HOMEBANKING")
+                                        {
+                                            if (isFirst) readed = sr.ReadLine();
+                                            if (readed == "HOMEBANKING") break;
+                                            tempEntry.Name = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Login = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Password = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Phone = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.URL = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Notes = readed;
+
+                                            emailList.Add(tempEntry);
+                                            readed = sr.ReadLine();
+                                            isFirst = false;
+                                            tempEntry = new Entry();
+                                        }
+
+                                        isFirst = true;
+                                        while (readed != "LICENSES")
+                                        {
+                                            if (isFirst) readed = sr.ReadLine();
+                                            if (readed == "LICENSES") break;
+                                            tempBankEntry.Name = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempBankEntry.CardNumber = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempBankEntry.Date = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempBankEntry.CVC = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempBankEntry.Phone = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempBankEntry.Notes = readed;
+
+                                            homebankingList.Add(tempBankEntry);
+                                            readed = sr.ReadLine();
+                                            isFirst = false;
+                                            tempBankEntry = new BankEntry();
+                                        }
+
+                                        isFirst = true;
+                                        while (readed != "OTHER")
+                                        {
+                                            if (isFirst) readed = sr.ReadLine();
+                                            if (readed == "OTHER") break;
+                                            tempLicenseEntry.Name = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempLicenseEntry.Key = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempLicenseEntry.Notes = readed;
+
+                                            licensesList.Add(tempLicenseEntry);
+                                            readed = sr.ReadLine();
+                                            isFirst = false;
+                                            tempLicenseEntry = new LicenseEntry();
+                                        }
+
+                                        isFirst = true;
+                                        while (!sr.EndOfStream)
+                                        {
+                                            if (isFirst) readed = sr.ReadLine();
+                                            tempEntry.Name = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Login = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Password = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Phone = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.URL = readed;
+
+                                            readed = sr.ReadLine();
+                                            tempEntry.Notes = readed;
+
+                                            otherList.Add(tempEntry);
+                                            readed = sr.ReadLine();
+                                            isFirst = false;
+                                            tempEntry = new Entry();
+                                        }
+
+                                        FullListView();
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    NewMessageBox messageBox = new NewMessageBox("Unkonwn error: " + ex.Message, "ERROR", MessageBoxButtons.OK);
+                                    messageBox.ShowDialog();
+                                    ClearAll();
+                                }
+                            }
+
+                            using (StreamWriter sw = new StreamWriter(ofd.FileName))
+                            {
+                                sw.Write(rd);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                messageBox.ShowDialog();
+            }
+        }
+
+        /// <summary>
+        /// Open database from system
+        /// </summary>
+        /// <param name="file"></param>
+        private void OpenFromSystem(string file)
+        {
+            string rd = "";
+            bool isDecrypted = false;
+            string decrypted = "";
+            using (StreamReader sr = new StreamReader(file))
+            {
+                PasswordForm form = new PasswordForm();
+                DialogResult dr = form.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    using (MD5 md5hash = MD5.Create())
+                    {
+                        rd = sr.ReadLine();
+                        string[] temp = rd.Split();
+                        byte[] rdb = new byte[temp.Length];
+                        for (int i = 0; i < temp.Length; i++)
+                            rdb[i] = Convert.ToByte(temp[i], 16);
+
+                        string hash = GetMD5Hash(md5hash, password);
+                        byte[,] key = StringToByteBlock(hash);
+                        aes = new AES(key);
+
+                        decrypted = AES.Decrypt(rdb);
+                        isDecrypted = true;
+                    }
+                }
+                else if (dr == DialogResult.Yes)
+                {
+                    rd = sr.ReadLine();
+                    string[] temp = rd.Split();
+                    byte[] rdb = new byte[temp.Length];
+                    for (int i = 0; i < temp.Length; i++)
+                        rdb[i] = Convert.ToByte(temp[i], 16);
+
+                    aes = new AES(PasswordForm.secureKey);
+                    decrypted = AES.Decrypt(rdb);
+                    isDecrypted = true;
+                }
+            }
+
+            if (isDecrypted)
+            {
+                using (StreamReader sr = new StreamReader(file))
+                {
+                    Entry tempEntry = new Entry();
+                    BankEntry tempBankEntry = new BankEntry();
+                    LicenseEntry tempLicenseEntry = new LicenseEntry();
+
+                    bool isFirst = true;
+                    string readed = sr.ReadLine();
+
+                    try
+                    {
+                        if (readed != "ENGLISH" && readed != "RUSSIAN")
+                        {
+                            NewMessageBox messageBox = new NewMessageBox("Wrong password!", "ERROR", MessageBoxButtons.OK);
+                            messageBox.ShowDialog();
+                            ClearAll();
+                        }
+                        else
+                        {
                             if (readed == "ENGLISH")
                                 SettingsForm.language = Language.English;
                             if (readed == "RUSSIAN")
@@ -1426,192 +1771,19 @@ namespace Passave
                             FullListView();
                         }
                     }
+                    catch
+                    {
+                        NewMessageBox messageBox = new NewMessageBox("Wrong password!", "ERROR", MessageBoxButtons.OK);
+                        messageBox.ShowDialog();
+                        ClearAll();
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
-                messageBox.ShowDialog();
-            }
-        }
 
-        private void OpenFromSystem(string file)
-        {
-            using (StreamReader sr = new StreamReader(file))
-            {
-                Entry tempEntry = new Entry();
-                BankEntry tempBankEntry = new BankEntry();
-                LicenseEntry tempLicenseEntry = new LicenseEntry();
 
-                // TODO: DECRYPTION HERE
-
-                bool isFirst = true;
-                string readed = sr.ReadLine();
-
-                if (readed == "ENGLISH")
-                    SettingsForm.language = Language.English;
-                if (readed == "RUSSIAN")
-                    SettingsForm.language = Language.Russian;
-
-                readed = sr.ReadLine();
-
-                if (readed == "FOREST")
+                using (StreamWriter sw = new StreamWriter(file))
                 {
-                    theme = Theme.Forest;
-                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
+                    sw.Write(rd);
                 }
-                if (readed == "DESERT")
-                {
-                    theme = Theme.Desert;
-                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
-                }
-                if (readed == "MOUNTAINS")
-                {
-                    theme = Theme.Mountains;
-                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
-                }
-                if (readed == "CITY")
-                {
-                    theme = Theme.City;
-                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
-                }
-                if (readed == "SUNSET")
-                {
-                    theme = Theme.Sunset;
-                    MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
-                }
-
-                readed = sr.ReadLine();
-                while (readed != "EMAIL")
-                {
-                    if (isFirst) readed = sr.ReadLine();
-                    if (readed == "EMAIL") break;
-                    tempEntry.Name = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Login = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Password = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Phone = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.URL = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Notes = readed;
-
-                    socialNetworkList.Add(tempEntry);
-                    readed = sr.ReadLine();
-                    isFirst = false;
-                    tempEntry = new Entry();
-                }
-
-                isFirst = true;
-                while (readed != "HOMEBANKING")
-                {
-                    if (isFirst) readed = sr.ReadLine();
-                    if (readed == "HOMEBANKING") break;
-                    tempEntry.Name = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Login = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Password = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Phone = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.URL = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Notes = readed;
-
-                    emailList.Add(tempEntry);
-                    readed = sr.ReadLine();
-                    isFirst = false;
-                    tempEntry = new Entry();
-                }
-
-                isFirst = true;
-                while (readed != "LICENSES")
-                {
-                    if (isFirst) readed = sr.ReadLine();
-                    if (readed == "LICENSES") break;
-                    tempBankEntry.Name = readed;
-
-                    readed = sr.ReadLine();
-                    tempBankEntry.CardNumber = readed;
-
-                    readed = sr.ReadLine();
-                    tempBankEntry.Date = readed;
-
-                    readed = sr.ReadLine();
-                    tempBankEntry.CVC = readed;
-
-                    readed = sr.ReadLine();
-                    tempBankEntry.Phone = readed;
-
-                    readed = sr.ReadLine();
-                    tempBankEntry.Notes = readed;
-
-                    homebankingList.Add(tempBankEntry);
-                    readed = sr.ReadLine();
-                    isFirst = false;
-                    tempBankEntry = new BankEntry();
-                }
-
-                isFirst = true;
-                while (readed != "OTHER")
-                {
-                    if (isFirst) readed = sr.ReadLine();
-                    if (readed == "OTHER") break;
-                    tempLicenseEntry.Name = readed;
-
-                    readed = sr.ReadLine();
-                    tempLicenseEntry.Key = readed;
-
-                    readed = sr.ReadLine();
-                    tempLicenseEntry.Notes = readed;
-
-                    licensesList.Add(tempLicenseEntry);
-                    readed = sr.ReadLine();
-                    isFirst = false;
-                    tempLicenseEntry = new LicenseEntry();
-                }
-
-                isFirst = true;
-                while (!sr.EndOfStream)
-                {
-                    if (isFirst) readed = sr.ReadLine();
-                    tempEntry.Name = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Login = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Password = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Phone = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.URL = readed;
-
-                    readed = sr.ReadLine();
-                    tempEntry.Notes = readed;
-
-                    otherList.Add(tempEntry);
-                    readed = sr.ReadLine();
-                    isFirst = false;
-                    tempEntry = new Entry();
-                }
-
-                FullListView();
             }
         }
 
@@ -1796,6 +1968,87 @@ namespace Passave
 
                 OtherListView.Items.Add(lvi);
             }
+        }
+
+        private void ClearAll()
+        {
+            SNListView.Items.Clear();
+            EmailListView.Items.Clear();
+            HomebankingListView.Items.Clear();
+            LicensesListView.Items.Clear();
+            OtherListView.Items.Clear();
+
+            socialNetworkList.Clear();
+            emailList.Clear();
+            homebankingList.Clear();
+            licensesList.Clear();
+            otherList.Clear();
+
+            havePassword = false;
+            changes = 0;
+        }
+
+        /// <summary>
+        /// Convert string to hash (16 bytes). For password
+        /// </summary>
+        /// <param name="md5Hash"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static string GetMD5Hash(MD5 md5Hash, string input)
+        {
+
+            // Convert the input string to a byte array and compute the hash.
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            // Create a new Stringbuilder to collect the bytes
+            // and create a string.
+            StringBuilder sBuilder = new StringBuilder();
+
+            // Loop through each byte of the hashed data 
+            // and format each one as a hexadecimal string.
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            // Return the hexadecimal string.
+            return sBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Convert hash string to byte block
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static byte[,] StringToByteBlock(string source)
+        {
+            int count = 1;
+            int len = source.Length;
+            for (int i = 1; i < len; i+=2)
+            {
+                if (i != len - 1)
+                {
+                    source = source.Insert(i + count, " ");
+                    count++;
+                }
+            }
+
+            string[] temp = source.Split();
+            byte[] res = new byte[temp.Length];
+
+            for (int i = 0; i < temp.Length; i++)
+                res[i] = Convert.ToByte(temp[i], 16);
+
+            int index = 0;
+            byte[,] block = new byte[4, 4];
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++)
+                {
+                    block[i, j] = res[index];
+                    index++;
+                }
+
+            return block;
         }
 
         #endregion
