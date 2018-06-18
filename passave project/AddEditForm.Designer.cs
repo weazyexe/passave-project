@@ -266,6 +266,8 @@
             this.CardNumberTextBox.TabIndex = 15;
             this.CardNumberTextBox.TabStop = false;
             this.CardNumberTextBox.UseSystemPasswordChar = false;
+            this.CardNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CardNumberTextBox_KeyPress);
+            this.CardNumberTextBox.TextChanged += new System.EventHandler(this.CardNumberTextBox_TextChanged);
             // 
             // CvcTextBox
             // 
@@ -306,7 +308,7 @@
             // 
             this.KeyTextBox.Depth = 0;
             this.KeyTextBox.Hint = "Key";
-            this.KeyTextBox.Location = new System.Drawing.Point(39, 117);
+            this.KeyTextBox.Location = new System.Drawing.Point(39, 138);
             this.KeyTextBox.MaxLength = 32767;
             this.KeyTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.KeyTextBox.Name = "KeyTextBox";

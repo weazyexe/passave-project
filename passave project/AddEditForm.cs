@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,9 @@ namespace Passave
         public static LicenseEntry addLicenseEntry = new LicenseEntry();
         public static BankEntry addHomebankingEntry = new BankEntry();
         Mode mode;
+
+        bool first = false, second = false, third = false, four = false;
+        int cardLength = 0;
 
         public AddEditForm(Mode _mode)
         {
@@ -238,6 +242,20 @@ namespace Passave
             Close();
         }
 
+        private void CardNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8)
+            {
+                if (CardNumberTextBox.Text.Length == 0) cardLength = 0;
+                else cardLength--;
+
+                if (cardLength < 16) four = false;
+                if (cardLength < 12) third = false;
+                if (cardLength < 8) second = false;
+                if (cardLength < 3) first = false;
+            }
+        }
+
         private void AddEditForm_Load(object sender, EventArgs e)
         {
             if (mode == Mode.Add)
@@ -390,6 +408,43 @@ namespace Passave
             {
                 DateTextBox.Text += '/';
                 DateTextBox.SelectionStart = DateTextBox.Text.Length;
+            }
+        }
+
+        private void CardNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Regex firstRegEx = new Regex(@"^\d{4}$"), secRegEx = new Regex(@"^\d{4} \d{4}"), thirdRegEx = new Regex(@"^\d{4} \d{4} \d{4}$"), fourRegEx = new Regex(@"^\d{4} \d{4} \d{4} \d{4}$");
+
+            if (firstRegEx.IsMatch(CardNumberTextBox.Text) && !first)
+            {
+                first = true;
+                cardLength = CardNumberTextBox.Text.Length;
+                CardNumberTextBox.Text = CardNumberTextBox.Text + " ";
+                CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
+            }
+
+            if (secRegEx.IsMatch(CardNumberTextBox.Text) && !second)
+            {
+                second = true;
+                cardLength = CardNumberTextBox.Text.Length;
+                CardNumberTextBox.Text = CardNumberTextBox.Text + " ";
+                CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
+            }
+
+            if (thirdRegEx.IsMatch(CardNumberTextBox.Text) && !third)
+            {
+                third = true;
+                cardLength = CardNumberTextBox.Text.Length;
+                CardNumberTextBox.Text = CardNumberTextBox.Text + " ";
+                CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
+            }
+
+            if (fourRegEx.IsMatch(CardNumberTextBox.Text) && !four)
+            {
+                four = true;
+                cardLength = CardNumberTextBox.Text.Length;
+                //CardNumberTextBox.Text = CardNumberTextBox.Text + " ";
+                CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
             }
         }
     }

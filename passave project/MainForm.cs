@@ -9,6 +9,9 @@ namespace Passave
 {
     // TODO:
     // settings: change password, create secure key, clipboard clear timer at secure
+    // set new icons
+    // languages
+    // CRYPT!!!
 
     public partial class MainForm : Form
     {
@@ -26,7 +29,7 @@ namespace Passave
         public static Theme theme = Theme.Desert;
         #endregion
 
-        #region Constructor
+        #region Constructors
         public MainForm()
         {
             InitializeComponent();
