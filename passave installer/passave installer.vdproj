@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:passave installer"
-"LanguageId" = "3:1049"
-"CodePage" = "3:1251"
-"UILanguageId" = "3:1049"
+"LanguageId" = "3:0"
+"CodePage" = "3:1252"
+"UILanguageId" = "3:0"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -21,7 +21,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1755047AA22A4D68AC3D8DDECACAE5F5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1E5B1DA1A8C84B51A034D41DA3E17041"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1E70F8608A4E44788D9DED8D4F526E60"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_245287BE74B74DAC86984E28E0AD9099"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,14 +51,56 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_669D41FBF81F335AEC7A1C520E70B770"
-        "OwnerKey" = "8:_0FD11AEBF7284F9893515EB050B3028A"
+        "MsmKey" = "8:_4B67EFB87B2C42F890E4A1F49E71A651"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_669D41FBF81F335AEC7A1C520E70B770"
+        "MsmKey" = "8:_4C2CA3D19590408488D20550B287591E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_71FC750EF7194C79B4A3D2EB7F35D889"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_805016DA9316466EA4FE9B2D32B7B437"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8D032E9ED7FC48489A270DE3C991C81E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D908689AC01749D4A2336620E548D929"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E725F4526EF4427183E66954F000724E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FB47BC19512749D1BEB0B95948CFA21B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FCB8EE3D89064C76B62285595CDBC8B8"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -120,6 +180,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -149,6 +225,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1755047AA22A4D68AC3D8DDECACAE5F5"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-Italic.ttf"
+            "TargetName" = "8:Roboto-Italic.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1E5B1DA1A8C84B51A034D41DA3E17041"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-Medium.ttf"
+            "TargetName" = "8:Roboto-Medium.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1E70F8608A4E44788D9DED8D4F526E60"
             {
             "SourcePath" = "8:..\\passave design\\psv file.ico"
@@ -165,6 +281,26 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_245287BE74B74DAC86984E28E0AD9099"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-BoldItalic.ttf"
+            "TargetName" = "8:Roboto-BoldItalic.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
@@ -200,23 +336,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_669D41FBF81F335AEC7A1C520E70B770"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4B67EFB87B2C42F890E4A1F49E71A651"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_669D41FBF81F335AEC7A1C520E70B770"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-ThinItalic.ttf"
+            "TargetName" = "8:Roboto-ThinItalic.ttf"
             "Tag" = "8:"
-            "Folder" = "8:_FF0FF76A66C440FDA3823EC49EF278A6"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -226,9 +351,169 @@
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
-            "Register" = "3:1"
+            "Register" = "3:5"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C2CA3D19590408488D20550B287591E"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-MediumItalic.ttf"
+            "TargetName" = "8:Roboto-MediumItalic.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_71FC750EF7194C79B4A3D2EB7F35D889"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-Thin.ttf"
+            "TargetName" = "8:Roboto-Thin.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_805016DA9316466EA4FE9B2D32B7B437"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-Light.ttf"
+            "TargetName" = "8:Roboto-Light.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8D032E9ED7FC48489A270DE3C991C81E"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-Bold.ttf"
+            "TargetName" = "8:Roboto-Bold.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D908689AC01749D4A2336620E548D929"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-LightItalic.ttf"
+            "TargetName" = "8:Roboto-LightItalic.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E725F4526EF4427183E66954F000724E"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-BlackItalic.ttf"
+            "TargetName" = "8:Roboto-BlackItalic.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FB47BC19512749D1BEB0B95948CFA21B"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-Regular.ttf"
+            "TargetName" = "8:Roboto-Regular.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FCB8EE3D89064C76B62285595CDBC8B8"
+            {
+            "SourcePath" = "8:E:\\YandexDisk\\graphix\\fontpack\\Roboto-Black.ttf"
+            "TargetName" = "8:Roboto-Black.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -271,6 +556,17 @@
                 {
                 }
             }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_9375FE70FF34406FA966CA4F6C3EC0DC"
+            {
+            "Name" = "8:#1911"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:FontsFolder"
+                "Folders"
+                {
+                }
+            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_F943F1F588A64C1EB403A8E2FF9AD485"
             {
             "Name" = "8:#1916"
@@ -284,7 +580,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_FF0FF76A66C440FDA3823EC49EF278A6"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -303,15 +599,15 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1049"
+        "LangId" = "3:0"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:passave installer"
+        "ProductName" = "8:Passave Project"
         "ProductCode" = "8:{B7B3918B-A5C5-4097-9B5D-6530F1A8A2DE}"
-        "PackageCode" = "8:{FFDCAD6E-DD9F-4A0A-BFC9-1BF40A19686F}"
+        "PackageCode" = "8:{00A17900-7326-47FE-B9E8-771D50EAA47E}"
         "UpgradeCode" = "8:{D1D33B3D-B395-48E5-899D-7BB963FA6186}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -319,20 +615,20 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:weazy.exe"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:passave installer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:weazy."
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:Simple and beautiful password manager"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"

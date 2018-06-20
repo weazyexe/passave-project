@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using Passave.International;
 
 namespace Passave
 {
@@ -59,25 +60,7 @@ namespace Passave
                 currentColor = pink;
             }
 
-            if (language == Language.English)
-            {
-                EnglishButton.ForeColor = white;
-                EnglishButton.BackColor = currentColor;
-                EnglishButton.FlatAppearance.BorderColor = currentColor;
-                RussianButton.ForeColor = currentColor;
-                RussianButton.BackColor = SystemColors.Control;
-                RussianButton.FlatAppearance.BorderColor = currentColor;
-            }
-
-            if (language == Language.Russian)
-            {
-                EnglishButton.ForeColor = currentColor;
-                EnglishButton.BackColor = SystemColors.Control;
-                EnglishButton.FlatAppearance.BorderColor = currentColor;
-                RussianButton.ForeColor = white;
-                RussianButton.BackColor = currentColor;
-                RussianButton.FlatAppearance.BorderColor = currentColor;
-            }
+            SetLanguage();
 
             if (!MainForm.havePassword) OldPasswordTextBox.Enabled = false;
             else OldPasswordTextBox.Enabled = true;
@@ -166,6 +149,7 @@ namespace Passave
         }
         #endregion
 
+        #region UI handling
         private void BorderPanel_MouseDown(object sender, MouseEventArgs e)
         {
             BorderPanel.Capture = false;
@@ -284,7 +268,7 @@ namespace Passave
             if (MainForm.theme != Theme.Sunset)
                 SunsetButton.Image = Properties.Resources.menuimage_sunset_move;
         }
-
+        #endregion
 
         private void ForestButton_Click(object sender, EventArgs e)
         {
@@ -426,6 +410,11 @@ namespace Passave
                 messageBox.ShowDialog();
                 MainForm.havePassword = true;
             }
+            else
+            {
+                NewMessageBox messageBox = new NewMessageBox("Old password is wrong or you do not confirm your new password!", "ERROR", MessageBoxButtons.OK);
+                messageBox.ShowDialog();
+            }
         }
 
         private void CreateKeyButton_Click(object sender, EventArgs e)
@@ -561,6 +550,69 @@ namespace Passave
             SecureKeyDescLabel.Show();
             CreateKeyButton.Show();
             WarningLabel.Show();
+        }
+
+        private void SetLanguage()
+        {
+            if (language == Language.English)
+            {
+                EnglishButton.ForeColor = white;
+                EnglishButton.BackColor = currentColor;
+                EnglishButton.FlatAppearance.BorderColor = currentColor;
+                RussianButton.ForeColor = currentColor;
+                RussianButton.BackColor = SystemColors.Control;
+                RussianButton.FlatAppearance.BorderColor = currentColor;
+
+                HeaderLabel.Text = Eng.SettingsHeader;
+
+                ChangeButton.Text = Eng.ChangeButton;
+                ApplyButton.Text = Eng.ApplyButton;
+                CancelButton.Text = Eng.CancelButton;
+                CreateKeyButton.Text = Eng.CreateSecureKey;
+
+                ChangePassLabel.Text = Eng.ChangePasswordLabel;
+                CreateKeyLabel.Text = Eng.CreateSecureKey;
+                ThemeLabel.Text = Eng.ThemeLabel;
+                LanguageLabel.Text = Eng.LanguageLabel;
+                WarningLabel.Text = Eng.AttentionChangePasswordLabel;
+                SecureKeyDescLabel.Text = Eng.AboutSecureKeyLabel;
+                AboutProgramLabel.Text = Eng.AboutProgramLabel;
+                AboutDevLink.Text = Eng.DevLinkLabel;
+
+                OldPasswordTextBox.Hint = Eng.OldPasswordHint;
+                NewPasswordTextBox.Hint = Eng.NewPasswordHint;
+                ConfirmPasswordTextBox.Hint = Eng.ConfirmPasswordHint;
+            }
+
+            if (language == Language.Russian)
+            {
+                EnglishButton.ForeColor = currentColor;
+                EnglishButton.BackColor = SystemColors.Control;
+                EnglishButton.FlatAppearance.BorderColor = currentColor;
+                RussianButton.ForeColor = white;
+                RussianButton.BackColor = currentColor;
+                RussianButton.FlatAppearance.BorderColor = currentColor;
+
+                HeaderLabel.Text = Rus.SettingsHeader;
+
+                ChangeButton.Text = Rus.ChangeButton;
+                ApplyButton.Text = Rus.ApplyButton;
+                CancelButton.Text = Rus.CancelButton;
+                CreateKeyButton.Text = Rus.CreateSecureKey;
+
+                ChangePassLabel.Text = Rus.ChangePasswordLabel;
+                CreateKeyLabel.Text = Rus.CreateSecureKey;
+                ThemeLabel.Text = Rus.ThemeLabel;
+                LanguageLabel.Text = Rus.LanguageLabel;
+                WarningLabel.Text = Rus.AttentionChangePasswordLabel;
+                SecureKeyDescLabel.Text = Rus.AboutSecureKeyLabel;
+                AboutProgramLabel.Text = Rus.AboutProgramLabel;
+                AboutDevLink.Text = Rus.DevLinkLabel;
+
+                OldPasswordTextBox.Hint = Rus.OldPasswordHint;
+                NewPasswordTextBox.Hint = Rus.NewPasswordHint;
+                ConfirmPasswordTextBox.Hint = Rus.ConfirmPasswordHint;
+            }
         }
     }
 }

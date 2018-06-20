@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cryptography
+namespace Passave.Cryptography
 {
     public class AES
     {

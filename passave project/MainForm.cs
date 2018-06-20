@@ -8,13 +8,13 @@ using System.Security.Cryptography;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
-using Cryptography;
+using Passave.Cryptography;
+using Passave.International;
 
 
 namespace Passave
 {
     // TODO:
-    // settings: change password, create secure key, clipboard clear timer at secure
     // set new icons
     // languages
 
@@ -35,6 +35,8 @@ namespace Passave
 
         public static Theme theme = Theme.Desert;
 
+        string fn = "";
+
         public static string password;
         #endregion
 
@@ -50,18 +52,11 @@ namespace Passave
             HomebankingListView.Hide();
             LicensesListView.Hide();
             OtherListView.Hide();
-
-            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            //materialSkinManager.AddFormToManage(this);
-            //materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            //// 1 - bar (name), 2 - upper bar, 3 - ?, 4 - primary color tabpage, 5 - text color (theme)
-            //materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey900, Primary.Grey900, Primary.Green400, Accent.Blue400, TextShade.BLACK);
         }
 
-        public MainForm(string caller)
+        public MainForm(string caller) : base()
         {
-            InitializeComponent();
-            OpenFromSystem(caller);
+            fn = caller;
         }
         #endregion
 
@@ -386,6 +381,12 @@ namespace Passave
         #endregion
 
         #region UI handling
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (fn != "") Open(fn);
+        }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (changes != 0)
@@ -616,7 +617,7 @@ namespace Passave
         {
             Delete();
         }
-        
+
 
         private void CopyLoginButton_Click(object sender, EventArgs e)
         {
@@ -749,6 +750,8 @@ namespace Passave
                     MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
                 if (theme == Theme.Sunset)
                     MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+
+                SetLanguage();
             }
         }
 
@@ -1218,26 +1221,12 @@ namespace Passave
                         bool isEncrypted = false;
                         byte[] encrypted = new byte[16];
 
-                            if (!havePassword)
+                        if (!havePassword)
+                        {
+                            PasswordForm form = new PasswordForm();
+                            string hash;
+                            if (form.ShowDialog() == DialogResult.OK)
                             {
-                                PasswordForm form = new PasswordForm();
-                                string hash;
-                                if (form.ShowDialog() == DialogResult.OK)
-                                {
-                                    using (MD5 md5hash = MD5.Create())
-                                    {
-                                        hash = GetMD5Hash(md5hash, password);
-                                        byte[,] key = StringToByteBlock(hash);
-                                        aes = new AES(key);
-                                        encrypted = AES.Encrypt(saved);
-                                        havePassword = true;
-                                        isEncrypted = true;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                string hash;
                                 using (MD5 md5hash = MD5.Create())
                                 {
                                     hash = GetMD5Hash(md5hash, password);
@@ -1248,6 +1237,20 @@ namespace Passave
                                     isEncrypted = true;
                                 }
                             }
+                        }
+                        else
+                        {
+                            string hash;
+                            using (MD5 md5hash = MD5.Create())
+                            {
+                                hash = GetMD5Hash(md5hash, password);
+                                byte[,] key = StringToByteBlock(hash);
+                                aes = new AES(key);
+                                encrypted = AES.Encrypt(saved);
+                                havePassword = true;
+                                isEncrypted = true;
+                            }
+                        }
 
                         if (isEncrypted)
                         {
@@ -1284,252 +1287,7 @@ namespace Passave
                     ofd.Filter = "Passave Database (*.psv)|*.psv";
 
                     if (ofd.ShowDialog() == DialogResult.OK)
-                    {
-                        string rd = "";
-                        bool isDecrypted = false;
-                        string decrypted = "";
-                        using (StreamReader sr = new StreamReader(ofd.FileName))
-                        {
-                            PasswordForm form = new PasswordForm();
-                            DialogResult dr = form.ShowDialog();
-                            if (dr == DialogResult.OK)
-                            {
-                                using (MD5 md5hash = MD5.Create())
-                                {
-                                    rd = sr.ReadLine();
-                                    string[] temp = rd.Split();
-                                    byte[] rdb = new byte[temp.Length];
-                                    for (int i = 0; i < temp.Length; i++)
-                                        rdb[i] = Convert.ToByte(temp[i], 16);
-
-                                    string hash = GetMD5Hash(md5hash, password);
-                                    byte[,] key = StringToByteBlock(hash);
-                                    aes = new AES(key);
-
-                                    decrypted = AES.Decrypt(rdb);
-                                    isDecrypted = true;
-                                }
-                            }
-                            else if (dr == DialogResult.Yes)
-                            {
-                                rd = sr.ReadLine();
-                                string[] temp = rd.Split();
-                                byte[] rdb = new byte[temp.Length];
-                                for (int i = 0; i < temp.Length; i++)
-                                    rdb[i] = Convert.ToByte(temp[i], 16);
-
-                                aes = new AES(PasswordForm.secureKey);
-                                decrypted = AES.Decrypt(rdb);
-                                isDecrypted = true;
-                            }
-                        }
-
-                        if (isDecrypted)
-                        {
-                            using (StreamWriter sw = new StreamWriter(ofd.FileName))
-                            {
-                                sw.Write(decrypted);
-                            }
-
-                            using (StreamReader sr = new StreamReader(ofd.FileName))
-                            {
-                                havePassword = true;
-                                try
-                                {
-                                    Entry tempEntry = new Entry();
-                                    BankEntry tempBankEntry = new BankEntry();
-                                    LicenseEntry tempLicenseEntry = new LicenseEntry();
-
-                                    bool isFirst = true;
-                                    string readed = sr.ReadLine();
-                                    if (readed != "ENGLISH" && readed != "RUSSIAN")
-                                    {
-                                        NewMessageBox messageBox = new NewMessageBox("Wrong password!", "ERROR", MessageBoxButtons.OK);
-                                        messageBox.ShowDialog();
-                                        ClearAll();
-                                    }
-                                    else
-                                    {
-                                        if (readed == "ENGLISH")
-                                            SettingsForm.language = Language.English;
-                                        if (readed == "RUSSIAN")
-                                            SettingsForm.language = Language.Russian;
-
-                                        readed = sr.ReadLine();
-
-                                        if (readed == "FOREST")
-                                        {
-                                            theme = Theme.Forest;
-                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
-                                        }
-                                        if (readed == "DESERT")
-                                        {
-                                            theme = Theme.Desert;
-                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
-                                        }
-                                        if (readed == "MOUNTAINS")
-                                        {
-                                            theme = Theme.Mountains;
-                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
-                                        }
-                                        if (readed == "CITY")
-                                        {
-                                            theme = Theme.City;
-                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
-                                        }
-                                        if (readed == "SUNSET")
-                                        {
-                                            theme = Theme.Sunset;
-                                            MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
-                                        }
-
-                                        readed = sr.ReadLine();
-                                        while (readed != "EMAIL")
-                                        {
-                                            if (isFirst) readed = sr.ReadLine();
-                                            if (readed == "EMAIL") break;
-                                            tempEntry.Name = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Login = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Password = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Phone = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.URL = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Notes = readed;
-
-                                            socialNetworkList.Add(tempEntry);
-                                            readed = sr.ReadLine();
-                                            isFirst = false;
-                                            tempEntry = new Entry();
-                                        }
-
-                                        isFirst = true;
-                                        while (readed != "HOMEBANKING")
-                                        {
-                                            if (isFirst) readed = sr.ReadLine();
-                                            if (readed == "HOMEBANKING") break;
-                                            tempEntry.Name = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Login = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Password = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Phone = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.URL = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Notes = readed;
-
-                                            emailList.Add(tempEntry);
-                                            readed = sr.ReadLine();
-                                            isFirst = false;
-                                            tempEntry = new Entry();
-                                        }
-
-                                        isFirst = true;
-                                        while (readed != "LICENSES")
-                                        {
-                                            if (isFirst) readed = sr.ReadLine();
-                                            if (readed == "LICENSES") break;
-                                            tempBankEntry.Name = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempBankEntry.CardNumber = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempBankEntry.Date = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempBankEntry.CVC = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempBankEntry.Phone = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempBankEntry.Notes = readed;
-
-                                            homebankingList.Add(tempBankEntry);
-                                            readed = sr.ReadLine();
-                                            isFirst = false;
-                                            tempBankEntry = new BankEntry();
-                                        }
-
-                                        isFirst = true;
-                                        while (readed != "OTHER")
-                                        {
-                                            if (isFirst) readed = sr.ReadLine();
-                                            if (readed == "OTHER") break;
-                                            tempLicenseEntry.Name = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempLicenseEntry.Key = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempLicenseEntry.Notes = readed;
-
-                                            licensesList.Add(tempLicenseEntry);
-                                            readed = sr.ReadLine();
-                                            isFirst = false;
-                                            tempLicenseEntry = new LicenseEntry();
-                                        }
-
-                                        isFirst = true;
-                                        while (!sr.EndOfStream)
-                                        {
-                                            if (isFirst) readed = sr.ReadLine();
-                                            tempEntry.Name = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Login = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Password = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Phone = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.URL = readed;
-
-                                            readed = sr.ReadLine();
-                                            tempEntry.Notes = readed;
-
-                                            otherList.Add(tempEntry);
-                                            readed = sr.ReadLine();
-                                            isFirst = false;
-                                            tempEntry = new Entry();
-                                        }
-
-                                        FullListView();
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    NewMessageBox messageBox = new NewMessageBox("Unkonwn error: " + ex.Message, "ERROR", MessageBoxButtons.OK);
-                                    messageBox.ShowDialog();
-                                    ClearAll();
-                                }
-                            }
-
-                            using (StreamWriter sw = new StreamWriter(ofd.FileName))
-                            {
-                                sw.Write(rd);
-                            }
-                        }
-                    }
+                        Open(ofd.FileName);
                 }
             }
             catch (Exception e)
@@ -1543,7 +1301,7 @@ namespace Passave
         /// Open database from system
         /// </summary>
         /// <param name="file"></param>
-        private void OpenFromSystem(string file)
+        private void Open(string file)
         {
             string rd = "";
             bool isDecrypted = false;
@@ -1586,17 +1344,22 @@ namespace Passave
 
             if (isDecrypted)
             {
+                using (StreamWriter sw = new StreamWriter(file))
+                {
+                    sw.Write(decrypted);
+                }
+
                 using (StreamReader sr = new StreamReader(file))
                 {
-                    Entry tempEntry = new Entry();
-                    BankEntry tempBankEntry = new BankEntry();
-                    LicenseEntry tempLicenseEntry = new LicenseEntry();
-
-                    bool isFirst = true;
-                    string readed = sr.ReadLine();
-
+                    havePassword = true;
                     try
                     {
+                        Entry tempEntry = new Entry();
+                        BankEntry tempBankEntry = new BankEntry();
+                        LicenseEntry tempLicenseEntry = new LicenseEntry();
+
+                        bool isFirst = true;
+                        string readed = sr.ReadLine();
                         if (readed != "ENGLISH" && readed != "RUSSIAN")
                         {
                             NewMessageBox messageBox = new NewMessageBox("Wrong password!", "ERROR", MessageBoxButtons.OK);
@@ -1769,16 +1532,16 @@ namespace Passave
                             }
 
                             FullListView();
+                            SetLanguage();
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        NewMessageBox messageBox = new NewMessageBox("Wrong password!", "ERROR", MessageBoxButtons.OK);
+                        NewMessageBox messageBox = new NewMessageBox("Unkonwn error: " + ex.Message, "ERROR", MessageBoxButtons.OK);
                         messageBox.ShowDialog();
                         ClearAll();
                     }
                 }
-
 
                 using (StreamWriter sw = new StreamWriter(file))
                 {
@@ -1970,6 +1733,9 @@ namespace Passave
             }
         }
 
+        /// <summary>
+        /// Clear all data
+        /// </summary>
         private void ClearAll()
         {
             SNListView.Items.Clear();
@@ -1986,6 +1752,86 @@ namespace Passave
 
             havePassword = false;
             changes = 0;
+        }
+
+        /// <summary>
+        /// Set form language
+        /// </summary>
+        private void SetLanguage()
+        {
+            if (SettingsForm.language == Language.English)
+            {
+                SNListView.Columns[0].Text = Eng.NameListViewHeader;
+                SNListView.Columns[1].Text = Eng.LoginListViewHeader;
+                SNListView.Columns[2].Text = Eng.PasswordListViewHeader;
+                SNListView.Columns[3].Text = Eng.PhoneListViewHeader;
+                SNListView.Columns[4].Text = Eng.UrlListViewHeader;
+                SNListView.Columns[5].Text = Eng.NotesListViewHeader;
+
+                EmailListView.Columns[0].Text = Eng.NameListViewHeader;
+                EmailListView.Columns[1].Text = Eng.LoginListViewHeader;
+                EmailListView.Columns[2].Text = Eng.PasswordListViewHeader;
+                EmailListView.Columns[3].Text = Eng.PhoneListViewHeader;
+                EmailListView.Columns[4].Text = Eng.UrlListViewHeader;
+                EmailListView.Columns[5].Text = Eng.NotesListViewHeader;
+
+                OtherListView.Columns[0].Text = Eng.NameListViewHeader;
+                OtherListView.Columns[1].Text = Eng.LoginListViewHeader;
+                OtherListView.Columns[2].Text = Eng.PasswordListViewHeader;
+                OtherListView.Columns[3].Text = Eng.PhoneListViewHeader;
+                OtherListView.Columns[4].Text = Eng.UrlListViewHeader;
+                OtherListView.Columns[5].Text = Eng.NotesListViewHeader;
+
+                HomebankingListView.Columns[0].Text = Eng.NameListViewHeader;
+                HomebankingListView.Columns[1].Text = Eng.CardNumberListViewHeader;
+                HomebankingListView.Columns[2].Text = Eng.DateListViewHeader;
+                HomebankingListView.Columns[3].Text = Eng.CvcListViewHeader;
+                HomebankingListView.Columns[4].Text = Eng.PhoneListViewHeader;
+                HomebankingListView.Columns[5].Text = Eng.NotesListViewHeader;
+
+                LicensesListView.Columns[0].Text = Eng.NameListViewHeader;
+                LicensesListView.Columns[1].Text = Eng.KeyListViewHeader;
+                LicensesListView.Columns[2].Text = Eng.DateListViewHeader;
+
+                SearchTextBox.Hint = Eng.SearchHint;
+            }
+
+            if (SettingsForm.language == Language.Russian)
+            {
+                SNListView.Columns[0].Text = Rus.NameListViewHeader;
+                SNListView.Columns[1].Text = Rus.LoginListViewHeader;
+                SNListView.Columns[2].Text = Rus.PasswordListViewHeader;
+                SNListView.Columns[3].Text = Rus.PhoneListViewHeader;
+                SNListView.Columns[4].Text = Rus.UrlListViewHeader;
+                SNListView.Columns[5].Text = Rus.NotesListViewHeader;
+
+                EmailListView.Columns[0].Text = Rus.NameListViewHeader;
+                EmailListView.Columns[1].Text = Rus.LoginListViewHeader;
+                EmailListView.Columns[2].Text = Rus.PasswordListViewHeader;
+                EmailListView.Columns[3].Text = Rus.PhoneListViewHeader;
+                EmailListView.Columns[4].Text = Rus.UrlListViewHeader;
+                EmailListView.Columns[5].Text = Rus.NotesListViewHeader;
+
+                OtherListView.Columns[0].Text = Rus.NameListViewHeader;
+                OtherListView.Columns[1].Text = Rus.LoginListViewHeader;
+                OtherListView.Columns[2].Text = Rus.PasswordListViewHeader;
+                OtherListView.Columns[3].Text = Rus.PhoneListViewHeader;
+                OtherListView.Columns[4].Text = Rus.UrlListViewHeader;
+                OtherListView.Columns[5].Text = Rus.NotesListViewHeader;
+
+                HomebankingListView.Columns[0].Text = Rus.NameListViewHeader;
+                HomebankingListView.Columns[1].Text = Rus.CardNumberListViewHeader;
+                HomebankingListView.Columns[2].Text = Rus.DateListViewHeader;
+                HomebankingListView.Columns[3].Text = Rus.CvcListViewHeader;
+                HomebankingListView.Columns[4].Text = Rus.PhoneListViewHeader;
+                HomebankingListView.Columns[5].Text = Rus.NotesListViewHeader;
+
+                LicensesListView.Columns[0].Text = Rus.NameListViewHeader;
+                LicensesListView.Columns[1].Text = Rus.KeyListViewHeader;
+                LicensesListView.Columns[2].Text = Rus.DateListViewHeader;
+
+                SearchTextBox.Hint = Rus.SearchHint;
+            }
         }
 
         /// <summary>
@@ -2024,7 +1870,7 @@ namespace Passave
         {
             int count = 1;
             int len = source.Length;
-            for (int i = 1; i < len; i+=2)
+            for (int i = 1; i < len; i += 2)
             {
                 if (i != len - 1)
                 {

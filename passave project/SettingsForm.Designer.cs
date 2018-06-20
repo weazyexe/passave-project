@@ -89,11 +89,11 @@
             // HeaderLabel
             // 
             this.HeaderLabel.AutoSize = true;
-            this.HeaderLabel.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HeaderLabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.HeaderLabel.Location = new System.Drawing.Point(28, 12);
             this.HeaderLabel.Name = "HeaderLabel";
-            this.HeaderLabel.Size = new System.Drawing.Size(111, 26);
+            this.HeaderLabel.Size = new System.Drawing.Size(124, 25);
             this.HeaderLabel.TabIndex = 3;
             this.HeaderLabel.Text = "SETTINGS";
             // 
@@ -114,7 +114,7 @@
             // ThemeLabel
             // 
             this.ThemeLabel.AutoSize = true;
-            this.ThemeLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ThemeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ThemeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ThemeLabel.Location = new System.Drawing.Point(192, 91);
             this.ThemeLabel.Name = "ThemeLabel";
@@ -159,11 +159,11 @@
             // LanguageLabel
             // 
             this.LanguageLabel.AutoSize = true;
-            this.LanguageLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LanguageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LanguageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LanguageLabel.Location = new System.Drawing.Point(192, 382);
             this.LanguageLabel.Name = "LanguageLabel";
-            this.LanguageLabel.Size = new System.Drawing.Size(84, 20);
+            this.LanguageLabel.Size = new System.Drawing.Size(85, 20);
             this.LanguageLabel.TabIndex = 20;
             this.LanguageLabel.Text = "Language:";
             // 
@@ -184,7 +184,7 @@
             this.EnglishButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
             this.EnglishButton.FlatAppearance.BorderSize = 2;
             this.EnglishButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EnglishButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EnglishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EnglishButton.ForeColor = System.Drawing.Color.White;
             this.EnglishButton.Location = new System.Drawing.Point(196, 416);
             this.EnglishButton.Name = "EnglishButton";
@@ -199,7 +199,7 @@
             this.RussianButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
             this.RussianButton.FlatAppearance.BorderSize = 2;
             this.RussianButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RussianButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RussianButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RussianButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(181)))), ((int)(((byte)(125)))));
             this.RussianButton.Location = new System.Drawing.Point(309, 416);
             this.RussianButton.Name = "RussianButton";
@@ -211,7 +211,7 @@
             // 
             // AboutProgramLabel
             // 
-            this.AboutProgramLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutProgramLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AboutProgramLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.AboutProgramLabel.Location = new System.Drawing.Point(269, 276);
             this.AboutProgramLabel.Name = "AboutProgramLabel";
@@ -225,12 +225,12 @@
             // 
             this.AboutDevLink.ActiveLinkColor = System.Drawing.Color.Gray;
             this.AboutDevLink.AutoSize = true;
-            this.AboutDevLink.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutDevLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AboutDevLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.AboutDevLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.AboutDevLink.Location = new System.Drawing.Point(401, 388);
             this.AboutDevLink.Name = "AboutDevLink";
-            this.AboutDevLink.Size = new System.Drawing.Size(163, 20);
+            this.AboutDevLink.Size = new System.Drawing.Size(182, 20);
             this.AboutDevLink.TabIndex = 26;
             this.AboutDevLink.TabStop = true;
             this.AboutDevLink.Text = "Developer: weazy.exe";
@@ -367,11 +367,11 @@
             // ChangePassLabel
             // 
             this.ChangePassLabel.AutoSize = true;
-            this.ChangePassLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangePassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChangePassLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ChangePassLabel.Location = new System.Drawing.Point(191, 91);
             this.ChangePassLabel.Name = "ChangePassLabel";
-            this.ChangePassLabel.Size = new System.Drawing.Size(140, 20);
+            this.ChangePassLabel.Size = new System.Drawing.Size(141, 20);
             this.ChangePassLabel.TabIndex = 27;
             this.ChangePassLabel.Text = "Change password:";
             // 
@@ -383,7 +383,7 @@
             this.OldPasswordTextBox.MaxLength = 32767;
             this.OldPasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.OldPasswordTextBox.Name = "OldPasswordTextBox";
-            this.OldPasswordTextBox.PasswordChar = '\0';
+            this.OldPasswordTextBox.PasswordChar = '•';
             this.OldPasswordTextBox.SelectedText = "";
             this.OldPasswordTextBox.SelectionLength = 0;
             this.OldPasswordTextBox.SelectionStart = 0;
@@ -400,7 +400,7 @@
             this.NewPasswordTextBox.MaxLength = 32767;
             this.NewPasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
-            this.NewPasswordTextBox.PasswordChar = '\0';
+            this.NewPasswordTextBox.PasswordChar = '•';
             this.NewPasswordTextBox.SelectedText = "";
             this.NewPasswordTextBox.SelectionLength = 0;
             this.NewPasswordTextBox.SelectionStart = 0;
@@ -417,7 +417,7 @@
             this.ConfirmPasswordTextBox.MaxLength = 32767;
             this.ConfirmPasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
-            this.ConfirmPasswordTextBox.PasswordChar = '\0';
+            this.ConfirmPasswordTextBox.PasswordChar = '•';
             this.ConfirmPasswordTextBox.SelectedText = "";
             this.ConfirmPasswordTextBox.SelectionLength = 0;
             this.ConfirmPasswordTextBox.SelectionStart = 0;
@@ -474,17 +474,17 @@
             // CreateKeyLabel
             // 
             this.CreateKeyLabel.AutoSize = true;
-            this.CreateKeyLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CreateKeyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CreateKeyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CreateKeyLabel.Location = new System.Drawing.Point(191, 316);
             this.CreateKeyLabel.Name = "CreateKeyLabel";
-            this.CreateKeyLabel.Size = new System.Drawing.Size(132, 20);
+            this.CreateKeyLabel.Size = new System.Drawing.Size(137, 20);
             this.CreateKeyLabel.TabIndex = 34;
             this.CreateKeyLabel.Text = "Create secure key";
             // 
             // SecureKeyDescLabel
             // 
-            this.SecureKeyDescLabel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SecureKeyDescLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SecureKeyDescLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.SecureKeyDescLabel.Location = new System.Drawing.Point(192, 340);
             this.SecureKeyDescLabel.Name = "SecureKeyDescLabel";
@@ -495,13 +495,13 @@
             // 
             // WarningLabel
             // 
-            this.WarningLabel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WarningLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.WarningLabel.Location = new System.Drawing.Point(402, 122);
             this.WarningLabel.Name = "WarningLabel";
             this.WarningLabel.Size = new System.Drawing.Size(168, 87);
             this.WarningLabel.TabIndex = 36;
-            this.WarningLabel.Text = "If you will change password, your old secure key will be disabled!\r\n";
+            this.WarningLabel.Text = "If you will change password, your old secure key will be disabled!";
             // 
             // SettingsForm
             // 

@@ -308,7 +308,7 @@
             // 
             this.KeyTextBox.Depth = 0;
             this.KeyTextBox.Hint = "Key";
-            this.KeyTextBox.Location = new System.Drawing.Point(39, 138);
+            this.KeyTextBox.Location = new System.Drawing.Point(39, 117);
             this.KeyTextBox.MaxLength = 32767;
             this.KeyTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.KeyTextBox.Name = "KeyTextBox";

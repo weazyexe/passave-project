@@ -1,0 +1,16 @@
+E:\repositories\passave-project\passave project\bin\Release\passave project.exe.config
+E:\repositories\passave-project\passave project\bin\Release\passave project.exe
+E:\repositories\passave-project\passave project\bin\Release\passave project.pdb
+E:\repositories\passave-project\passave project\bin\Release\MaterialSkin.dll
+E:\repositories\passave-project\passave project\obj\Release\Passave.AddEditForm.resources
+E:\repositories\passave-project\passave project\obj\Release\Passave.MainForm.resources
+E:\repositories\passave-project\passave project\obj\Release\Passave.NewMessageBox.resources
+E:\repositories\passave-project\passave project\obj\Release\Passave.PasswordForm.resources
+E:\repositories\passave-project\passave project\obj\Release\Passave.Properties.Resources.resources
+E:\repositories\passave-project\passave project\obj\Release\Passave.SettingsForm.resources
+E:\repositories\passave-project\passave project\obj\Release\passave project.csproj.GenerateResource.cache
+E:\repositories\passave-project\passave project\obj\Release\passave project.csproj.CoreCompileInputs.cache
+E:\repositories\passave-project\passave project\obj\Release\passave project.csproj.CopyComplete
+E:\repositories\passave-project\passave project\obj\Release\passave project.exe
+E:\repositories\passave-project\passave project\obj\Release\passave project.pdb
+E:\repositories\passave-project\passave project\obj\Release\passave project.csprojResolveAssemblyReference.cache
