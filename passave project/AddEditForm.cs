@@ -466,8 +466,43 @@ namespace Passave
 
                 AttentionHMB = Eng.AttentionHeader;
 
-                AddButton.Location = new Point(254, 449);
-                CancelButton.Location = new Point(173, 449);
+                if (mode == Mode.Add)
+                {
+                    if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
+                    {
+                        AddButton.Location = new Point(254, 449);
+                        CancelButton.Location = new Point(173, 449);
+                    }
+                    else if (MainForm.isHomebankingShow)
+                    {
+                        AddButton.Location = new Point(475, 260);
+                        CancelButton.Location = new Point(394, 260);
+                    }
+                    else
+                    {
+                        AddButton.Location = new Point(476, 204);
+                        CancelButton.Location = new Point(395, 204);
+                    }
+                }
+
+                if (mode == Mode.Edit)
+                {
+                    if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
+                    {
+                        AddButton.Location = new Point(254, 449);
+                        CancelButton.Location = new Point(173, 449);
+                    }
+                    else if (MainForm.isHomebankingShow)
+                    {
+                        AddButton.Location = new Point(445, 260);
+                        CancelButton.Location = new Point(364, 260);
+                    }
+                    else
+                    {
+                        AddButton.Location = new Point(476, 204);
+                        CancelButton.Location = new Point(395, 204);
+                    }
+                }
 
                 NameTextBox.Hint = Eng.NameHint;
                 LoginTextBox.Hint = Eng.LoginHint;
@@ -508,6 +543,44 @@ namespace Passave
 
                     AddButton.Location = new Point(168, 449);
                     CancelButton.Location = new Point(87, 449);
+                }
+
+                if (mode == Mode.Add)
+                {
+                    if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
+                    {
+                        AddButton.Location = new Point(254, 449);
+                        CancelButton.Location = new Point(173, 449);
+                    }
+                    else if (MainForm.isHomebankingShow)
+                    {
+                        AddButton.Location = new Point(435, 260);
+                        CancelButton.Location = new Point(354, 260);
+                    }
+                    else
+                    {
+                        AddButton.Location = new Point(436, 204);
+                        CancelButton.Location = new Point(355, 204);
+                    }
+                }
+
+                if (mode == Mode.Edit)
+                {
+                    if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
+                    {
+                        AddButton.Location = new Point(254, 449);
+                        CancelButton.Location = new Point(173, 449);
+                    }
+                    else if (MainForm.isHomebankingShow)
+                    {
+                        AddButton.Location = new Point(385, 260);
+                        CancelButton.Location = new Point(304, 260);
+                    }
+                    else
+                    {
+                        AddButton.Location = new Point(416, 204);
+                        CancelButton.Location = new Point(335, 204);
+                    }
                 }
 
                 AttentionHMB = Rus.AttentionHeader;
