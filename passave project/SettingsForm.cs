@@ -11,7 +11,7 @@ namespace Passave
     public partial class SettingsForm : Form
     {
         public static bool isUIShow = true, isSecureShow = false, isAboutShow = false;
-        public static Language language = Language.English;
+        public static Language language = Language.Russian;
         static Color sand = Color.FromArgb(193, 181, 125), green = Color.FromArgb(99, 124, 89), blue = Color.FromArgb(103, 138, 165), pink = Color.FromArgb(206, 106, 142), black = Color.FromArgb(42, 42, 42), white = Color.FromArgb(255, 255, 255);
         static Color currentColor = sand;
 
@@ -96,7 +96,20 @@ namespace Passave
 
             SecureSettingsHide();
             AboutSettingsHide();
-            UIButton.Image = Properties.Resources.ui_button_activated;
+
+            if (language == Language.English)
+            {
+                UIButton.Image = Properties.Resources.ui_button_activated;
+                SecureButton.Image = Properties.Resources.secure_button_default;
+                AboutButton.Image = Properties.Resources.about_button_default;
+            }
+
+            if (language == Language.Russian)
+            {
+                UIButton.Image = Properties.Resources.rus_ui_button_activated;
+                SecureButton.Image = Properties.Resources.rus_secure_button_default;
+                AboutButton.Image = Properties.Resources.rus_about_button_default;
+            }
         }
 
         #region FORM SHADOW
@@ -207,35 +220,60 @@ namespace Passave
 
         private void UIButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!isUIShow)
-                UIButton.Image = Properties.Resources.ui_button_default;
+            if (language == Language.English)
+                if (!isUIShow)
+                    UIButton.Image = Properties.Resources.ui_button_default;
+
+            if (language == Language.Russian)
+                if (!isUIShow)
+                    UIButton.Image = Properties.Resources.rus_ui_button_default;
         }
 
         private void UIButton_MouseMove(object sender, MouseEventArgs e)
         {
-            UIButton.Image = Properties.Resources.ui_button_activated;
+            if (language == Language.English)
+                UIButton.Image = Properties.Resources.ui_button_activated;
+
+            if (language == Language.Russian)
+                UIButton.Image = Properties.Resources.rus_ui_button_activated;
         }
 
         private void SecureButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!isSecureShow)
-                SecureButton.Image = Properties.Resources.secure_button_default;
+            if (language == Language.English)
+                if (!isSecureShow)
+                    SecureButton.Image = Properties.Resources.secure_button_default;
+
+            if (language == Language.Russian)
+                if (!isSecureShow)
+                    SecureButton.Image = Properties.Resources.rus_secure_button_default;
         }
 
         private void SecureButton_MouseMove(object sender, MouseEventArgs e)
         {
-            SecureButton.Image = Properties.Resources.secure_button_activated;
+            if (language == Language.English)
+                SecureButton.Image = Properties.Resources.secure_button_activated;
+            if (language == Language.Russian)
+                SecureButton.Image = Properties.Resources.rus_secure_button_activated;
         }
 
         private void AboutButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!isAboutShow)
-                AboutButton.Image = Properties.Resources.about_button_default;
+            if (language == Language.English)
+                if (!isAboutShow)
+                    AboutButton.Image = Properties.Resources.about_button_default;
+
+            if (language == Language.Russian)
+                if (!isAboutShow)
+                    AboutButton.Image = Properties.Resources.rus_about_button_default;
         }
 
         private void AboutButton_MouseMove(object sender, MouseEventArgs e)
         {
-            AboutButton.Image = Properties.Resources.about_button_activated;
+            if (language == Language.English)
+                AboutButton.Image = Properties.Resources.about_button_activated;
+            if (language == Language.Russian)
+                AboutButton.Image = Properties.Resources.rus_about_button_activated;
         }
 
         private void ForestButton_MouseLeave(object sender, EventArgs e)
@@ -391,9 +429,19 @@ namespace Passave
             isSecureShow = false;
             isAboutShow = false;
 
-            UIButton.Image = Properties.Resources.ui_button_activated;
-            SecureButton.Image = Properties.Resources.secure_button_default;
-            AboutButton.Image = Properties.Resources.about_button_default;
+            if (language == Language.English)
+            {
+                UIButton.Image = Properties.Resources.ui_button_activated;
+                SecureButton.Image = Properties.Resources.secure_button_default;
+                AboutButton.Image = Properties.Resources.about_button_default;
+            }
+
+            if (language == Language.Russian)
+            {
+                UIButton.Image = Properties.Resources.rus_ui_button_activated;
+                SecureButton.Image = Properties.Resources.rus_secure_button_default;
+                AboutButton.Image = Properties.Resources.rus_about_button_default;
+            }
 
             UiSettingsShow();
             SecureSettingsHide();
@@ -406,9 +454,19 @@ namespace Passave
             isSecureShow = true;
             isAboutShow = false;
 
-            UIButton.Image = Properties.Resources.ui_button_default;
-            SecureButton.Image = Properties.Resources.secure_button_activated;
-            AboutButton.Image = Properties.Resources.about_button_default;
+            if (language == Language.English)
+            {
+                UIButton.Image = Properties.Resources.ui_button_default;
+                SecureButton.Image = Properties.Resources.secure_button_activated;
+                AboutButton.Image = Properties.Resources.about_button_default;
+            }
+
+            if (language == Language.Russian)
+            {
+                UIButton.Image = Properties.Resources.rus_ui_button_default;
+                SecureButton.Image = Properties.Resources.rus_secure_button_activated;
+                AboutButton.Image = Properties.Resources.rus_about_button_default;
+            }
 
             UiSettingsHide();
             SecureSettingsShow();
@@ -421,9 +479,19 @@ namespace Passave
             isSecureShow = false;
             isAboutShow = true;
 
-            UIButton.Image = Properties.Resources.ui_button_default;
-            SecureButton.Image = Properties.Resources.secure_button_default;
-            AboutButton.Image = Properties.Resources.about_button_activated;
+            if (language == Language.English)
+            {
+                UIButton.Image = Properties.Resources.ui_button_default;
+                SecureButton.Image = Properties.Resources.secure_button_default;
+                AboutButton.Image = Properties.Resources.about_button_activated;
+            }
+
+            if (language == Language.Russian)
+            {
+                UIButton.Image = Properties.Resources.rus_ui_button_default;
+                SecureButton.Image = Properties.Resources.rus_secure_button_default;
+                AboutButton.Image = Properties.Resources.rus_about_button_activated;
+            }
 
             UiSettingsHide();
             SecureSettingsHide();

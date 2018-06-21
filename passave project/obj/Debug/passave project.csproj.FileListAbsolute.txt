@@ -25,3 +25,4 @@ E:\repositories\passave-project\passave project\obj\Debug\Passave.AddEditForm.re
 E:\repositories\passave-project\passave project\obj\Debug\Passave.NewMessageBox.resources
 E:\repositories\passave-project\passave project\obj\Debug\Passave.SettingsForm.resources
 E:\repositories\passave-project\passave project\obj\Debug\Passave.PasswordForm.resources
+E:\repositories\passave-project\passave project\obj\Debug\passave project.csprojResolveAssemblyReference.cache

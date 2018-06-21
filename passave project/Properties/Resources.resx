@@ -250,4 +250,58 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rus_about_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_about_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_about_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_about_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_email_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_email_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_email_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_email_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_homebanking_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_homebanking_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_homebanking_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_homebanking_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_licenses_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_licenses_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_licenses_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_licenses_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_other_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_other_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_other_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_other_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_secure_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_secure_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_secure_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_secure_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_settings_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_settings_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_settings_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_settings_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_sn_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_sn_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_sn_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_sn_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_ui_button_activated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_ui_button_activated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rus_ui_button_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus_ui_button_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

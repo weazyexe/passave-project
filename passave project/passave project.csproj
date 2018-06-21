@@ -264,6 +264,24 @@
   <ItemGroup>
     <Content Include="ico.ico" />
     <Content Include="logo.ico" />
+    <None Include="Resources\rus_homebanking_button_activated.png" />
+    <None Include="Resources\rus_email_button_default.png" />
+    <None Include="Resources\rus_email_button_activated.png" />
+    <None Include="Resources\rus_sn_button_default.png" />
+    <None Include="Resources\rus_sn_button_activated.png" />
+    <None Include="Resources\rus_settings_button_default.png" />
+    <None Include="Resources\rus_settings_button_activated.png" />
+    <None Include="Resources\rus_other_button_default.png" />
+    <None Include="Resources\rus_other_button_activated.png" />
+    <None Include="Resources\rus_licenses_button_default.png" />
+    <None Include="Resources\rus_licenses_button_activated.png" />
+    <None Include="Resources\rus_homebanking_button_default.png" />
+    <None Include="Resources\rus_about_button_activated.png" />
+    <None Include="Resources\rus_about_button_default.png" />
+    <None Include="Resources\rus_secure_button_activated.png" />
+    <None Include="Resources\rus_ui_button_default.png" />
+    <None Include="Resources\rus_ui_button_activated.png" />
+    <None Include="Resources\rus_secure_button_default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

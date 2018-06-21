@@ -42,7 +42,25 @@ namespace Passave
         {
             InitializeComponent();
 
-            SNButton.Image = Properties.Resources.sn_button_activated;
+            SetLanguage();
+
+            if (SettingsForm.language == Language.English)
+            {
+                SNButton.Image = Properties.Resources.sn_button_activated;
+                EmailButton.Image = Properties.Resources.email_button_default;
+                HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.licenses_button_default;
+                OtherButton.Image = Properties.Resources.other_button_default;
+            }
+
+            if (SettingsForm.language == Language.Russian)
+            {
+                SNButton.Image = Properties.Resources.rus_sn_button_activated;
+                EmailButton.Image = Properties.Resources.rus_email_button_default;
+                HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                OtherButton.Image = Properties.Resources.rus_other_button_default;
+            }
 
             SNListView.Show();
             EmailListView.Hide();
@@ -140,67 +158,114 @@ namespace Passave
 
         private void SNButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!isSNShow)
-                SNButton.Image = Properties.Resources.sn_button_default;
+            if (SettingsForm.language == Language.English)
+                if (!isSNShow)
+                    SNButton.Image = Properties.Resources.sn_button_default;
+
+            if (SettingsForm.language == Language.Russian)
+                if (!isSNShow)
+                    SNButton.Image = Properties.Resources.rus_sn_button_default;
         }
 
         private void SNButton_MouseMove(object sender, MouseEventArgs e)
         {
-            SNButton.Image = Properties.Resources.sn_button_activated;
+            if (SettingsForm.language == Language.English)
+                SNButton.Image = Properties.Resources.sn_button_activated;
+            if (SettingsForm.language == Language.Russian)
+                SNButton.Image = Properties.Resources.rus_sn_button_activated;
         }
 
         private void EmailButton_MouseMove(object sender, MouseEventArgs e)
         {
-            EmailButton.Image = Properties.Resources.email_button_activated;
+            if (SettingsForm.language == Language.English)
+                EmailButton.Image = Properties.Resources.email_button_activated;
+            if (SettingsForm.language == Language.Russian)
+                EmailButton.Image = Properties.Resources.rus_email_button_activated;
         }
 
         private void EmailButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!isEmailShow)
-                EmailButton.Image = Properties.Resources.email_button_default;
+            if (SettingsForm.language == Language.English)
+                if (!isEmailShow)
+                    EmailButton.Image = Properties.Resources.email_button_default;
+
+            if (SettingsForm.language == Language.Russian)
+                if (!isEmailShow)
+                    EmailButton.Image = Properties.Resources.rus_email_button_default;
         }
 
         private void HomebankingButton_MouseMove(object sender, MouseEventArgs e)
         {
-            HomebankingButton.Image = Properties.Resources.homebanking_button_activated;
+            if (SettingsForm.language == Language.English)
+                HomebankingButton.Image = Properties.Resources.homebanking_button_activated;
+            if (SettingsForm.language == Language.Russian)
+                HomebankingButton.Image = Properties.Resources.rus_homebanking_button_activated;
         }
 
         private void HomebankingButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!isHomebankingShow)
-                HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+            if (SettingsForm.language == Language.English)
+                if (!isHomebankingShow)
+                    HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+
+            if (SettingsForm.language == Language.Russian)
+                if (!isHomebankingShow)
+                    HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
         }
 
         private void LicensesButton_MouseMove(object sender, MouseEventArgs e)
         {
-            LicensesButton.Image = Properties.Resources.licenses_button_activated;
+            if (SettingsForm.language == Language.English)
+                LicensesButton.Image = Properties.Resources.licenses_button_activated;
+            if (SettingsForm.language == Language.Russian)
+                LicensesButton.Image = Properties.Resources.rus_licenses_button_activated;
         }
 
         private void LicensesButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!isLicensesShow)
-                LicensesButton.Image = Properties.Resources.licenses_button_default;
+            if (SettingsForm.language == Language.English)
+                if (!isLicensesShow)
+                    LicensesButton.Image = Properties.Resources.licenses_button_default;
+
+            if (SettingsForm.language == Language.Russian)
+                if (!isLicensesShow)
+                    LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
         }
 
         private void OtherButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!isOtherShow)
-                OtherButton.Image = Properties.Resources.other_button_default;
+            if (SettingsForm.language == Language.English)
+                if (!isOtherShow)
+                    OtherButton.Image = Properties.Resources.other_button_default;
+
+            if (SettingsForm.language == Language.Russian)
+                if (!isOtherShow)
+                    OtherButton.Image = Properties.Resources.rus_other_button_default;
         }
 
         private void OtherButton_MouseMove(object sender, MouseEventArgs e)
         {
-            OtherButton.Image = Properties.Resources.other_button_activated;
+            if (SettingsForm.language == Language.English)
+                OtherButton.Image = Properties.Resources.other_button_activated;
+            if (SettingsForm.language == Language.Russian)
+                OtherButton.Image = Properties.Resources.rus_other_button_activated;
         }
 
         private void SettingsButton_MouseMove(object sender, MouseEventArgs e)
         {
-            SettingsButton.Image = Properties.Resources.settings_button_activated;
+            if (SettingsForm.language == Language.English)
+                SettingsButton.Image = Properties.Resources.settings_button_activated;
+            if (SettingsForm.language == Language.Russian)
+                SettingsButton.Image = Properties.Resources.rus_settings_button_activated;
         }
 
         private void SettingsButton_MouseLeave(object sender, EventArgs e)
         {
-            SettingsButton.Image = Properties.Resources.settings_button_default;
+            if (SettingsForm.language == Language.English)
+                SettingsButton.Image = Properties.Resources.settings_button_default;
+
+            if (SettingsForm.language == Language.Russian)
+                SettingsButton.Image = Properties.Resources.rus_settings_button_default;
         }
 
         private void BorderPanel_MouseDown(object sender, MouseEventArgs e)
@@ -278,11 +343,23 @@ namespace Passave
             isLicensesShow = false;
             isOtherShow = false;
 
-            SNButton.Image = Properties.Resources.sn_button_activated;
-            EmailButton.Image = Properties.Resources.email_button_default;
-            HomebankingButton.Image = Properties.Resources.homebanking_button_default;
-            LicensesButton.Image = Properties.Resources.licenses_button_default;
-            OtherButton.Image = Properties.Resources.other_button_default;
+            if (SettingsForm.language == Language.English)
+            {
+                SNButton.Image = Properties.Resources.sn_button_activated;
+                EmailButton.Image = Properties.Resources.email_button_default;
+                HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.licenses_button_default;
+                OtherButton.Image = Properties.Resources.other_button_default;
+            }
+
+            if (SettingsForm.language == Language.Russian)
+            {
+                SNButton.Image = Properties.Resources.rus_sn_button_activated;
+                EmailButton.Image = Properties.Resources.rus_email_button_default;
+                HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                OtherButton.Image = Properties.Resources.rus_other_button_default;
+            }
 
             SNListView.Show();
             EmailListView.Hide();
@@ -299,11 +376,23 @@ namespace Passave
             isLicensesShow = false;
             isOtherShow = false;
 
-            SNButton.Image = Properties.Resources.sn_button_default;
-            EmailButton.Image = Properties.Resources.email_button_activated;
-            HomebankingButton.Image = Properties.Resources.homebanking_button_default;
-            LicensesButton.Image = Properties.Resources.licenses_button_default;
-            OtherButton.Image = Properties.Resources.other_button_default;
+            if (SettingsForm.language == Language.English)
+            {
+                SNButton.Image = Properties.Resources.sn_button_default;
+                EmailButton.Image = Properties.Resources.email_button_activated;
+                HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.licenses_button_default;
+                OtherButton.Image = Properties.Resources.other_button_default;
+            }
+
+            if (SettingsForm.language == Language.Russian)
+            {
+                SNButton.Image = Properties.Resources.rus_sn_button_default;
+                EmailButton.Image = Properties.Resources.rus_email_button_activated;
+                HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                OtherButton.Image = Properties.Resources.rus_other_button_default;
+            }
 
             SNListView.Hide();
             EmailListView.Show();
@@ -320,11 +409,23 @@ namespace Passave
             isLicensesShow = false;
             isOtherShow = false;
 
-            SNButton.Image = Properties.Resources.sn_button_default;
-            EmailButton.Image = Properties.Resources.email_button_default;
-            HomebankingButton.Image = Properties.Resources.homebanking_button_activated;
-            LicensesButton.Image = Properties.Resources.licenses_button_default;
-            OtherButton.Image = Properties.Resources.other_button_default;
+            if (SettingsForm.language == Language.English)
+            {
+                SNButton.Image = Properties.Resources.sn_button_default;
+                EmailButton.Image = Properties.Resources.email_button_default;
+                HomebankingButton.Image = Properties.Resources.homebanking_button_activated;
+                LicensesButton.Image = Properties.Resources.licenses_button_default;
+                OtherButton.Image = Properties.Resources.other_button_default;
+            }
+
+            if (SettingsForm.language == Language.Russian)
+            {
+                SNButton.Image = Properties.Resources.rus_sn_button_default;
+                EmailButton.Image = Properties.Resources.rus_email_button_default;
+                HomebankingButton.Image = Properties.Resources.rus_homebanking_button_activated;
+                LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                OtherButton.Image = Properties.Resources.rus_other_button_default;
+            }
 
             SNListView.Hide();
             EmailListView.Hide();
@@ -341,11 +442,23 @@ namespace Passave
             isLicensesShow = true;
             isOtherShow = false;
 
-            SNButton.Image = Properties.Resources.sn_button_default;
-            EmailButton.Image = Properties.Resources.email_button_default;
-            HomebankingButton.Image = Properties.Resources.homebanking_button_default;
-            LicensesButton.Image = Properties.Resources.licenses_button_activated;
-            OtherButton.Image = Properties.Resources.other_button_default;
+            if (SettingsForm.language == Language.English)
+            {
+                SNButton.Image = Properties.Resources.sn_button_default;
+                EmailButton.Image = Properties.Resources.email_button_default;
+                HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.licenses_button_activated;
+                OtherButton.Image = Properties.Resources.other_button_default;
+            }
+
+            if (SettingsForm.language == Language.Russian)
+            {
+                SNButton.Image = Properties.Resources.rus_sn_button_default;
+                EmailButton.Image = Properties.Resources.rus_email_button_default;
+                HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.rus_licenses_button_activated;
+                OtherButton.Image = Properties.Resources.rus_other_button_default;
+            }
 
             SNListView.Hide();
             EmailListView.Hide();
@@ -362,11 +475,23 @@ namespace Passave
             isLicensesShow = false;
             isOtherShow = true;
 
-            SNButton.Image = Properties.Resources.sn_button_default;
-            EmailButton.Image = Properties.Resources.email_button_default;
-            HomebankingButton.Image = Properties.Resources.homebanking_button_default;
-            LicensesButton.Image = Properties.Resources.licenses_button_default;
-            OtherButton.Image = Properties.Resources.other_button_activated;
+            if (SettingsForm.language == Language.English)
+            {
+                SNButton.Image = Properties.Resources.sn_button_default;
+                EmailButton.Image = Properties.Resources.email_button_default;
+                HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.licenses_button_default;
+                OtherButton.Image = Properties.Resources.other_button_activated;
+            }
+
+            if (SettingsForm.language == Language.Russian)
+            {
+                SNButton.Image = Properties.Resources.rus_sn_button_default;
+                EmailButton.Image = Properties.Resources.rus_email_button_default;
+                HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                OtherButton.Image = Properties.Resources.rus_other_button_activated;
+            }
 
             SNListView.Hide();
             EmailListView.Hide();
@@ -1838,6 +1963,53 @@ namespace Passave
         {
             if (SettingsForm.language == Language.English)
             {
+                if (isSNShow)
+                {
+                    SNButton.Image = Properties.Resources.sn_button_activated;
+                    EmailButton.Image = Properties.Resources.email_button_default;
+                    HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                    LicensesButton.Image = Properties.Resources.licenses_button_default;
+                    OtherButton.Image = Properties.Resources.other_button_default;
+                }
+
+                if (isEmailShow)
+                {
+                    SNButton.Image = Properties.Resources.sn_button_default;
+                    EmailButton.Image = Properties.Resources.email_button_activated;
+                    HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                    LicensesButton.Image = Properties.Resources.licenses_button_default;
+                    OtherButton.Image = Properties.Resources.other_button_default;
+                }
+
+                if (isHomebankingShow)
+                {
+                    SNButton.Image = Properties.Resources.sn_button_default;
+                    EmailButton.Image = Properties.Resources.email_button_default;
+                    HomebankingButton.Image = Properties.Resources.homebanking_button_activated;
+                    LicensesButton.Image = Properties.Resources.licenses_button_default;
+                    OtherButton.Image = Properties.Resources.other_button_default;
+                }
+
+                if (isLicensesShow)
+                {
+                    SNButton.Image = Properties.Resources.sn_button_default;
+                    EmailButton.Image = Properties.Resources.email_button_default;
+                    HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                    LicensesButton.Image = Properties.Resources.licenses_button_activated;
+                    OtherButton.Image = Properties.Resources.other_button_default;
+                }
+
+                if (isOtherShow)
+                {
+                    SNButton.Image = Properties.Resources.sn_button_default;
+                    EmailButton.Image = Properties.Resources.email_button_default;
+                    HomebankingButton.Image = Properties.Resources.homebanking_button_default;
+                    LicensesButton.Image = Properties.Resources.licenses_button_default;
+                    OtherButton.Image = Properties.Resources.other_button_activated;
+                }
+
+                SettingsButton.Image = Properties.Resources.settings_button_default;
+
                 SNListView.Columns[0].Text = Eng.NameListViewHeader;
                 SNListView.Columns[1].Text = Eng.LoginListViewHeader;
                 SNListView.Columns[2].Text = Eng.PasswordListViewHeader;
@@ -1894,6 +2066,53 @@ namespace Passave
 
             if (SettingsForm.language == Language.Russian)
             {
+                if (isSNShow)
+                {
+                    SNButton.Image = Properties.Resources.rus_sn_button_activated;
+                    EmailButton.Image = Properties.Resources.rus_email_button_default;
+                    HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                    LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                    OtherButton.Image = Properties.Resources.rus_other_button_default;
+                }
+
+                if (isEmailShow)
+                {
+                    SNButton.Image = Properties.Resources.rus_sn_button_default;
+                    EmailButton.Image = Properties.Resources.rus_email_button_activated;
+                    HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                    LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                    OtherButton.Image = Properties.Resources.rus_other_button_default;
+                }
+
+                if (isHomebankingShow)
+                {
+                    SNButton.Image = Properties.Resources.rus_sn_button_default;
+                    EmailButton.Image = Properties.Resources.rus_email_button_default;
+                    HomebankingButton.Image = Properties.Resources.rus_homebanking_button_activated;
+                    LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                    OtherButton.Image = Properties.Resources.rus_other_button_default;
+                }
+
+                if (isLicensesShow)
+                {
+                    SNButton.Image = Properties.Resources.rus_sn_button_default;
+                    EmailButton.Image = Properties.Resources.rus_email_button_default;
+                    HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                    LicensesButton.Image = Properties.Resources.rus_licenses_button_activated;
+                    OtherButton.Image = Properties.Resources.rus_other_button_default;
+                }
+
+                if (isOtherShow)
+                {
+                    SNButton.Image = Properties.Resources.rus_sn_button_default;
+                    EmailButton.Image = Properties.Resources.rus_email_button_default;
+                    HomebankingButton.Image = Properties.Resources.rus_homebanking_button_default;
+                    LicensesButton.Image = Properties.Resources.rus_licenses_button_default;
+                    OtherButton.Image = Properties.Resources.rus_other_button_activated;
+                }
+
+                SettingsButton.Image = Properties.Resources.rus_settings_button_default;
+
                 SNListView.Columns[0].Text = Rus.NameListViewHeader;
                 SNListView.Columns[1].Text = Rus.LoginListViewHeader;
                 SNListView.Columns[2].Text = Rus.PasswordListViewHeader;
