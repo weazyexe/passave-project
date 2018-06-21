@@ -125,7 +125,7 @@
             this.NotesSN});
             this.SNListView.ContextMenuStrip = this.TableContextMenu;
             this.SNListView.Depth = 0;
-            this.SNListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.SNListView.Font = new System.Drawing.Font("Roboto", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(204)));
             this.SNListView.FullRowSelect = true;
             this.SNListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.SNListView.Location = new System.Drawing.Point(297, 77);
@@ -334,7 +334,7 @@
             this.NotesEmail});
             this.EmailListView.ContextMenuStrip = this.TableContextMenu;
             this.EmailListView.Depth = 0;
-            this.EmailListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.EmailListView.Font = new System.Drawing.Font("Roboto", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(204)));
             this.EmailListView.FullRowSelect = true;
             this.EmailListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.EmailListView.Location = new System.Drawing.Point(297, 77);
@@ -390,7 +390,7 @@
             this.NotesHB});
             this.HomebankingListView.ContextMenuStrip = this.HomebankingContextMenu;
             this.HomebankingListView.Depth = 0;
-            this.HomebankingListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.HomebankingListView.Font = new System.Drawing.Font("Roboto", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(204)));
             this.HomebankingListView.FullRowSelect = true;
             this.HomebankingListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.HomebankingListView.Location = new System.Drawing.Point(297, 77);
@@ -497,7 +497,7 @@
             this.NotesLicenses});
             this.LicensesListView.ContextMenuStrip = this.LicensesContextMenu;
             this.LicensesListView.Depth = 0;
-            this.LicensesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.LicensesListView.Font = new System.Drawing.Font("Roboto", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(204)));
             this.LicensesListView.FullRowSelect = true;
             this.LicensesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.LicensesListView.Location = new System.Drawing.Point(297, 77);
@@ -586,7 +586,7 @@
             this.NotesOther});
             this.OtherListView.ContextMenuStrip = this.TableContextMenu;
             this.OtherListView.Depth = 0;
-            this.OtherListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.OtherListView.Font = new System.Drawing.Font("Roboto", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(204)));
             this.OtherListView.ForeColor = System.Drawing.SystemColors.WindowText;
             this.OtherListView.FullRowSelect = true;
             this.OtherListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -745,6 +745,7 @@
             this.Text = "Passave";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.TableContextMenu.ResumeLayout(false);
             this.BorderPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton)).EndInit();

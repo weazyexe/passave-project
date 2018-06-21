@@ -25,6 +25,10 @@ namespace Passave
         Theme thisTheme = MainForm.theme;
         Color thisCurrentColor = currentColor;
 
+        string SuccessHMB, ErrorHMB, PasswordSetsMB, PasswordChangedMB, WrongOldPasswordMB, CreateSecureKeySuccessfullMB, CreateSecureKeyWrongMB;
+
+        bool isForest, isDesert, isMountains, isCity, isSunset;
+
         public SettingsForm()
         {
             InitializeComponent();
@@ -34,30 +38,60 @@ namespace Passave
                 MenuPanel.BackgroundImage = Properties.Resources.menuimage_forest;
                 ForestButton.Image = Properties.Resources.menuimage_forest_activated;
                 currentColor = green;
+
+                isForest = true;
+                isDesert = false;
+                isMountains = false;
+                isCity = false;
+                isSunset = false;
             }
             if (MainForm.theme == Theme.Desert)
             {
                 MenuPanel.BackgroundImage = Properties.Resources.menuimage_desert;
                 DesertButton.Image = Properties.Resources.menuimage_desert_activated;
                 currentColor = sand;
+
+                isForest = false;
+                isDesert = true;
+                isMountains = false;
+                isCity = false;
+                isSunset = false;
             }
             if (MainForm.theme == Theme.Mountains)
             {
                 MenuPanel.BackgroundImage = Properties.Resources.menuimage_mountains;
                 MountainsButton.Image = Properties.Resources.menuimage_mountains_activated;
                 currentColor = blue;
+
+                isForest = false;
+                isDesert = false;
+                isMountains = true;
+                isCity = false;
+                isSunset = false;
             }
             if (MainForm.theme == Theme.City)
             {
                 MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
                 CityButton.Image = Properties.Resources.menuimage_city_activated;
                 currentColor = black;
+
+                isForest = false;
+                isDesert = false;
+                isMountains = false;
+                isCity = true;
+                isSunset = false;
             }
             if (MainForm.theme == Theme.Sunset)
             {
                 MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
                 SunsetButton.Image = Properties.Resources.menuimage_sunset_activated;
                 currentColor = pink;
+
+                isForest = false;
+                isDesert = false;
+                isMountains = false;
+                isCity = false;
+                isSunset = true;
             }
 
             SetLanguage();
@@ -211,61 +245,61 @@ namespace Passave
 
         private void ForestButton_MouseLeave(object sender, EventArgs e)
         {
-            if (MainForm.theme != Theme.Forest)
+            if (!isForest)
                 ForestButton.Image = Properties.Resources.menuimage_forest;
         }
 
         private void ForestButton_MouseMove(object sender, MouseEventArgs e)
         {
-            if (MainForm.theme != Theme.Forest)
+            if (!isForest)
                 ForestButton.Image = Properties.Resources.menuimage_forest_move;
         }
 
         private void DesertButton_MouseLeave(object sender, EventArgs e)
         {
-            if (MainForm.theme != Theme.Desert)
+            if (!isDesert)
                 DesertButton.Image = Properties.Resources.menuimage_desert;
         }
 
         private void DesertButton_MouseMove(object sender, MouseEventArgs e)
         {
-            if (MainForm.theme != Theme.Desert)
+            if (!isDesert)
                 DesertButton.Image = Properties.Resources.menuimage_desert_move;
         }
 
         private void MountainsButton_MouseLeave(object sender, EventArgs e)
         {
-            if (MainForm.theme != Theme.Mountains)
+            if (!isMountains)
                 MountainsButton.Image = Properties.Resources.menuimage_mountains;
         }
 
         private void MountainsButton_MouseMove(object sender, MouseEventArgs e)
         {
-            if (MainForm.theme != Theme.Mountains)
+            if (!isMountains)
                 MountainsButton.Image = Properties.Resources.menuimage_mountains_move;
         }
 
         private void CityButton_MouseLeave(object sender, EventArgs e)
         {
-            if (MainForm.theme != Theme.City)
+            if (!isCity)
                 CityButton.Image = Properties.Resources.menuimage_city;
         }
 
         private void CityButton_MouseMove(object sender, MouseEventArgs e)
         {
-            if (MainForm.theme != Theme.City)
+            if (!isCity)
                 CityButton.Image = Properties.Resources.menuimage_city_move;
         }
 
         private void SunsetButton_MouseLeave(object sender, EventArgs e)
         {
-            if (MainForm.theme != Theme.Sunset)
+            if (!isSunset)
                 SunsetButton.Image = Properties.Resources.menuimage_sunset;
         }
 
         private void SunsetButton_MouseMove(object sender, MouseEventArgs e)
         {
-            if (MainForm.theme != Theme.Sunset)
+            if (!isSunset)
                 SunsetButton.Image = Properties.Resources.menuimage_sunset_move;
         }
         #endregion
@@ -273,67 +307,86 @@ namespace Passave
         private void ForestButton_Click(object sender, EventArgs e)
         {
             if (MainForm.theme != Theme.Forest) MainForm.changes++;
-            MainForm.theme = Theme.Forest;
+
+            isForest = true;
+            isDesert = false;
+            isMountains = false;
+            isCity = false;
+            isSunset = false;
 
             ForestButton.Image = Properties.Resources.menuimage_forest_activated;
             DesertButton.Image = Properties.Resources.menuimage_desert;
             MountainsButton.Image = Properties.Resources.menuimage_mountains;
             CityButton.Image = Properties.Resources.menuimage_city;
             SunsetButton.Image = Properties.Resources.menuimage_sunset;
-
-            currentColor = green;
         }
 
         private void DesertButton_Click(object sender, EventArgs e)
         {
             if (MainForm.theme != Theme.Desert) MainForm.changes++;
-            MainForm.theme = Theme.Desert;
+
+            isForest = false;
+            isDesert = true;
+            isMountains = false;
+            isCity = false;
+            isSunset = false;
+
             ForestButton.Image = Properties.Resources.menuimage_forest;
             DesertButton.Image = Properties.Resources.menuimage_desert_activated;
             MountainsButton.Image = Properties.Resources.menuimage_mountains;
             CityButton.Image = Properties.Resources.menuimage_city;
             SunsetButton.Image = Properties.Resources.menuimage_sunset;
-
-            currentColor = sand;
         }
 
         private void MountainsButton_Click(object sender, EventArgs e)
         {
             if (MainForm.theme != Theme.Mountains) MainForm.changes++;
-            MainForm.theme = Theme.Mountains;
+
+            isForest = false;
+            isDesert = false;
+            isMountains = true;
+            isCity = false;
+            isSunset = false;
+
             ForestButton.Image = Properties.Resources.menuimage_forest;
             DesertButton.Image = Properties.Resources.menuimage_desert;
             MountainsButton.Image = Properties.Resources.menuimage_mountains_activated;
             CityButton.Image = Properties.Resources.menuimage_city;
             SunsetButton.Image = Properties.Resources.menuimage_sunset;
-
-            currentColor = blue;
         }
 
         private void CityButton_Click(object sender, EventArgs e)
         {
             if (MainForm.theme != Theme.City) MainForm.changes++;
-            MainForm.theme = Theme.City;
+
+            isForest = false;
+            isDesert = false;
+            isMountains = false;
+            isCity = true;
+            isSunset = false;
+
             ForestButton.Image = Properties.Resources.menuimage_forest;
             DesertButton.Image = Properties.Resources.menuimage_desert;
             MountainsButton.Image = Properties.Resources.menuimage_mountains;
             CityButton.Image = Properties.Resources.menuimage_city_activated;
             SunsetButton.Image = Properties.Resources.menuimage_sunset;
-
-            currentColor = black;
         }
 
         private void SunsetButton_Click(object sender, EventArgs e)
         {
             if (MainForm.theme != Theme.Sunset) MainForm.changes++;
-            MainForm.theme = Theme.Sunset;
+
+            isForest = false;
+            isDesert = false;
+            isMountains = false;
+            isCity = false;
+            isSunset = true;
+
             ForestButton.Image = Properties.Resources.menuimage_forest;
             DesertButton.Image = Properties.Resources.menuimage_desert;
             MountainsButton.Image = Properties.Resources.menuimage_mountains;
             CityButton.Image = Properties.Resources.menuimage_city;
             SunsetButton.Image = Properties.Resources.menuimage_sunset_activated;
-
-            currentColor = pink;
         }
 
 
@@ -385,6 +438,18 @@ namespace Passave
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
+            if (isForest) MainForm.theme = Theme.Forest;
+            if (isDesert) MainForm.theme = Theme.Desert;
+            if (isMountains) MainForm.theme = Theme.Mountains;
+            if (isCity) MainForm.theme = Theme.City;
+            if (isSunset) MainForm.theme = Theme.Sunset;
+
+            if (MainForm.theme == Theme.Forest) currentColor = green;
+            if (MainForm.theme == Theme.Desert) currentColor = sand;
+            if (MainForm.theme == Theme.Mountains) currentColor = blue;
+            if (MainForm.theme == Theme.City) currentColor = black;
+            if (MainForm.theme == Theme.Sunset) currentColor = pink;
+
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -396,24 +461,24 @@ namespace Passave
 
         private void ChangeButton_Click(object sender, EventArgs e)
         {
-            if (!MainForm.havePassword)
+            if (ConfirmPasswordTextBox.Text != NewPasswordTextBox.Text)
+            {
+                NewMessageBox messageBox = new NewMessageBox(WrongOldPasswordMB, ErrorHMB);
+                messageBox.ShowDialog();
+            }
+            else if (!MainForm.havePassword)
             {
                 MainForm.password = NewPasswordTextBox.Text;
-                NewMessageBox messageBox = new NewMessageBox("Password sets!", "SUCCESS", MessageBoxButtons.OK);
+                NewMessageBox messageBox = new NewMessageBox(PasswordSetsMB, SuccessHMB);
                 messageBox.ShowDialog();
                 MainForm.havePassword = true;
             }
             else if (OldPasswordTextBox.Text == MainForm.password && NewPasswordTextBox.Text == ConfirmPasswordTextBox.Text)
             {
                 MainForm.password = NewPasswordTextBox.Text;
-                NewMessageBox messageBox = new NewMessageBox("Password changed!", "SUCCESS", MessageBoxButtons.OK);
+                NewMessageBox messageBox = new NewMessageBox(PasswordChangedMB, SuccessHMB);
                 messageBox.ShowDialog();
                 MainForm.havePassword = true;
-            }
-            else
-            {
-                NewMessageBox messageBox = new NewMessageBox("Old password is wrong or you do not confirm your new password!", "ERROR", MessageBoxButtons.OK);
-                messageBox.ShowDialog();
             }
         }
 
@@ -437,7 +502,7 @@ namespace Passave
                                 sw.Write(hash);
 
                                 MainForm.password = NewPasswordTextBox.Text;
-                                NewMessageBox messageBox = new NewMessageBox("Create successful. Keep it safe :)", "SUCCESS", MessageBoxButtons.OK);
+                                NewMessageBox messageBox = new NewMessageBox(CreateSecureKeySuccessfullMB, SuccessHMB);
                                 messageBox.ShowDialog();
                             }
                         }
@@ -446,7 +511,7 @@ namespace Passave
             }
             else
             {
-                NewMessageBox messageBox = new NewMessageBox("You haven't password! Please, set the password and create secure key after it.", "INFO", MessageBoxButtons.OK);
+                NewMessageBox messageBox = new NewMessageBox(CreateSecureKeyWrongMB, ErrorHMB);
                 messageBox.Show();
             }
         }
@@ -556,12 +621,23 @@ namespace Passave
         {
             if (language == Language.English)
             {
+                ApplyButton.Location = new Point(712, 471);
+                CancelButton.Location = new Point(631, 471);
+
                 EnglishButton.ForeColor = white;
                 EnglishButton.BackColor = currentColor;
                 EnglishButton.FlatAppearance.BorderColor = currentColor;
                 RussianButton.ForeColor = currentColor;
                 RussianButton.BackColor = SystemColors.Control;
                 RussianButton.FlatAppearance.BorderColor = currentColor;
+
+                SuccessHMB = Eng.SuccessHeader;
+                ErrorHMB = Eng.ErrorHeader;
+                PasswordSetsMB = Eng.PasswordSetsMB;
+                PasswordChangedMB = Eng.PasswordChangedMB;
+                WrongOldPasswordMB = Eng.PasswordChangeErrorMB;
+                CreateSecureKeySuccessfullMB = Eng.SecureKeyCreateSuccessMB;
+                CreateSecureKeyWrongMB = Eng.SecureKeyCreateWrongMB;
 
                 HeaderLabel.Text = Eng.SettingsHeader;
 
@@ -586,6 +662,9 @@ namespace Passave
 
             if (language == Language.Russian)
             {
+                ApplyButton.Location = new Point(692, 471);
+                CancelButton.Location = new Point(611, 471);
+
                 EnglishButton.ForeColor = currentColor;
                 EnglishButton.BackColor = SystemColors.Control;
                 EnglishButton.FlatAppearance.BorderColor = currentColor;
@@ -594,6 +673,14 @@ namespace Passave
                 RussianButton.FlatAppearance.BorderColor = currentColor;
 
                 HeaderLabel.Text = Rus.SettingsHeader;
+
+                SuccessHMB = Rus.SuccessHeader;
+                ErrorHMB = Rus.ErrorHeader;
+                PasswordSetsMB = Rus.PasswordSetsMB;
+                PasswordChangedMB = Rus.PasswordChangedMB;
+                WrongOldPasswordMB = Rus.PasswordChangeErrorMB;
+                CreateSecureKeySuccessfullMB = Rus.SecureKeyCreateSuccessMB;
+                CreateSecureKeyWrongMB = Rus.SecureKeyCreateWrongMB;
 
                 ChangeButton.Text = Rus.ChangeButton;
                 ApplyButton.Text = Rus.ApplyButton;

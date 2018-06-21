@@ -18,6 +18,7 @@
         public static string SuccessHeader = "SUCCESS";
         public static string AddHeader = "ADD";
         public static string EditHeader = "EDIT";
+        public static string InfoHeader = "INFO";
 
         public static string NameListViewHeader = "Name";
         public static string LoginListViewHeader = "Login";
@@ -63,5 +64,20 @@
         public static string CopyCardNumberCM = "Copy Card Number";
         public static string CopyKeyCM = "Copy Key";
         public static string CopyCvcCM = "Copy CVC";
+
+        public static string SaveChangesMB = "Do you want to save changes?";
+        public static string UnknownErrorMB = "Unknown error: ";
+        public static string WrongPasswordMB = "Wrong password! Try again";
+        public static string PasswordSetsMB = "Password set successfully!";
+        public static string PasswordChangedMB = "Password changed successfully!";
+        public static string PasswordChangeErrorMB = "Old password is wrong or you do not confirm your new password!";
+        public static string SecureKeyCreateSuccessMB = "Create successful. Keep it safe :)";
+        public static string SecureKeyCreateWrongMB = "You haven't password! Please, set the password and create secure key after it.";
+        public static string PasswordNotEqualsMB = "Passwords not equals!";
+        public static string EmptyNameLoginMB = "Name, login and password field can't be empty!";
+        public static string EmptyCardDateCvcMB = "Name, card number, date and CVC field can't be empty!";
+        public static string NotCorrectCvcMB = "CVC is not correct!";
+        public static string NotCorrectDateMB = "Date is not correct!";
+        public static string EmptyNameKeyMB = "Name and key field can't be empty!";
     }
 }

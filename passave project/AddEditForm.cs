@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+
+using Passave.International;
 
 namespace Passave
 {
@@ -17,6 +13,8 @@ namespace Passave
         public static LicenseEntry addLicenseEntry = new LicenseEntry();
         public static BankEntry addHomebankingEntry = new BankEntry();
         Mode mode;
+
+        string PasswordNotEqualsMB, EmptyNameLoginMB, NameCardNumberDateCvcMB, NotCorrectCvcMB, NotCorrectDateMB, EmptyNameKeyMB, AttentionHMB;
 
         bool first = false, second = false, third = false, four = false;
         int cardLength = 0;
@@ -152,14 +150,14 @@ namespace Passave
             NewMessageBox messageBox;
             if (PasswordTextBox.Text != RepeatPasswordTextBox.Text)
             {
-                messageBox = new NewMessageBox("Passwords not equals!");
+                messageBox = new NewMessageBox(PasswordNotEqualsMB, AttentionHMB);
                 messageBox.ShowDialog();
             }
             else 
             {
                 if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
                 {
-                    if (NameTextBox.Text != "" || PasswordTextBox.Text != "" || LoginTextBox.Text != "")
+                    if (NameTextBox.Text != "" && PasswordTextBox.Text != "" && LoginTextBox.Text != "")
                     {
                         addEntry = new Entry(NameTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text, PhoneTextBox.Text, UrlTextBox.Text, NotesTextBox.Text);
                         DialogResult = DialogResult.OK;
@@ -172,7 +170,7 @@ namespace Passave
                     }
                     else
                     {
-                        messageBox = new NewMessageBox("Name, login and password field can't be empty!");
+                        messageBox = new NewMessageBox(EmptyNameLoginMB, AttentionHMB);
                         messageBox.ShowDialog();
                     }
                 }
@@ -181,27 +179,27 @@ namespace Passave
                 {
                     if (NameTextBox.Text == "" || CardNumberTextBox.Text == "" || DateTextBox.Text == "" || CvcTextBox.Text == "")
                     {
-                        messageBox = new NewMessageBox("Name, card number, date and CVC field can't be empty!");
+                        messageBox = new NewMessageBox(NameCardNumberDateCvcMB, AttentionHMB);
                         messageBox.ShowDialog();
                     }
                     else if (CvcTextBox.Text.Length != 3)
                     {
-                        messageBox = new NewMessageBox("CVC is not correct!");
+                        messageBox = new NewMessageBox(NotCorrectCvcMB, AttentionHMB);
                         messageBox.ShowDialog();
                     }
                     else if (!char.IsDigit(CvcTextBox.Text[0]) && !char.IsDigit(CvcTextBox.Text[1]) && !char.IsDigit(CvcTextBox.Text[2]))
                     {
-                        messageBox = new NewMessageBox("CVC is not correct!");
+                        messageBox = new NewMessageBox(NotCorrectCvcMB, AttentionHMB);
                         messageBox.ShowDialog();
                     }
                     else if (DateTextBox.Text.Length != 5)
                     {
-                        messageBox = new NewMessageBox("Date is not correct!");
+                        messageBox = new NewMessageBox(NotCorrectDateMB, AttentionHMB);
                         messageBox.ShowDialog();
                     }
                     else if (!char.IsDigit(DateTextBox.Text[0]) && !char.IsDigit(DateTextBox.Text[1]) && !char.IsDigit(DateTextBox.Text[3]) && !char.IsDigit(DateTextBox.Text[4]))
                     {
-                        messageBox = new NewMessageBox("Date is not correct!");
+                        messageBox = new NewMessageBox(NotCorrectDateMB, AttentionHMB);
                         messageBox.ShowDialog();
                     }
                     else if (addHomebankingEntry.Name == NameTextBox.Text && addHomebankingEntry.CardNumber == CardNumberTextBox.Text && addHomebankingEntry.Date == DateTextBox.Text &&
@@ -230,7 +228,7 @@ namespace Passave
                     }
                     else
                     {
-                        messageBox = new NewMessageBox("Name and key field can't be empty!");
+                        messageBox = new NewMessageBox(EmptyNameKeyMB, AttentionHMB);
                         messageBox.ShowDialog();
                     }
                 }
@@ -365,6 +363,8 @@ namespace Passave
                 CvcTextBox.TabIndex = 2;
                 DateTextBox.TabIndex = 3;
                 KeyTextBox.TabIndex = 10;
+
+                SetLanguage();
             }
             else
             {
@@ -400,6 +400,8 @@ namespace Passave
                 DateTextBox.TabIndex = 10;
                 KeyTextBox.TabIndex = 1;
             }
+
+            SetLanguage();
         }
 
         private void DateTextBox_TextChanged(object sender, EventArgs e)
@@ -443,8 +445,93 @@ namespace Passave
             {
                 four = true;
                 cardLength = CardNumberTextBox.Text.Length;
-                //CardNumberTextBox.Text = CardNumberTextBox.Text + " ";
                 CardNumberTextBox.SelectionStart = CardNumberTextBox.Text.Length;
+            }
+        }
+
+        private void SetLanguage()
+        {
+            if (SettingsForm.language == Language.English)
+            {
+                if (mode == Mode.Add)
+                {
+                    HeaderLabel.Text = Eng.AddHeader;
+                    AddButton.Text = Eng.AddButton;
+                }
+                else
+                {
+                    HeaderLabel.Text = Eng.EditHeader;
+                    AddButton.Text = Eng.EditButton;
+                }
+
+                AttentionHMB = Eng.AttentionHeader;
+
+                AddButton.Location = new Point(254, 449);
+                CancelButton.Location = new Point(173, 449);
+
+                NameTextBox.Hint = Eng.NameHint;
+                LoginTextBox.Hint = Eng.LoginHint;
+                PasswordTextBox.Hint = Eng.PasswordHint;
+                RepeatPasswordTextBox.Hint = Eng.ConfirmPasswordHint;
+                PhoneTextBox.Hint = Eng.PhoneHint;
+                UrlTextBox.Hint = Eng.UrlHint;
+                NotesTextBox.Hint = Eng.NotesHint;
+                CardNumberTextBox.Hint = Eng.CardNumberHint;
+                DateTextBox.Hint = Eng.DateHint;
+                CvcTextBox.Hint = Eng.CvcHint;
+                KeyTextBox.Hint = Eng.KeyHint;
+
+                CancelButton.Text = Eng.CancelButton;
+
+                PasswordNotEqualsMB = Eng.PasswordNotEqualsMB;
+                EmptyNameLoginMB = Eng.EmptyNameLoginMB;
+                NameCardNumberDateCvcMB = Eng.EmptyCardDateCvcMB;
+                NotCorrectCvcMB = Eng.NotCorrectCvcMB;
+                NotCorrectDateMB = Eng.NotCorrectDateMB;
+                EmptyNameKeyMB = Eng.EmptyNameKeyMB;
+            }
+            
+            if (SettingsForm.language == Language.Russian)
+            {
+                if (mode == Mode.Add)
+                {
+                    HeaderLabel.Text = Rus.AddHeader;
+                    AddButton.Text = Rus.AddButton;
+
+                    AddButton.Location = new Point(210, 449);
+                    CancelButton.Location = new Point(129, 449);
+                }
+                else
+                {
+                    HeaderLabel.Text = Rus.EditHeader;
+                    AddButton.Text = Rus.EditButton;
+
+                    AddButton.Location = new Point(168, 449);
+                    CancelButton.Location = new Point(87, 449);
+                }
+
+                AttentionHMB = Rus.AttentionHeader;
+
+                NameTextBox.Hint = Rus.NameHint;
+                LoginTextBox.Hint = Rus.LoginHint;
+                PasswordTextBox.Hint = Rus.PasswordHint;
+                RepeatPasswordTextBox.Hint = Rus.ConfirmPasswordHint;
+                PhoneTextBox.Hint = Rus.PhoneHint;
+                UrlTextBox.Hint = Rus.UrlHint;
+                NotesTextBox.Hint = Rus.NotesHint;
+                CardNumberTextBox.Hint = Rus.CardNumberHint;
+                DateTextBox.Hint = Rus.DateHint;
+                CvcTextBox.Hint = Rus.CvcHint;
+                KeyTextBox.Hint = Rus.KeyHint;
+
+                CancelButton.Text = Rus.CancelButton;
+
+                PasswordNotEqualsMB = Rus.PasswordNotEqualsMB;
+                EmptyNameLoginMB = Rus.EmptyNameLoginMB;
+                NameCardNumberDateCvcMB = Rus.EmptyCardDateCvcMB;
+                NotCorrectCvcMB = Rus.NotCorrectCvcMB;
+                NotCorrectDateMB = Rus.NotCorrectDateMB;
+                EmptyNameKeyMB = Rus.EmptyNameKeyMB;
             }
         }
     }

@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
-using MaterialSkin;
 using MaterialSkin.Controls;
 
 using Passave.Cryptography;
@@ -14,10 +13,6 @@ using Passave.International;
 
 namespace Passave
 {
-    // TODO:
-    // set new icons
-    // languages
-
     public partial class MainForm : Form
     {
         #region Fields
@@ -27,7 +22,7 @@ namespace Passave
         List<LicenseEntry> licensesList = new List<LicenseEntry>();
         List<Entry> otherList = new List<Entry>();
 
-        Cryptography.AES aes;
+        Passave.Cryptography.AES aes;
 
         public static bool isSNShow = true, isEmailShow = false, isHomebankingShow = false, isLicensesShow = false, isOtherShow = false, isSecureKey = false, havePassword = false;
 
@@ -38,6 +33,8 @@ namespace Passave
         string fn = "";
 
         public static string password;
+
+        string SaveChangesMB, AttentionHMB, ErrorHMB, UnknownErrorMB, WrongPasswordMB;
         #endregion
 
         #region Constructors
@@ -391,7 +388,7 @@ namespace Passave
         {
             if (changes != 0)
             {
-                NewMessageBox messageBox = new NewMessageBox("Do you want to save the changes?", "ATTENTION", MessageBoxButtons.YesNoCancel);
+                NewMessageBox messageBox = new NewMessageBox(SaveChangesMB, AttentionHMB, MessageBoxButtons.YesNoCancel);
                 DialogResult dr = messageBox.ShowDialog();
 
                 if (dr == DialogResult.Yes)
@@ -406,6 +403,11 @@ namespace Passave
             }
         }
 
+        private void MainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            SetLanguage();
+        }
+
 
         private void OtherListView_MouseMove(object sender, MouseEventArgs e)
         {
@@ -417,7 +419,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = false;
                 CopyLoginButton.Enabled = false;
                 CopyPasswordButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count == 1)
@@ -426,7 +433,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = true;
                 CopyLoginButton.Enabled = true;
                 CopyPasswordButton.Enabled = true;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count > 1)
@@ -435,7 +447,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = true;
                 CopyLoginButton.Enabled = false;
                 CopyPasswordButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entries";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntriesCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntriesCM;
             }
         }
 
@@ -448,7 +465,12 @@ namespace Passave
                 EditLicenseButton.Enabled = false;
                 DeleteLicenseButton.Enabled = false;
                 CopyKeyButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteLicenseButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteLicenseButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count == 1)
@@ -456,7 +478,12 @@ namespace Passave
                 EditLicenseButton.Enabled = true;
                 DeleteLicenseButton.Enabled = true;
                 CopyKeyButton.Enabled = true;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteLicenseButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteLicenseButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count > 1)
@@ -464,7 +491,12 @@ namespace Passave
                 EditLicenseButton.Enabled = false;
                 DeleteLicenseButton.Enabled = true;
                 CopyKeyButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entries";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteLicenseButton.Text = Eng.DeleteEntriesCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteLicenseButton.Text = Rus.DeleteEntriesCM;
             }
         }
 
@@ -478,7 +510,12 @@ namespace Passave
                 DeleteCardButton.Enabled = false;
                 CopyCardButton.Enabled = false;
                 CopyCVCButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteCardButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteCardButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count == 1)
@@ -487,7 +524,12 @@ namespace Passave
                 DeleteCardButton.Enabled = true;
                 CopyCardButton.Enabled = true;
                 CopyCVCButton.Enabled = true;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteCardButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteCardButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count > 1)
@@ -496,7 +538,12 @@ namespace Passave
                 DeleteCardButton.Enabled = true;
                 CopyCardButton.Enabled = false;
                 CopyCVCButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entries";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteCardButton.Text = Eng.DeleteEntriesCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteCardButton.Text = Rus.DeleteEntriesCM;
             }
         }
 
@@ -510,7 +557,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = false;
                 CopyLoginButton.Enabled = false;
                 CopyPasswordButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count == 1)
@@ -519,7 +571,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = true;
                 CopyLoginButton.Enabled = true;
                 CopyPasswordButton.Enabled = true;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count > 1)
@@ -528,7 +585,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = true;
                 CopyLoginButton.Enabled = false;
                 CopyPasswordButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entries";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntriesCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntriesCM;
             }
         }
 
@@ -542,7 +604,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = false;
                 CopyLoginButton.Enabled = false;
                 CopyPasswordButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count == 1)
@@ -551,7 +618,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = true;
                 CopyLoginButton.Enabled = true;
                 CopyPasswordButton.Enabled = true;
-                DeleteEntryButton.Text = "Delete Entry";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntryCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntryCM;
             }
 
             if (selected.Count > 1)
@@ -560,7 +632,12 @@ namespace Passave
                 DeleteEntryButton.Enabled = true;
                 CopyLoginButton.Enabled = false;
                 CopyPasswordButton.Enabled = false;
-                DeleteEntryButton.Text = "Delete Entries";
+
+                if (SettingsForm.language == Language.English)
+                    DeleteEntryButton.Text = Eng.DeleteEntriesCM;
+
+                if (SettingsForm.language == Language.Russian)
+                    DeleteEntryButton.Text = Rus.DeleteEntriesCM;
             }
         }
 
@@ -693,7 +770,7 @@ namespace Passave
         {
             if (changes != 0)
             {
-                NewMessageBox messageBox = new NewMessageBox("Do you want to save the changes?", "ATTENTION", MessageBoxButtons.YesNoCancel);
+                NewMessageBox messageBox = new NewMessageBox(SaveChangesMB, AttentionHMB, MessageBoxButtons.YesNoCancel);
                 DialogResult dr = messageBox.ShowDialog();
 
                 if (dr == DialogResult.Yes)
@@ -718,7 +795,7 @@ namespace Passave
         {
             if (changes != 0)
             {
-                NewMessageBox messageBox = new NewMessageBox("Do you want to save the changes?", "ATTENTION", MessageBoxButtons.YesNoCancel);
+                NewMessageBox messageBox = new NewMessageBox(SaveChangesMB, AttentionHMB, MessageBoxButtons.YesNoCancel);
                 DialogResult dr = messageBox.ShowDialog();
 
                 if (dr == DialogResult.Yes)
@@ -826,7 +903,7 @@ namespace Passave
             }
             catch (Exception e)
             {
-                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                NewMessageBox messageBox = new NewMessageBox(UnknownErrorMB + e.Message, ErrorHMB);
                 messageBox.ShowDialog();
             }
         }
@@ -1011,7 +1088,7 @@ namespace Passave
             }
             catch (Exception e)
             {
-                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                NewMessageBox messageBox = new NewMessageBox(UnknownErrorMB + e.Message, ErrorHMB);
                 messageBox.ShowDialog();
             }
         }
@@ -1121,7 +1198,7 @@ namespace Passave
             }
             catch (Exception e)
             {
-                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                NewMessageBox messageBox = new NewMessageBox(UnknownErrorMB + e.Message, ErrorHMB);
                 messageBox.ShowDialog();
             }
         }
@@ -1269,7 +1346,7 @@ namespace Passave
             }
             catch (Exception e)
             {
-                NewMessageBox messageBox = new NewMessageBox("Unknown error: " + e.Message, "ERROR");
+                NewMessageBox messageBox = new NewMessageBox(UnknownErrorMB + e.Message, ErrorHMB);
                 messageBox.ShowDialog();
             }
         }
@@ -1362,7 +1439,7 @@ namespace Passave
                         string readed = sr.ReadLine();
                         if (readed != "ENGLISH" && readed != "RUSSIAN")
                         {
-                            NewMessageBox messageBox = new NewMessageBox("Wrong password!", "ERROR", MessageBoxButtons.OK);
+                            NewMessageBox messageBox = new NewMessageBox(WrongPasswordMB, ErrorHMB, MessageBoxButtons.OK);
                             messageBox.ShowDialog();
                             ClearAll();
                         }
@@ -1537,7 +1614,7 @@ namespace Passave
                     }
                     catch (Exception ex)
                     {
-                        NewMessageBox messageBox = new NewMessageBox("Unkonwn error: " + ex.Message, "ERROR", MessageBoxButtons.OK);
+                        NewMessageBox messageBox = new NewMessageBox(UnknownErrorMB + ex.Message, ErrorHMB);
                         messageBox.ShowDialog();
                         ClearAll();
                     }
@@ -1794,6 +1871,25 @@ namespace Passave
                 LicensesListView.Columns[2].Text = Eng.DateListViewHeader;
 
                 SearchTextBox.Hint = Eng.SearchHint;
+
+                AddEntryButton.Text = Eng.AddEntryCM;
+                AddCardButton.Text = Eng.AddEntryCM;
+                AddLicenseButton.Text = Eng.AddEntryCM;
+                EditEntryButton.Text = Eng.EditEntryCM;
+                EditCardButton.Text = Eng.EditEntryCM;
+                EditLicenseButton.Text = Eng.EditEntryCM;
+                DeleteEntryButton.Text = Eng.DeleteEntryCM;
+                CopyLoginButton.Text = Eng.CopyLoginCM;
+                CopyPasswordButton.Text = Eng.CopyPasswordCM;
+                CopyCardButton.Text = Eng.CopyCardNumberCM;
+                CopyCVCButton.Text = Eng.CopyCvcCM;
+                CopyKeyButton.Text = Eng.CopyKeyCM;
+
+                SaveChangesMB = Eng.SaveChangesMB;
+                AttentionHMB = Eng.AttentionHeader;
+                ErrorHMB = Eng.ErrorHeader;
+                UnknownErrorMB = Eng.UnknownErrorMB;
+                WrongPasswordMB = Eng.WrongPasswordMB;
             }
 
             if (SettingsForm.language == Language.Russian)
@@ -1831,6 +1927,25 @@ namespace Passave
                 LicensesListView.Columns[2].Text = Rus.DateListViewHeader;
 
                 SearchTextBox.Hint = Rus.SearchHint;
+
+                AddEntryButton.Text = Rus.AddEntryCM;
+                AddCardButton.Text = Rus.AddEntryCM;
+                AddLicenseButton.Text = Rus.AddEntryCM;
+                EditEntryButton.Text = Rus.EditEntryCM;
+                EditCardButton.Text = Rus.EditEntryCM;
+                EditLicenseButton.Text = Rus.EditEntryCM;
+                DeleteEntryButton.Text = Rus.DeleteEntryCM;
+                CopyLoginButton.Text = Rus.CopyLoginCM;
+                CopyPasswordButton.Text = Rus.CopyPasswordCM;
+                CopyCardButton.Text = Rus.CopyCardNumberCM;
+                CopyCVCButton.Text = Rus.CopyCvcCM;
+                CopyKeyButton.Text = Rus.CopyKeyCM;
+
+                SaveChangesMB = Rus.SaveChangesMB;
+                AttentionHMB = Rus.AttentionHeader;
+                ErrorHMB = Rus.ErrorHeader;
+                UnknownErrorMB = Rus.UnknownErrorMB;
+                WrongPasswordMB = Rus.WrongPasswordMB;
             }
         }
 

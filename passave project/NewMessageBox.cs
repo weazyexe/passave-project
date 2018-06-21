@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using Passave.International;
 
 namespace Passave
 {
@@ -31,6 +27,20 @@ namespace Passave
                 MenuPanel.BackgroundImage = Properties.Resources.menuimage_city;
             if (MainForm.theme == Theme.Sunset)
                 MenuPanel.BackgroundImage = Properties.Resources.menuimage_sunset;
+
+            if (SettingsForm.language == Language.English)
+            {
+                YesButton.Text = Eng.YesButton;
+                NoButton.Text = Eng.NoButton;
+                CancelButton.Text = Eng.CancelButton;
+            }
+
+            if (SettingsForm.language == Language.Russian)
+            {
+                YesButton.Text = Rus.YesButton;
+                NoButton.Text = Rus.NoButton;
+                CancelButton.Text = Rus.CancelButton;
+            }
         }
 
         #region FORM SHADOW
