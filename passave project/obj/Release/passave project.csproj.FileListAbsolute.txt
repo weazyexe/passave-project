@@ -13,4 +13,3 @@ E:\repositories\passave-project\passave project\obj\Release\passave project.cspr
 E:\repositories\passave-project\passave project\obj\Release\passave project.csproj.CopyComplete
 E:\repositories\passave-project\passave project\obj\Release\passave project.exe
 E:\repositories\passave-project\passave project\obj\Release\passave project.pdb
-E:\repositories\passave-project\passave project\obj\Release\passave project.csprojResolveAssemblyReference.cache

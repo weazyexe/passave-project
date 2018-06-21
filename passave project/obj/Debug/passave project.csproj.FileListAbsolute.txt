@@ -14,7 +14,6 @@ E:\repositories\passave-project\passave project\bin\Debug\passave project.exe.co
 E:\repositories\passave-project\passave project\bin\Debug\passave project.exe
 E:\repositories\passave-project\passave project\bin\Debug\passave project.pdb
 E:\repositories\passave-project\passave project\bin\Debug\MaterialSkin.dll
-E:\repositories\passave-project\passave project\obj\Debug\passave project.csprojResolveAssemblyReference.cache
 E:\repositories\passave-project\passave project\obj\Debug\Passave.MainForm.resources
 E:\repositories\passave-project\passave project\obj\Debug\Passave.Properties.Resources.resources
 E:\repositories\passave-project\passave project\obj\Debug\passave project.csproj.GenerateResource.cache
