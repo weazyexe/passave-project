@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Passave
@@ -18,7 +13,7 @@ namespace Passave
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (args.Count() == 1)
+            if (args.Length == 1)
                 Application.Run(new MainForm(args[0]));
             else Application.Run(new MainForm());
         }
