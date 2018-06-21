@@ -346,7 +346,7 @@
             this.Name = "AddEditForm";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AddEditForm";
+            this.Text = "Add / Edit";
             this.Load += new System.EventHandler(this.AddEditForm_Load);
             this.BorderPanel.ResumeLayout(false);
             this.BorderPanel.PerformLayout();

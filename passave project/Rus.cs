@@ -37,7 +37,7 @@
         public static string CreateSecureKeyLabel = "Создать ключ безопасности";
         public static string AttentionChangePasswordLabel = "Если вы измените пароль, старый ключ безопасности будет больше неактивен!";
         public static string AboutSecureKeyLabel = "Ключ безопасности - ключ для открытия базы данных, если Вы забыли пароль. Сохраните его. Восстановление доступа иначе невозможно!";
-        public static string AboutProgramLabel = "Passave - простой и красивый менеджер паролей\nПроект с открытым исходным кодом (нажмите на разработчика для переходы на GitHub)\nДата компиляции: 20.06.2018";
+        public static string AboutProgramLabel = "Passave - простой и красивый менеджер паролей\nПроект с открытым исходным кодом (имя разработчика - кликабельная ссылка, GitHub)\nДата компиляции: 21.06.2018";
         public static string DevLinkLabel = "Разработчик: weazy.exe";
 
         public static string OldPasswordHint = "Старый пароль";

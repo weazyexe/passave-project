@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Passave.AddEditForm" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>mhIDJBEACCRBERDBAomCYAiiASVAACIAoAggRIAgAoA=</HashCode>
+      <FileName>AddEditForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.BankEntry">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAAIAAAAAA=</HashCode>
+      <FileName>BankEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.BaseEntry">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.Entry">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAACAAAQIAAAAAA=</HashCode>
+      <FileName>Entry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.LicenseEntry">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LicenseEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.MainForm" Collapsed="true">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>1j9btdXRBrwpNHrjlirqdqyinwVlCmvDWj6gQgUhxK4=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.NewMessageBox" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="Passave.NewMessageBox.MARGINS" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>NewMessageBox.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EhACIBEAAGABCBDBABiAQAICAQVAAAAAAAgg1AAwAIA=</HashCode>
+      <FileName>NewMessageBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.PasswordForm" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EhACIBMAACABABDBAAiAAAAiAAlAAAAAAAggZAAwAIA=</HashCode>
+      <FileName>PasswordForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.Program" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.SettingsForm" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Fh0KeBlBLSRFMZrjBVmfQ2JClaVNSiOAcoggZgpgpok=</HashCode>
+      <FileName>SettingsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.Cryptography.AES">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAABIChAAQBAAYCBAAAAAQAACEEGABABOAMkA=</HashCode>
+      <FileName>AES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.International.Eng" Collapsed="true">
+    <Position X="2.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggOAABIaQwAERIQJRJAoCoQnfQgAaEIGgAApMBwWAQ=</HashCode>
+      <FileName>Eng.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.International.Rus" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggOAABIaQwAERIQJRJAoCoQnfQgAaEIGgAApMBwWAQ=</HashCode>
+      <FileName>Rus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.Properties.Resources" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQkAGJACoEAMoABUACBEkwME1EqBHoEAAIETgAEJ4o=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passave.Properties.Settings" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Passave.Mode">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Passave.Theme">
+    <Position X="5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAACAAAIAAAAAAAAAEAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Passave.Language">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

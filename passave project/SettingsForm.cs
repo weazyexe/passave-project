@@ -686,6 +686,7 @@ namespace Passave
             {
                 ApplyButton.Location = new Point(712, 471);
                 CancelButton.Location = new Point(631, 471);
+                AboutDevLink.Location = new Point(391, 388);
 
                 EnglishButton.ForeColor = white;
                 EnglishButton.BackColor = currentColor;
@@ -727,6 +728,7 @@ namespace Passave
             {
                 ApplyButton.Location = new Point(692, 471);
                 CancelButton.Location = new Point(611, 471);
+                AboutDevLink.Location = new Point(373, 388);
 
                 EnglishButton.ForeColor = currentColor;
                 EnglishButton.BackColor = SystemColors.Control;

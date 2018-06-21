@@ -540,7 +540,7 @@
             this.Name = "SettingsForm";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SettingsForm";
+            this.Text = "Settings";
             this.BorderPanel.ResumeLayout(false);
             this.BorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();

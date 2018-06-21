@@ -182,7 +182,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewMessageBox";
+            this.Text = "Message";
             this.Load += new System.EventHandler(this.NewMessageBox_Load);
             this.BorderPanel.ResumeLayout(false);
             this.BorderPanel.PerformLayout();

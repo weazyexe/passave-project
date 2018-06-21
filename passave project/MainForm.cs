@@ -1006,7 +1006,7 @@ namespace Passave
                     ListViewItem listViewItem = new ListViewItem(AddEditForm.addHomebankingEntry.Name);
                     listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.CardNumber);
                     listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.Date);
-                    listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.CVC);
+                    listViewItem.SubItems.Add("•••");
                     listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.Phone);
                     listViewItem.SubItems.Add(AddEditForm.addHomebankingEntry.Notes);
 
@@ -2040,7 +2040,7 @@ namespace Passave
 
                 LicensesListView.Columns[0].Text = Eng.NameListViewHeader;
                 LicensesListView.Columns[1].Text = Eng.KeyListViewHeader;
-                LicensesListView.Columns[2].Text = Eng.DateListViewHeader;
+                LicensesListView.Columns[2].Text = Eng.NotesListViewHeader;
 
                 SearchTextBox.Hint = Eng.SearchHint;
 
@@ -2143,7 +2143,7 @@ namespace Passave
 
                 LicensesListView.Columns[0].Text = Rus.NameListViewHeader;
                 LicensesListView.Columns[1].Text = Rus.KeyListViewHeader;
-                LicensesListView.Columns[2].Text = Rus.DateListViewHeader;
+                LicensesListView.Columns[2].Text = Rus.NotesListViewHeader;
 
                 SearchTextBox.Hint = Rus.SearchHint;
 

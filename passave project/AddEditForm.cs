@@ -549,8 +549,8 @@ namespace Passave
                 {
                     if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
                     {
-                        AddButton.Location = new Point(254, 449);
-                        CancelButton.Location = new Point(173, 449);
+                        AddButton.Location = new Point(215, 449);
+                        CancelButton.Location = new Point(134, 449);
                     }
                     else if (MainForm.isHomebankingShow)
                     {
@@ -568,8 +568,8 @@ namespace Passave
                 {
                     if (MainForm.isSNShow || MainForm.isEmailShow || MainForm.isOtherShow)
                     {
-                        AddButton.Location = new Point(254, 449);
-                        CancelButton.Location = new Point(173, 449);
+                        AddButton.Location = new Point(164, 449);
+                        CancelButton.Location = new Point(83, 449);
                     }
                     else if (MainForm.isHomebankingShow)
                     {

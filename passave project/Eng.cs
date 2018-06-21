@@ -37,7 +37,7 @@
         public static string CreateSecureKeyLabel = "Create secure key";
         public static string AttentionChangePasswordLabel = "If you will change password, your old secure key will be disabled!";
         public static string AboutSecureKeyLabel = "Secure key - the key you need to open your database, if you forgot password. Keep it safe. Restore access to database otherwise impossible!";
-        public static string AboutProgramLabel = "Passave - simple and beautiful password manager\nAn open source project(dev link is clickable to github)\nCompilation date: 20.06.2018";
+        public static string AboutProgramLabel = "Passave - simple and beautiful password manager\nAn open source project(dev link is clickable to github)\nCompilation date: 21.06.2018";
         public static string DevLinkLabel = "Developer: weazy.exe";
 
         public static string OldPasswordHint = "Old password";
